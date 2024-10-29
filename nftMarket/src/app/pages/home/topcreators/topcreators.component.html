@@ -1,1 +1,22 @@
-<p>topcreators works!</p>
+<div class="pt-[160px] bg-lightBlack pl-[390px]">
+  <div class="flex">
+    <div>
+      <h3 class="font-work font-semibold text-h3 text-white leading-[120%]">Top creators</h3>
+      <p class="font-work font-regular text-base text-white leading-[160%]">Checkout Top Rated Creators on the NFT Marketplace</p>
+    </div>
+    <div>
+      <app-primary class="pt-[50px]">View Rankings</app-primary>
+    </div>
+  </div>
+  <div class="mt-[60px] w-[80%] flex flex-wrap gap-4 ml-[25px]">
+    <div *ngFor="let creator of creators" class="creator-card w-[240px] h-[238px] bg-darkGray rounded-[20px]">
+      <div class="pt-[18px] ml-5">
+        <h1 class="bg-lightBlack w-[30px] h-[30px] rounded-full text-center py-1 text-lightGray">{{ creator.id }}</h1>
+      </div>
+      <img [src]="creator.ava" alt="" class="w-[120px] h-[120px] rounded-full -mt-5 mx-auto">
+      <h1 class="text-center text-white mt-5">{{ creator.name }}</h1>
+      <h1 class="text-center mt-[5px] text-lightGray">Total Sales:<span class="text-white">{{ creator.total }}</span></h1>
+    </div>
+  </div>
+
+</div>

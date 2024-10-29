@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
+import {PrimaryComponent} from '../../../components/buttonWithBorder/primary/primary.component';
+import {NgForOf} from '@angular/common';
 
 @Component({
   selector: 'app-topcreators',
   standalone: true,
-  imports: [],
+  imports: [
+    PrimaryComponent,
+    NgForOf
+  ],
   templateUrl: './topcreators.component.html',
   styleUrl: './topcreators.component.scss'
 })
@@ -59,7 +64,7 @@ export class TopcreatorsComponent {
     },
     {
       id: 9,
-      ava: "/icons/Kianna.svg",
+      ava: "/icons/Stanton.svg",
       name: "RustyRobot",
       total: 34.53
     },
@@ -77,7 +82,7 @@ export class TopcreatorsComponent {
     },
     {
       id: 12,
-      ava: "/icons/Joselyn.svg",
+      ava: "/icons/Jocelyn.svg",
       name: "Ghiblier",
       total: 34.53
     },
