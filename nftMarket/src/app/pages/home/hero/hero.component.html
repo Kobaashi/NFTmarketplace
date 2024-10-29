@@ -1,1 +1,33 @@
-<p>hero works!</p>
+<div class="flex bg-lightBlack w-full h-auto pl-[60px] pr-[50px]">
+  <div class="pl-[330px] pt-40" id="info">
+    <h1 class="font-work font-semibold text-white text-h1 leading-[110%] w-[510px] ">Discover digital art & Collect NFTs</h1>
+    <p class="font-work font-regular text-white text-base leading-[160%] w-[350px] h-[105px] mt-5">{{ 'NFT marketplace UI created with Anima for Figma. Collect, buy and sell art from more than 20k NFT artists.' | firstUppercase }}</p>
+    <app-primary>Get Started</app-primary>
+    <div class="flex mt-[30px]">
+      <div class="w-[150px] mr-[30px]">
+        <h4 class="font-mono font-bold text-h4 text-white leading-[140%]">240k+</h4>
+        <p class="font-mono font-regular text-[24px] text-white leading-[160%]">Total Sale</p>
+      </div>
+      <div class="ml-[30px] w-[150px]">
+        <h4 class="font-mono font-bold text-h4 text-white leading-[140%]">100k+</h4>
+        <p class="font-mono font-regular text-[24px] text-white leading-[160%]">Auctions</p>
+      </div>
+      <div class="ml-[30px] w-[150px]">
+        <h4 class="font-mono font-bold text-h4 text-white leading-[140%]">240k+</h4>
+        <p class="font-mono font-regular text-[24px] text-white leading-[160%]">Artists</p>
+      </div>
+    </div>
+  </div>
+  <div class="ml-[60px]" id="image">
+    <div>
+      <img [src]="spaceWalking" alt="" class="ml-[30px] mt-40 rounded-t-[20px]">
+      <div class="bg-darkGray w-[510px] h-[109px] ml-[30px] rounded-b-[20px]">
+        <h5 class="font-work font-semibold text-white text-h5 leading-[140%] ml-[20px] pt-[22px]">Space Walking</h5>
+        <div class="flex pt-[10px] ml-[20px]">
+          <img [src]="avatar" alt="">
+          <p class="ml-3 font-work font-regular text-base text-white leading-[140%]">Animakid</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

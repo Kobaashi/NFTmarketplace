@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './primary.component.scss'
 })
 export class PrimaryComponent {
-
+    rocket: string = "/icons/RocketWhite.svg";
 }
