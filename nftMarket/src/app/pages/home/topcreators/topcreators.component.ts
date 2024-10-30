@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
-import {PrimaryComponent} from '../../../components/buttonWithBorder/primary/primary.component';
 import {NgForOf} from '@angular/common';
 
 @Component({
   selector: 'app-topcreators',
   standalone: true,
   imports: [
-    PrimaryComponent,
     NgForOf
   ],
   templateUrl: './topcreators.component.html',
   styleUrl: './topcreators.component.scss'
 })
 export class TopcreatorsComponent {
+
+  rocket: string = "/icons/RocketPurple.svg";
+
   creators = [
     {
       id: 1,
