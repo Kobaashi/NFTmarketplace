@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './highlight.component.scss'
 })
 export class HighlightComponent {
-
+  bg: string = "/img/NFTHighlight.png";
+  eye: string = "/icons/Eye.svg";
+  ava: string = "/icons/Phillip.svg";
 }

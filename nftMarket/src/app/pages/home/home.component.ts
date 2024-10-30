@@ -5,6 +5,7 @@ import {TrendingCollectionComponent} from './trending-collection/trending-collec
 import {TopcreatorsComponent} from './topcreators/topcreators.component';
 import {BrowsecategoriesComponent} from './browsecategories/browsecategories.component';
 import {DiscoverMoreComponent} from './discover-more/discover-more.component';
+import {HighlightComponent} from './highlight/highlight.component';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +19,7 @@ import {DiscoverMoreComponent} from './discover-more/discover-more.component';
     DiscoverMoreComponent,
     NavMenuComponent,
     NavMenuComponent,
+    HighlightComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
