@@ -1,4 +1,4 @@
-<div class="pt-[120px] bg-lightBlack">
+<div class="pt-[120px] pb-[80px] bg-lightBlack">
   <div class="w-[1120px] h-[430px] bg-darkGray ml-[390px] rounded-[20px] flex">
     <div class="pt-[60px] ml-[60px]" id="image">
       <img [src]="actronavt" alt="" class="w-[425px] h-[310px]">
@@ -8,14 +8,9 @@
       <h5 class="w-[425px] font-work font-regular text-h5 text-white leading-[160%] mt-[10px]">{{ 'Get exclusive promotions & updates straight to your inbox.' | firstUppercase }}</h5>
       <div class="flex mt-10" id="form" [formGroup]="form" >
 
-        <input type="text" placeholder="Enter your email here" class="font-work font-regular text-base text-black leading-[140%] w-[425px] h-[60px] rounded-[20px] px-[19px] py-[20px] border-none placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%] placeholder:opacity-70" formControlName="email">
+        <input type="text" placeholder="Enter your email here" class="font-work font-regular text-base text-black leading-[140%] w-[425px] h-[60px] rounded-[20px] px-[19px] py-[20px] border-none placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]" formControlName="email">
         <button type="submit" class="w-[211px] h-[60px] rounded-[20px] bg-purple -ml-[210px]" (click)="submitForm()"><img [src]="message" alt="" class=" ml-[50px] mt-[5px]"><h5 class="font-work font-semibold text-base text-white leading-[140%] -mt-[22px] ml-[24px]">Subscribe</h5></button>
         <div class="text-red-500 text-center mt-[70px] -ml-[300px]">
-          <!--          <label class="text-red-500" id="text-danger" *ngIf="getError(form.get('email'))">-->
-          <!--            {{-->
-          <!--              getError(form.get('email'))-->
-          <!--            }}-->
-          <!--          </label>-->
           @if(getError(form.get('email'))) {
             <label  id="text-danger">{{getError(form.get('email')) }}</label>
           }
@@ -24,9 +19,6 @@
           @if(successMessage) {
             <label id="text-safe ">{{successMessage}}</label>
           }
-          <!--        <div *ngIf="" class="text-green-500 text-center mt-[10px]">-->
-          <!--          {{ successMessage }}-->
-          <!--        </div>-->
         </div>
       </div>
     </div>

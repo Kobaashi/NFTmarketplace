@@ -8,6 +8,7 @@ import {DiscoverMoreComponent} from './discover-more/discover-more.component';
 import {HighlightComponent} from './highlight/highlight.component';
 import {HowWorkComponent} from './how-work/how-work.component';
 import {JoinComponent} from './join/join.component';
+import {FooterComponent} from '../../components/footer/footer.component';
 
 @Component({
   selector: 'app-home',
@@ -24,6 +25,7 @@ import {JoinComponent} from './join/join.component';
     HighlightComponent,
     HowWorkComponent,
     JoinComponent,
+    FooterComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

@@ -1,1 +1,47 @@
-<p>footer works!</p>
+<div class="bg-darkGray w-full h-[356px]">
+  <div class="ml-[420px] flex">
+    <div class="pt-[40px] mb-[30px] w-[244px]" id="info">
+      <img [src]="logo" alt="" >
+      <h3 class="ml-3 font-mono font-bold text-white text-base -mt-[30px] cursor-pointer ml-[42px]"><span class="uppercase">nft</span> Marketplace</h3>
+      <p class="font-work font-regular text-base text-[#ccc] mt-[30px]">NFT marketplace UI created with Anima for Figma.</p>
+      <p class="font-work font-regular text-base text-[#ccc] mt-[20px]">Join our community</p>
+      <div class="flex mt-[15px]">
+        <img [src]="diskord" alt="" class="mr-[10px]">
+        <img [src]="youtube" alt="" class="mr-[10px]">
+        <img [src]="twitter" alt="" class="mr-[10px]">
+        <img [src]="instagram" alt="" class="">
+      </div>
+    </div>
+    <div class="ml-[87px] pt-[40px]" id="explore">
+      <h5 class="font-mono font-bold text-h5 text-white leading-[160%]">Explore</h5>
+      <div class="mt-[25px]">
+        <p class="font-work font-regular text-base text-[#ccc] leading-[140%]">Marketplace</p>
+        <p class="font-work font-regular text-base text-[#ccc] leading-[140%] mt-[20px]">Rankings</p>
+        <p class="font-work font-regular text-base text-[#ccc] leading-[140%] mt-[20px]">Connect a wallet</p>
+      </div>
+    </div>
+    <div class="ml-[150px] pt-[40px] pb-[10px]" id="join">
+        <h5 class="w-[297px] font-mono font-bold text-h5 text-white leading-[160%]">{{ 'Join our weekly digest' | firstUppercase }}</h5>
+        <p class="w-[330px] font-work font-regular text-base text-[#ccc] leading-[160%] mt-[25px]">{{ 'Get exclusive promotions & updates straight to your inbox.' | firstUppercase }}</p>
+        <div class="flex mt-10" id="form" [formGroup]="form" >
+
+          <input type="text" placeholder="Enter your email here" class="font-work font-regular text-base text-black leading-[140%] w-[420px] h-[60px] rounded-[20px] px-[19px] py-[20px] border-none placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]"  formControlName="email">
+          <button type="submit" class="w-[179px] h-[60px] rounded-[20px] bg-purple -ml-[175px]" (click)="submitForm()"><h5 class="font-work font-semibold text-base text-white leading-[140%] mt-[5px] ml-[20px]">Subscribe</h5></button>
+          <div class="text-red-500 text-center mt-[70px] -ml-[300px]">
+            @if(getError(form.get('email'))) {
+              <label  id="text-danger">{{getError(form.get('email')) }}</label>
+            }
+          </div>
+          <div class="text-green-500 text-center mt-[80px] -ml-[100px]">
+            @if(successMessage) {
+              <label id="text-safe">{{successMessage}}</label>
+            }
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="border-t border-[#cccccc] w-[1220px] pt-[30px] ml-[327px]">
+    <div class="-mt-[12px]"></div>
+    <p class="font-work font-regular text-base text-[#cccccc] leading-[110%]">Ⓒ NFT Market. Use this template freely.</p>
+  </div>
+</div>
