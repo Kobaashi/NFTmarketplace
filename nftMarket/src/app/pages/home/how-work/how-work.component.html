@@ -1,1 +1,17 @@
-<p>how-work works!</p>
+<div class="pt-[160px] bg-lightBlack ">
+  <div class="ml-[390px]" id="title">
+    <h3 class="font-work font-semibold text-h3 text-white leading-[120%]">How it works</h3>
+    <h5 class="font-work font-semibold text-h5 text-white leading-[160%]">Find out how to get started</h5>
+  </div>
+  <div class="mt-[48px] flex ml-[390px]" id="guid">
+    @for(guide of guides; track guide) {
+      <div class="bg-lightBlack fle mr-[60px]">
+        <div class="w-[330px] h-[439px] bg-darkGray rounded-[20px]">
+          <img [src]="guide.image" alt="" class="w-[250px] h-[250px] pt-[10px] ml-10">
+          <h5 class="font-work font-semibold text-h5 text-white text-center leading-[140%] mt-5">{{ guide.title | firstUppercase }}</h5>
+          <p class="w-[270px] font-work font-regular text-base text-white text-center leading-[140%] mt-[10px] ml-[30px]">{{ guide.description }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</div>

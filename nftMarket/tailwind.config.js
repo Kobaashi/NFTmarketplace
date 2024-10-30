@@ -23,8 +23,8 @@ module.exports = {
         'darkGray': '#3B3B3B',
         'lightGray': '#858584',
         'purple': '#A259FF',
-        'gradientone': 'linear-gradient(-45deg, #A259FF 0%, #377DF7 100%)',
-        'gradienttwo': 'linear-gradient(-45deg, #A259FF 0%, #FF6250 100%)'
+        // 'gradientone': 'linear-gradient(-45deg, #A259FF 0%, #377DF7 100%)',
+        // 'gradienttwo': 'linear-gradient(-45deg, #A259FF 0%, #FF6250 100%)'
       },
     },
   },

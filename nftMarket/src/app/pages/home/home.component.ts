@@ -6,6 +6,8 @@ import {TopcreatorsComponent} from './topcreators/topcreators.component';
 import {BrowsecategoriesComponent} from './browsecategories/browsecategories.component';
 import {DiscoverMoreComponent} from './discover-more/discover-more.component';
 import {HighlightComponent} from './highlight/highlight.component';
+import {HowWorkComponent} from './how-work/how-work.component';
+import {JoinComponent} from './join/join.component';
 
 @Component({
   selector: 'app-home',
@@ -20,6 +22,8 @@ import {HighlightComponent} from './highlight/highlight.component';
     NavMenuComponent,
     NavMenuComponent,
     HighlightComponent,
+    HowWorkComponent,
+    JoinComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
