@@ -6,9 +6,28 @@
     <div class="ml-20 mt-[79px]" id="info">
       <h3 class="w-[425px] font-work font-semibold text-h3 text-white leading-[120%]">{{ 'Join our weekly digest' | firstUppercase }}</h3>
       <h5 class="w-[425px] font-work font-regular text-h5 text-white leading-[160%] mt-[10px]">{{ 'Get exclusive promotions & updates straight to your inbox.' | firstUppercase }}</h5>
-      <div class="flex mt-10" id="form">
-        <input type="text" placeholder="Enter your email here" class="font-work font-regular text-base text-black leading-[140%] w-[425px] h-[60px] rounded-[20px] px-[19px] py-[20px] border-none placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%] placeholder:opacity-70">
-        <button type="submit" class="w-[211px] h-[60px] rounded-[20px] bg-purple -ml-[210px]"><img [src]="message" alt="" class=" ml-[50px] mt-[5px]"><h5 class="font-work font-semibold text-base text-white leading-[140%] -mt-[22px] ml-[24px]">Subscribe</h5></button>
+      <div class="flex mt-10" id="form" [formGroup]="form" >
+
+        <input type="text" placeholder="Enter your email here" class="font-work font-regular text-base text-black leading-[140%] w-[425px] h-[60px] rounded-[20px] px-[19px] py-[20px] border-none placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%] placeholder:opacity-70" formControlName="email">
+        <button type="submit" class="w-[211px] h-[60px] rounded-[20px] bg-purple -ml-[210px]" (click)="submitForm()"><img [src]="message" alt="" class=" ml-[50px] mt-[5px]"><h5 class="font-work font-semibold text-base text-white leading-[140%] -mt-[22px] ml-[24px]">Subscribe</h5></button>
+        <div class="text-red-500 text-center mt-[70px] -ml-[300px]">
+          <!--          <label class="text-red-500" id="text-danger" *ngIf="getError(form.get('email'))">-->
+          <!--            {{-->
+          <!--              getError(form.get('email'))-->
+          <!--            }}-->
+          <!--          </label>-->
+          @if(getError(form.get('email'))) {
+            <label  id="text-danger">{{getError(form.get('email')) }}</label>
+          }
+        </div>
+        <div class="text-green-500 text-center mt-[80px] -ml-[100px]">
+          @if(successMessage) {
+            <label id="text-safe ">{{successMessage}}</label>
+          }
+          <!--        <div *ngIf="" class="text-green-500 text-center mt-[10px]">-->
+          <!--          {{ successMessage }}-->
+          <!--        </div>-->
+        </div>
       </div>
     </div>
   </div>
