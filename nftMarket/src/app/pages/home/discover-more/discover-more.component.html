@@ -4,14 +4,14 @@
       <h3 class="font-work font-semibold text-h3 text-white leading-[120%]">Discover More NFTs</h3>
       <h5 class="font-work font-regular text-h5 text-white leading-[160%] mt-[10px]">Explore new trending NFTs</h5>
     </div>
-    <div class="inline-flex mt-[30px] ml-[540px] cursor-pointer border-2 border-purple rounded-[20px] cursor-pointer">
+    <div class="inline-flex mt-[30px] ml-[540px] cursor-pointer border-2 border-purple rounded-[20px] cursor-pointer transition-transform duration-500 hover:scale-90">
       <button class="flex font-work font-semibold text-base text-white leading-[140%] items-center justify-center w-[187px] h-[60px] rounded-[20px] ">
         <img [src]="eye" alt="" class="w-[19px] h-[19px] mr-[12px]">See all</button>
     </div>
   </div>
   <div class="mt-[60px] flex ml-[390px]" id="nft-card">
     @for(nft of nfts; track nft) {
-      <div class="mr-[55px]">
+      <div class="mr-[55px] transition-transform duration-500 hover:scale-90">
         <div class="w-[330px]">
           <img [src]="nft.image" alt="" class="w-full h-[296px] rounded-t-[20px]">
           <div class="h-[173px] bg-darkGray rounded-b-[20px]">

@@ -4,7 +4,7 @@
   </div>
   <div class="mt-[60px] ml-[390px] flex flex-wrap justify-between w-[60%]">
     @for(categorie of categories; track categorie) {
-        <div class="mr-[30px] mb-[30px] w-[240px] overflow-hidden rounded-[20px]">
+        <div class="mr-[30px] mb-[30px] w-[240px] overflow-hidden rounded-[20px] transition-transform duration-500 hover:scale-90">
           <div class="">
             <div class="relative w-[240px] h-[240px]">
               <img [src]="categorie.image" alt="" class="inset-0 w-full h-full blur-lg object-cover">
