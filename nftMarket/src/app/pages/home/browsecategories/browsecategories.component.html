@@ -1,1 +1,23 @@
-<p>browsecategories works!</p>
+<div class="pt-[160px] bg-lightBlack">
+  <div class="ml-[390px]" id="title">
+    <h3 class="font-work font-semibold text-h3 text-white leading-[120%]">Browse Categories</h3>
+  </div>
+  <div class="mt-[60px] ml-[390px] flex flex-wrap justify-between w-[60%]">
+    @for(categorie of categories; track categorie) {
+        <div class="mr-[30px] mb-[30px] w-[240px] overflow-hidden rounded-[20px]">
+          <div class="">
+            <div class="relative w-[240px] h-[240px]">
+              <img [src]="categorie.image" alt="" class="inset-0 w-full h-full blur-lg object-cover">
+              <img [src]="categorie.icon" alt="" class="absolute -mt-[150px] ml-[80px] w-[80px] h-[80px]">
+            </div>
+
+          </div>
+          <div class="w-[240px] h-[76px] rounded-b-[20px] bg-darkGray">
+            <h5 class="font-work font-semibold text-h5 text-white leading-[140%] px-[30px] py-5">
+              {{ categorie.name | firstUppercase }}
+            </h5>
+          </div>
+        </div>
+      }
+  </div>
+</div>
