@@ -26,7 +26,7 @@
         <div class="flex mt-10" id="form" [formGroup]="form" >
 
           <input type="text" placeholder="Enter your email here" class="font-work font-regular text-base text-black leading-[140%] w-[420px] h-[60px] rounded-[20px] px-[19px] py-[20px] border-none placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]"  formControlName="email">
-          <button type="submit" class="w-[179px] h-[60px] rounded-[20px] bg-purple -ml-[175px] transition-transform duration-500 hover:scale-90" (click)="submitForm()"><h5 class="font-work font-semibold text-base text-white leading-[140%] mt-[5px] ml-[20px]">Subscribe</h5></button>
+          <button type="submit" class="w-[179px] h-[60px] rounded-[20px] bg-purple -ml-[175px] transition-transform duration-500 hover:scale-90" (click)="submitForm()"><h5 class="font-work font-semibold text-base text-white leading-[140%] mt-[5px] ml-[10px]">Subscribe</h5></button>
           <div class="text-red-500 text-center mt-[70px] -ml-[300px]">
             @if(getError(form.get('email'))) {
               <label  id="text-danger">{{getError(form.get('email')) }}</label>
