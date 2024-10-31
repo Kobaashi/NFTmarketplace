@@ -19,7 +19,7 @@ export class HighlightComponent {
   ava2: string = "/icons/Avatar.svg";
   showFirst: boolean = true;
 
-  @Input() countdownTime: number = 10;
+  @Input() countdownTime: number = 3600;
   remainingTime: number = 0;
   hours: number = 0;
   minutes: number = 0;
