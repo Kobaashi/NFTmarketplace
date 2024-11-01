@@ -1,1 +1,97 @@
-<p>ranking works!</p>
+<app-nav-menu />
+<div class="pt-20 bg-lightBlack pl-[390px]">
+  <div id="ranking-title">
+    <h2 class="font-work font-semibold text-h2 text-white leading-[110%]">Top Creators</h2>
+    <h5 class="font-work font-regular text-h5 text-white leading-[160%] mt-5">Check out top ranking NFT artists on the NFT Marketplace.</h5>
+  </div>
+  <div class="flex" id="ranking-time">
+    <div class="w-[262.5px] h-[60px] border-b-[1px] border-lightGray px-[99.75px] py-[14.5px] mt-20 cursor-pointer" id="today" (click)="toogleActive()">
+      <h5 class="font-work font-semibold text-h5 text-white leading-[140%]">Today</h5>
+    </div>
+
+    <div class="w-[262.5px] h-[60px] px-[50.75px] py-[14.5px] mt-20 cursor-pointer" id="week" (click)="toogleActive()">
+      <h5 class="font-work font-semibold text-h5 text-lightGray leading-[140%]">This Week</h5>
+    </div>
+
+    <div class="w-[262.5px] h-[60px] px-[50.75px] py-[14.5px] mt-20 cursor-pointer" id="month" (click)="toogleActive()">
+      <h5 class="font-work font-semibold text-h5 text-lightGray leading-[140%]">This Month</h5>
+    </div>
+
+    <div class="w-[262.5px] h-[60px] px-[50.75px] py-[14.5px] mt-20 cursor-pointer" id="allTime" (click)="toogleActive()">
+      <h5 class="font-work font-semibold text-h5 text-lightGray leading-[140%]">All Time</h5>
+    </div>
+  </div>
+  <div id="ranking-categories">
+    <div class="w-[1050px] h-[46px] border-[1px] border-darkGray rounded-[20px] mt-10">
+      <div class="flex py-3">
+        <div class="w-[30px] h-[22px] ml-5">
+          <p class="font-mono font-regular text-base text-lightGray text-center leading-[140%] ">
+            #
+          </p>
+        </div>
+        <div class="w-[380px] h-[22px] ml-5">
+          <p class="font-mono font-regular text-base text-lightGray text-left leading-[140%]">
+            Artist
+          </p>
+        </div>
+        <div class="w-[160px] h-[22px] ml-[60px]">
+          <p class="font-mono font-regular text-base text-lightGray text-left leading-[140%]">
+            Change
+          </p>
+        </div>
+        <div class="w-[160px] h-[22px] ml-5">
+          <p class="font-mono font-regular text-base text-lightGray text-left leading-[140%]">
+            NFts Sold
+          </p>
+        </div>
+        <div class="w-[160px] h-[22px] ml-5">
+          <p class="font-mono font-regular text-base text-lightGray text-left leading-[140%]">
+            Volume
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="ranking-list ">
+    <div class="pt-5 pb-10 ">
+      @for(artist of artists; track artist) {
+        <div class="w-[1050px] h-[84px] rounded-[20px] bg-darkGray mt-5 transition-transform duration-500 hover:scale-90">
+          <div class="flex py-3 ml-5">
+            <div class="w-[30px] h-[22px] py-[15px]">
+              <div class="w-[30px] h-[30px] bg-lightBlack rounded-full " id="id">
+                <p class="text-center">{{ artist.id }}</p>
+              </div>
+            </div>
+
+            <div class="ml-5 w-[380px] h-[22px] cursor-pointer" id="imageAndName">
+              <div class="flex">
+                <img [src]="artist.ava" alt="" class="w-[60px] h-[60px]">
+                <h5 class="font-work font-semibold text-h5 text-white leading-[140%] ml-5 py-[14.5px]">{{ artist.fullname | firstUppercase }}</h5>
+              </div>
+            </div>
+
+            <div class="w-[160px] h-[22px] ml-[60px]" id="change">
+              <div class="py-[19px]">
+                <p class="font-mono font-regular text-base text-[#00AC4F] leading-[140%]">{{ artist.change }}</p>
+              </div>
+            </div>
+
+            <div class="w-[160px] h-[22px] ml-5" id="sold">
+              <div class="py-[19px]">
+                <p class="font-mono font-regular text-base text-white leading-[140%]">{{ artist.sold }}</p>
+              </div>
+            </div>
+
+            <div class="w-[160px] h-[22px] ml-5" id="volume">
+              <div class="py-[19px] flex items-center">
+                <p class="font-mono font-regular text-base text-white leading-[140%]">{{ artist.volume }}</p>
+                <span class="text-white -mt-[1px] ml-[5px]">ETH</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>
+<app-footer />

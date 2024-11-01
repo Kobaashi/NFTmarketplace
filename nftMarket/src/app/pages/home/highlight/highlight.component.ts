@@ -19,14 +19,13 @@ export class HighlightComponent {
   ava2: string = "/icons/Avatar.svg";
   showFirst: boolean = true;
 
-  @Input() countdownTime: number = 3600;
+  @Input() countdownTime: number = 10;
   remainingTime: number = 0;
   hours: number = 0;
   minutes: number = 0;
   seconds: number = 0;
   private intervalId: ReturnType<typeof setInterval> | null = null;
-  animationClass: string = '';
-  showFirstBlock: boolean = true; // Змінна для контролю видимості блоків
+  showFirstBlock: boolean = true;
 
   constructor(@Inject(PLATFORM_ID) private platformId: object) {}
 
@@ -46,12 +45,10 @@ export class HighlightComponent {
         this.updateTimeUnits();
       } else {
         this.stopCountdown();
-        this.animationClass = 'animate';
         setTimeout(() => {
-          this.toggleBlocks(); // Переключення блоків після закінчення таймера
+          this.toggleBlocks();
           this.startCountdown();
-          this.animationClass = '';
-        }, 3000);
+        });
       }
     }, 1000);
   }
@@ -74,6 +71,6 @@ export class HighlightComponent {
   }
 
   toggleBlocks() {
-    this.showFirstBlock = !this.showFirstBlock; // Переключення між блоками
+    this.showFirstBlock = !this.showFirstBlock;
   }
 }
