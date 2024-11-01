@@ -76,7 +76,7 @@ export class ArtistComponent {
     },
     {
       img: "/img/CherryBlossomGirl037.png",
-      name: "cherry blossom girl l037",
+      name: "cherry blossom girl 037",
       authorAva: "/icons/Avatar.svg",
       authorName: "animakid",
       price: 1.63,
