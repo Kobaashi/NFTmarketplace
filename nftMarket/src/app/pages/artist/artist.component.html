@@ -74,26 +74,28 @@
       <div class="flex flex-wrap pt-[50px] w-[60%] ml-[360px]">
         @for(nfts of NFTS; track nfts) {
           <div class="ml-[30px] mt-[30px]">
-            <div >
-              <img [src]="nfts.img" alt="" class="w-[330px] h-[295px] rounded-t-[20px]">
-            </div>
-            <div class="w-[330px] h-[173px] bg-lightBlack rounded-b-[20px]">
-              <h5 class="font-work font-semibold text-h5 text-white leading-[140%] pt-5 ml-[30px]">{{ nfts.name | firstUppercase }}</h5>
-              <div class="flex">
-                <img [src]="nfts.authorAva" alt="" class="w-[24px] h-[24px] rounded-full mt-[5px] ml-[30px]">
-                <p class="font-mono font-regular text-base text-white leading-[140%] ml-3 mt-1">{{ nfts.authorName | firstUppercase }}</p>
+            <a routerLink="/nft-page" routerLinkActive="active">
+              <div >
+                <img [src]="nfts.img" alt="" class="w-[330px] h-[295px] rounded-t-[20px]">
               </div>
-              <div class="flex pt-[25px]">
-                <div class="w-[135px] h-[43px] text-left ml-[30px]">
-                  <p class="font-mono font-regular text-caption text-lightGray leading-[110%]">Price</p>
-                  <p class="font-mono font-regular text-base text-white leading-[140%]">{{ nfts.price }} ETH</p>
+              <div class="w-[330px] h-[173px] bg-lightBlack rounded-b-[20px]">
+                <h5 class="font-work font-semibold text-h5 text-white leading-[140%] pt-5 ml-[30px]">{{ nfts.name | firstUppercase }}</h5>
+                <div class="flex">
+                  <img [src]="nfts.authorAva" alt="" class="w-[24px] h-[24px] rounded-full mt-[5px] ml-[30px]">
+                  <p class="font-mono font-regular text-base text-white leading-[140%] ml-3 mt-1">{{ nfts.authorName | firstUppercase }}</p>
                 </div>
-                <div>
-                  <p class="font-mono font-regular text-caption text-lightGray leading-[110%]">Highest Bid</p>
-                  <p class="font-mono font-regular text-base text-white leading-[140%]">{{ nfts.bid }} wETH</p>
+                <div class="flex pt-[25px]">
+                  <div class="w-[135px] h-[43px] text-left ml-[30px]">
+                    <p class="font-mono font-regular text-caption text-lightGray leading-[110%]">Price</p>
+                    <p class="font-mono font-regular text-base text-white leading-[140%]">{{ nfts.price }} ETH</p>
+                  </div>
+                  <div>
+                    <p class="font-mono font-regular text-caption text-lightGray leading-[110%]">Highest Bid</p>
+                    <p class="font-mono font-regular text-base text-white leading-[140%]">{{ nfts.bid }} wETH</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
         }
       </div>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {NavMenuComponent} from '../../components/nav-menu/nav-menu.component';
 import {FooterComponent} from '../../components/footer/footer.component';
 import {FirstUppercasePipe} from '../../shared/pipe/first-uppercase.pipe';
+import {RouterLink, RouterLinkActive} from '@angular/router';
 
 @Component({
   selector: 'app-artist',
@@ -9,7 +10,9 @@ import {FirstUppercasePipe} from '../../shared/pipe/first-uppercase.pipe';
   imports: [
     NavMenuComponent,
     FooterComponent,
-    FirstUppercasePipe
+    FirstUppercasePipe,
+    RouterLink,
+    RouterLinkActive
   ],
   templateUrl: './artist.component.html',
   styleUrl: './artist.component.scss'
