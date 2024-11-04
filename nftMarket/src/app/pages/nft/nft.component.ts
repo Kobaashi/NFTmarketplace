@@ -3,6 +3,7 @@ import {NavMenuComponent} from '../../components/nav-menu/nav-menu.component';
 import {FooterComponent} from '../../components/footer/footer.component';
 import {isPlatformBrowser, UpperCasePipe} from '@angular/common';
 import {FirstUppercasePipe} from '../../shared/pipe/first-uppercase.pipe';
+import {RouterLink, RouterLinkActive} from '@angular/router';
 
 @Component({
   selector: 'app-nft',
@@ -11,7 +12,9 @@ import {FirstUppercasePipe} from '../../shared/pipe/first-uppercase.pipe';
     NavMenuComponent,
     FooterComponent,
     UpperCasePipe,
-    FirstUppercasePipe
+    FirstUppercasePipe,
+    RouterLink,
+    RouterLinkActive
   ],
   templateUrl: './nft.component.html',
   styleUrl: './nft.component.scss'
@@ -112,7 +115,7 @@ export class NftComponent {
   ]
 
 
-  @Input() countdownTime: number = 30600;
+  @Input() countdownTime: number = 86400;
   remainingTime: number = 0;
   hours: number = 0;
   minutes: number = 0;
