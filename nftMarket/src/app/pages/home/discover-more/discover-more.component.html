@@ -4,36 +4,40 @@
       <h3 class="font-work font-semibold text-h3 text-white leading-[120%]">Discover More NFTs</h3>
       <h5 class="font-work font-regular text-h5 text-white leading-[160%] mt-[10px]">Explore new trending NFTs</h5>
     </div>
-    <div class="inline-flex mt-[30px] ml-[540px] cursor-pointer border-2 border-purple rounded-[20px] cursor-pointer transition-transform duration-500 hover:scale-90">
-      <button class="flex font-work font-semibold text-base text-white leading-[140%] items-center justify-center w-[187px] h-[60px] rounded-[20px] ">
-        <img [src]="eye" alt="" class="w-[19px] h-[19px] mr-[12px]">See all</button>
-    </div>
+    <a routerLink="/marketplace" routerLinkActive="active">
+      <div class="inline-flex mt-[30px] ml-[540px] cursor-pointer border-2 border-purple rounded-[20px] cursor-pointer transition-transform duration-500 hover:scale-90">
+        <button class="flex font-work font-semibold text-base text-white leading-[140%] items-center justify-center w-[187px] h-[60px] rounded-[20px] ">
+          <img [src]="eye" alt="" class="w-[19px] h-[19px] mr-[12px]">See all</button>
+      </div>
+    </a>
+
   </div>
   <div class="mt-[60px] flex ml-[390px]" id="nft-card">
     @for(nft of nfts; track nft) {
       <div class="mr-[55px] transition-transform duration-500 hover:scale-90">
-        <div class="w-[330px]">
-          <img [src]="nft.image" alt="" class="w-full h-[296px] rounded-t-[20px]">
-          <div class="h-[173px] bg-darkGray rounded-b-[20px]">
-            <h5 class="font-work font-semibold text-h5 text-white leading-[140%] pt-5 ml-[30px]">{{ nft.name | firstUppercase }}</h5>
-            <div class="flex mt-[5px] ml-[30px]">
-              <img [src]="nft.authorAva" alt="" class="w-[24px] h-[24px]">
-              <p class="font-mono font-regular text-base text-white leading-[140%] ml-3">{{ nft.authorName }}</p>
-            </div>
-            <div class="flex pt-[25px] ml-[30px]">
-              <div class="w-[135px] h-[43px]">
-                <p class="font-mono font-regular text-caption text-lightGray leading-[110%]">{{ 'price' | firstUppercase }}</p>
-                <p class="font-mono font-regular text-base text-white leading-[140%]">{{ nft.price }} ETH</p>
+        <a routerLink="/nft-page" routerLinkActive="active">
+          <div class="w-[330px]">
+            <img [src]="nft.image" alt="" class="w-full h-[296px] rounded-t-[20px]">
+            <div class="h-[173px] bg-darkGray rounded-b-[20px]">
+              <h5 class="font-work font-semibold text-h5 text-white leading-[140%] pt-5 ml-[30px]">{{ nft.name | firstUppercase }}</h5>
+              <div class="flex mt-[5px] ml-[30px]">
+                <img [src]="nft.authorAva" alt="" class="w-[24px] h-[24px]">
+                <p class="font-mono font-regular text-base text-white leading-[140%] ml-3">{{ nft.authorName }}</p>
               </div>
-              <div class="w-[135px] h-[43px] ml-[50px]">
-                <p class="font-mono font-regular text-caption text-lightGray leading-[110%]">{{ 'highest bid' | firstUppercase }}</p>
-                <p class="font-mono font-regular text-base text-white leading-[140%]">{{ nft.highestBid }} wETH</p>
+              <div class="flex pt-[25px] ml-[30px]">
+                <div class="w-[135px] h-[43px]">
+                  <p class="font-mono font-regular text-caption text-lightGray leading-[110%]">{{ 'price' | firstUppercase }}</p>
+                  <p class="font-mono font-regular text-base text-white leading-[140%]">{{ nft.price }} ETH</p>
+                </div>
+                <div class="w-[135px] h-[43px] ml-[50px]">
+                  <p class="font-mono font-regular text-caption text-lightGray leading-[110%]">{{ 'highest bid' | firstUppercase }}</p>
+                  <p class="font-mono font-regular text-base text-white leading-[140%]">{{ nft.highestBid }} wETH</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </a>
       </div>
-
     }
   </div>
 </div>

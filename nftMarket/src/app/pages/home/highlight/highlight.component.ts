@@ -1,12 +1,15 @@
 import { Component, Input, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import {isPlatformBrowser, NgClass, NgIf} from '@angular/common';
+import {RouterLink, RouterLinkActive} from '@angular/router';
 
 @Component({
   selector: 'app-highlight',
   standalone: true,
   imports: [
     NgIf,
-    NgClass
+    NgClass,
+    RouterLink,
+    RouterLinkActive
   ],
   templateUrl: './highlight.component.html',
   styleUrl: './highlight.component.scss'
@@ -18,7 +21,7 @@ export class HighlightComponent {
   bg2: string = "/img/Orbitations.png";
   ava2: string = "/icons/Avatar.svg";
 
-  @Input() countdownTime: number = 100000;
+  @Input() countdownTime: number = 3600;
   remainingTime: number = 0;
   hours: number = 0;
   minutes: number = 0;

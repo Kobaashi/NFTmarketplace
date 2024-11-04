@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {NavMenuComponent} from '../../components/nav-menu/nav-menu.component';
 import {FirstUppercasePipe} from '../../shared/pipe/first-uppercase.pipe';
 import {FooterComponent} from '../../components/footer/footer.component';
+import {RouterLink, RouterLinkActive} from '@angular/router';
 
 @Component({
   selector: 'app-marketplace',
@@ -9,7 +10,9 @@ import {FooterComponent} from '../../components/footer/footer.component';
   imports: [
     NavMenuComponent,
     FirstUppercasePipe,
-    FooterComponent
+    FooterComponent,
+    RouterLink,
+    RouterLinkActive
   ],
   templateUrl: './marketplace.component.html',
   styleUrl: './marketplace.component.scss'

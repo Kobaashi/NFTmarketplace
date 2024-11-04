@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import {NgForOf} from '@angular/common';
+import {RouterLink, RouterLinkActive} from "@angular/router";
 
 @Component({
   selector: 'app-topcreators',
   standalone: true,
-  imports: [
-    NgForOf
-  ],
+    imports: [
+        NgForOf,
+        RouterLink,
+        RouterLinkActive
+    ],
   templateUrl: './topcreators.component.html',
   styleUrl: './topcreators.component.scss'
 })
