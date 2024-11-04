@@ -1,1 +1,142 @@
-<p>nft works!</p>
+<app-nav-menu />
+<div class="bg-lightBlack">
+  <div>
+    <img [src]="orbitaions" alt="" class="w-full h-[565px] object-cover">
+  </div>
+  <div class="flex pt-[250px]">
+    <div class="ml-[390px]">
+      <div class="-mt-[200px]">
+        <h2 class="font-work font-semibold text-h2 text-white leading-[110%]">The Orbitians</h2>
+        <h5 class="font-work font-regular text-h5 text-lightGray leading-[160%]">Minted on Sep 30, 2022</h5>
+      </div>
+      <div class="mt-[30px]">
+        <h5 class="font-mono font-bold text-h5 text-lightGray leading-[160%]">Created By</h5>
+        <div class="flex mt-[10px]">
+          <img [src]="ava" alt="" class="w-6 h-6">
+          <h5 class="ml-3 font-work font-semibold text-h5 text-white leading-[140%]">Orbitian</h5>
+        </div>
+      </div>
+      <div class=" mt-[30px]">
+        <h5 class="font-mono font-bold text-h5 text-lightGray leading-[160%]">Description</h5>
+        <h5 class="w-[605px] h-[595px] font-work font-regular text-h5 text-white leading-[160%] mt-[10px]">
+          The Orbitians
+          is a collection of 10,000 unique NFTs on the Ethereum blockchain,
+          <br>
+          <br>
+          There are all sorts of beings in the NFT Universe. The most advanced and friendly of the bunch are Orbitians.
+          <br>
+          <br>
+          They live in a metal space machines, high up in the sky and only have one foot on Earth.
+          These Orbitians are a peaceful race, but they have been at war with a group of invaders for many generations.
+          The invaders are called Upside-Downs, because of their inverted bodies that live on the ground, yet do not know any other way to be.
+          Upside-Downs believe that they will be able to win this war if they could only get an eye into Orbitian territory, so they've taken to make human beings their target.
+        </h5>
+      </div>
+      <div class="-mt-[10px]">
+        <h5 class="font-work font-bold text-h5 text-white leading-[160%]">Details</h5>
+        <div class="flex mt-[10px]">
+          <img [src]="globe" alt="">
+          <h5 class="ml-[10px] font-work font-regular text-h5 text-white leading-[160%]">View on Etherscan</h5>
+        </div>
+        <div class="flex mt-[10px]">
+          <img [src]="globe" alt="">
+          <h5 class="ml-[10px] font-work font-regular text-h5 text-white leading-[160%]"> View Original </h5>
+        </div>
+      </div>
+      <div class="mt-[30px]">
+        <h5 class="font-work font-semibold text-h5 text-lightGray leading-[160%]">Tags</h5>
+        <div class="flex mt-[10px]">
+          @for(tag of tags; track tag) {
+            <p class="w-auto h-[46px] px-[30px] py-3 rounded-[20px] bg-darkGray font-work font-semibold text-base text-white leading-[140%] mr-5">{{ tag.name | uppercase }}</p>
+          }
+        </div>
+      </div>
+    </div>
+    <div class="-ml-[1025px]">
+      <div class="w-[295px] h-[237px] bg-darkGray bg-opacity-50 -mt-[210px] ml-[1144px] rounded-[20px]">
+        <p class="font-mono font-regular text-caption text-white leading-[110%] pt-[60px] ml-[30px]">Auction ends in:</p>
+        @if(countdownTime >= 1000) {
+          <div class="flex">
+            <!--            Hours-->
+            <div>
+              <span class="font-mono font-bold text-h3 text-white leading-[120%] pt-[10px] pl-[30px]">{{ hours }} :</span>
+            </div>
+            <!--            Minuts-->
+            <div>
+              <span class="font-mono font-bold text-h3 text-white leading-[120%] pt-[10px] pl-[5px]">{{ minutes }} :</span>
+            </div>
+            <!--            Seconds-->
+            <div>
+              <span class="font-mono font-bold text-h3 text-white leading-[120%] pt-[10px] pl-[10px]">{{ seconds }}</span>
+            </div>
+          </div>
+          <div class="flex pt-[5px]">
+            <p class="font-mono font-regular text-caption text-white leading-[110%] ml-[25px] mr-[40px]">Hours</p>
+            <p class="font-mono font-regular text-caption text-white leading-[110%] mr-[40px]">Minutes</p>
+            <p class="font-mono font-regular text-caption text-white leading-[110%] ">Seconds</p>
+          </div>
+        }
+        @else {
+          <div class="flex">
+            <!--            Hours-->
+            <div>
+              <span class="font-mono font-bold text-h3 text-white leading-[120%] pt-[10px] ml-[30px]">{{ hours }} :</span>
+            </div>
+            <!--            Minuts-->
+            <div>
+              <span class="font-mono font-bold text-h3 text-white leading-[120%] pt-[10px] ml-[5px]">{{ minutes }} :</span>
+            </div>
+            <!--            Seconds-->
+            <div>
+              <span class="font-mono font-bold text-h3 text-white leading-[120%] pt-[10px] ml-[10px]">{{ seconds }}</span>
+            </div>
+          </div>
+          <div class="flex pt-[5px]">
+            <p class="font-mono font-regular text-caption text-white leading-[110%] ml-[25px] mr-[55px]">Hours</p>
+            <p class="font-mono font-regular text-caption text-white leading-[110%] mr-[58px]">Minutes</p>
+            <p class="font-mono font-regular text-caption text-white leading-[110%] ">Seconds</p>
+          </div>
+        }
+        <button type="submit" class="w-[235px] h-[60px] bg-purple rounded-[20px] font-work font-semibold text-base text-white leading-[140%] ml-[30px] mt-[30px] transition-transform duration-500 hover:scale-90">Place Bid</button>
+      </div>
+    </div>
+  </div>
+  <div class="pt-20 ml-[390px]">
+    <div class="flex">
+      <h3 class="font-work font-semibold text-h3 text-white leading-[120%] w-[638px]">More from this artist</h3>
+      <button class="flex border-[2px] border-purple w-[267px] h-[60px] pl-[50px] py-4 rounded-[20px] ml-[100px] font-work font-semibold text-base text-white leading-[140%] transition-transform duration-500 group">
+        <img [src]="arrowR" alt="" class="w-[20px] h-[20px] mt-[3px] mr-3 transition-transform duration-500 group-hover:translate-x-[10px]">
+        Go To Artist Page
+      </button>
+    </div>
+  </div>
+  <div class="pb-20">
+    <div class="flex flex-wrap pt-[50px] w-[60%] ml-[360px]">
+      @for(nfts of NFTs; track nfts) {
+        <div class="ml-[30px] mt-[30px] transition-transform duration-500 hover:scale-90">
+          <div >
+            <img [src]="nfts.img" alt="" class="w-[330px] h-[295px] rounded-t-[20px]">
+          </div>
+          <div class="w-[330px] h-[173px] bg-darkGray rounded-b-[20px]">
+            <h5 class="font-work font-semibold text-h5 text-white leading-[140%] pt-5 ml-[30px]">{{ nfts.name | firstUppercase }}</h5>
+            <div class="flex">
+              <img [src]="nfts.authorAva" alt="" class="w-[24px] h-[24px] rounded-full mt-[5px] ml-[30px]">
+              <p class="font-mono font-regular text-base text-white leading-[140%] ml-3 mt-1">{{ nfts.authorName | firstUppercase }}</p>
+            </div>
+            <div class="flex pt-[25px]">
+              <div class="w-[135px] h-[43px] text-left ml-[30px]">
+                <p class="font-mono font-regular text-caption text-lightGray leading-[110%]">Price</p>
+                <p class="font-mono font-regular text-base text-white leading-[140%]">{{ nfts.price }} ETH</p>
+              </div>
+              <div>
+                <p class="font-mono font-regular text-caption text-lightGray leading-[110%]">Highest Bid</p>
+                <p class="font-mono font-regular text-base text-white leading-[140%]">{{ nfts.bid }} wETH</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>
+<app-footer />

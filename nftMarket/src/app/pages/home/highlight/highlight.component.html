@@ -18,26 +18,49 @@
       </div>
       <div class="w-[355px] h-[207px] bg-darkGray bg-opacity-50 -mt-[210px] ml-[1144px] rounded-[20px]">
         <p class="font-mono font-regular text-caption text-white leading-[110%] pt-[60px] ml-[30px]">Auction ends in:</p>
-        <!--          <h3 class="font-mono font-bold text-h3 text-white leading-[120%] pt-[10px] ml-[30px]">59 : 59 : 59</h3>-->
-        <div class="flex">
-          <!--            Hours-->
-          <div>
-            <span class="font-mono font-bold text-h3 text-white leading-[120%] pt-[10px] ml-[30px]">{{ hours }} :</span>
+        @if(countdownTime >= 1000) {
+          <div class="flex ml-[10px]">
+            <!--            Hours-->
+            <div>
+              <span class="font-mono font-bold text-h3 text-white leading-[120%] pt-[10px] ml-[30px]">{{ hours }} :</span>
+            </div>
+            <!--            Minuts-->
+            <div>
+              <span class="font-mono font-bold text-h3 text-white leading-[120%] pt-[10px] ml-[30px]">{{ minutes }} :</span>
+            </div>
+            <!--            Seconds-->
+            <div>
+              <span class="font-mono font-bold text-h3 text-white leading-[120%] pt-[10px] ml-[30px]">{{ seconds }}</span>
+            </div>
           </div>
-          <!--            Minuts-->
-          <div>
-            <span class="font-mono font-bold text-h3 text-white leading-[120%] pt-[10px] ml-[30px]">{{ minutes }} :</span>
+          <div class="flex pt-[5px]">
+            <p class="font-mono font-regular text-caption text-white leading-[110%] ml-[35px] mr-[65px]">Hours</p>
+            <p class="font-mono font-regular text-caption text-white leading-[110%] mr-[73px]">Minutes</p>
+            <p class="font-mono font-regular text-caption text-white leading-[110%] ">Seconds</p>
           </div>
-          <!--            Seconds-->
-          <div>
-            <span class="font-mono font-bold text-h3 text-white leading-[120%] pt-[10px] ml-[30px]">{{ seconds }}</span>
+        }
+        @else {
+          <div class="flex relative">
+            <!--            Hours-->
+            <div>
+              <span class="font-mono font-bold text-h3 text-white leading-[120%] pt-[10px] ml-[35px]">{{ hours }} :</span>
+            </div>
+            <!--            Minuts-->
+            <div>
+              <span class="font-mono font-bold text-h3 text-white leading-[120%] pt-[10px] ml-[30px]">{{ minutes }} :</span>
+            </div>
+            <!--            Seconds-->
+            <div>
+              <span class="font-mono font-bold text-h3 text-white leading-[120%] pt-[10px] ml-[30px]">{{ seconds }}</span>
+            </div>
           </div>
-        </div>
-        <div class="flex pt-[5px]">
-          <p class="font-mono font-regular text-caption text-white leading-[110%] ml-[35px] mr-[85px]">Hours</p>
-          <p class="font-mono font-regular text-caption text-white leading-[110%] mr-[68px]">Minutes</p>
-          <p class="font-mono font-regular text-caption text-white leading-[110%] ">Seconds</p>
-        </div>
+          <div class="flex pt-[5px] ml-[10px]">
+            <p class="font-mono font-regular text-caption text-white leading-[110%] ">Hours</p>
+            <p class="font-mono font-regular text-caption text-white leading-[110%] ">Minutes</p>
+            <p class="font-mono font-regular text-caption text-white leading-[110%] ">Seconds</p>
+          </div>
+        }
+
       </div>
     </div>
   </div>

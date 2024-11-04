@@ -1,1 +1,53 @@
-<p>marketplace works!</p>
+<app-nav-menu />
+<div class="bg-lightBlack">
+  <div class="border-b-[2px] border-darkGray">
+    <h2 class="font-work font-semibold text-h2 text-white leading-[110%] ml-[390px]">Browse Marketplace</h2>
+    <h5 class="font-work font-regular text-h5 text-white leading-[160%] pt-[10px] ml-[390px] ">Browse through more than 50k NFTs on the NFT Marketplace.</h5>
+    <div class="flex mt-[30px] pb-20 ml-[390px]">
+      <input type="text" placeholder="Search your favourite NFTs" class="w-[1050px] h-[60px] border-[1px] border-darkGray bg-transparent rounded-[20px] pl-5 placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-lightGray placeholder:leading-[160%]"><img [src]="search" alt="" class="relative w-[24px] h-[24px] mt-[15px] -left-10">
+    </div>
+  </div>
+  <div class="flex ml-[390px] mt-[10px]" id="ranking-time">
+    <div class="w-[525px] h-[60px] flex border-b-[2px] border-lightGray">
+      <h5 class="font-work font-semibold text-h5 text-white leading-[140%] py-[14.5px] px-[202.5px]">NFTs</h5>
+      <div class="w-auto h-8 bg-lightGray rounded-[20px] -ml-[184px] mt-[14px]">
+        <p class="font-mono font-regular text-base text-white leading-[140%] py-[5px] px-[10px]">{{ NFTs.length }}</p>
+      </div>
+    </div>
+    <div class="w-[525px] h-[60px] flex">
+      <h5 class="font-work font-semibold text-h5 text-lightGray leading-[140%] py-[14.5px] px-[202.5px]">Collections</h5>
+      <div class="w-auto h-8 bg-darkGray rounded-[20px] -ml-[184px] mt-[14px]">
+        <p class="font-mono font-regular text-base text-white leading-[140%] py-[5px] px-[10px]">0</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bg-darkGray border-b-[2px] border-lightBlack pb-20">
+  <div class="flex flex-wrap pt-[50px] w-[60%] ml-[360px]">
+    @for(nfts of NFTs; track nfts) {
+      <div class="ml-[30px] mt-[30px] transition-transform duration-500 hover:scale-90">
+        <div >
+          <img [src]="nfts.img" alt="" class="w-[330px] h-[295px] rounded-t-[20px]">
+        </div>
+        <div class="w-[330px] h-[173px] bg-lightBlack rounded-b-[20px]">
+          <h5 class="font-work font-semibold text-h5 text-white leading-[140%] pt-5 ml-[30px]">{{ nfts.name | firstUppercase }}</h5>
+          <div class="flex">
+            <img [src]="nfts.authorAva" alt="" class="w-[24px] h-[24px] rounded-full mt-[5px] ml-[30px]">
+            <p class="font-mono font-regular text-base text-white leading-[140%] ml-3 mt-1">{{ nfts.authorName | firstUppercase }}</p>
+          </div>
+          <div class="flex pt-[25px]">
+            <div class="w-[135px] h-[43px] text-left ml-[30px]">
+              <p class="font-mono font-regular text-caption text-lightGray leading-[110%]">Price</p>
+              <p class="font-mono font-regular text-base text-white leading-[140%]">{{ nfts.price }} ETH</p>
+            </div>
+            <div>
+              <p class="font-mono font-regular text-caption text-lightGray leading-[110%]">Highest Bid</p>
+              <p class="font-mono font-regular text-base text-white leading-[140%]">{{ nfts.bid }} wETH</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
+<app-footer />
