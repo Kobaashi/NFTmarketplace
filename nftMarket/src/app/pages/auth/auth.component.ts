@@ -1,9 +1,18 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {NavMenuComponent} from '../../components/nav-menu/nav-menu.component';
 import {FooterComponent} from '../../components/footer/footer.component';
-import {AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators
+} from '@angular/forms';
 import {FirstUppercasePipe} from '../../shared/pipe/first-uppercase.pipe';
-import {RouterLink, RouterLinkActive} from '@angular/router';
+import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
+import {NgClass} from '@angular/common';
 
 @Component({
   selector: 'app-auth',
@@ -15,57 +24,55 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
     FormsModule,
     FirstUppercasePipe,
     RouterLink,
-    RouterLinkActive
+    RouterLinkActive,
+    NgClass,
+    RouterOutlet
   ],
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.scss'
 })
 export class AuthComponent {
   user: string = "/icons/UserGray.svg";
-  email: string = "/icons/messageGray.svg";
-  pasword: string = "/icons/LockKeyGray.svg";
+  Email: string = "/icons/messageGray.svg";
+  Password: string = "/icons/LockKeyGray.svg";
   bg: string = "/img/authImage.png";
-  password : string = "";
-  Email: string = "";
 
-  form: FormGroup = new FormGroup({
-    email: new FormControl("", [Validators.required, this.customeEmailValidator]),
-    username: new FormControl("", [Validators.required]),
-  });
+  password: string = '';
+  confirmPassword: string = '';
 
-  successMessage: string = '';
+  emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-  getError(control:any) : string {
-    if(control.errors?.required && control.touched)
-      return 'Ви нічого не ввели!';
-    else if(control.errors?.emailError && control.touched)
-      return 'Будь ласка введіть правильну пошту!';
-    else return '';
+
+  registerForm: FormGroup;
+
+  // registerForm = new FormGroup({
+  //   email: new FormControl("", [Validators.required, Validators.maxLength(32), Validators.minLength(8), Validators.pattern(this.emailRegex)]),
+  //   // password: new FormControl("", [Validators.required, Validators.maxLength(32), Validators.minLength(8)]),
+  //   username: new FormControl("", [Validators.required, Validators.maxLength(32)]),
+  //   // confirmPassword: new FormControl("", [Validators.required, Validators.maxLength(32), Validators.minLength(8)]),
+  // })
+
+  constructor(private fb: FormBuilder) {
+    this.registerForm = this.fb.group({
+      email: new FormControl("", [Validators.required, Validators.maxLength(32), Validators.minLength(8), Validators.pattern(this.emailRegex)]),
+      username: new FormControl("", [Validators.required, Validators.maxLength(32)]),
+      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(32)]],
+      confirmPassword: ['', [Validators.required]]
+    });
   }
 
-  customeEmailValidator(control: AbstractControl) {
-    const pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,20}$/;
-    const value = control.value;
-    if (!pattern.test(value) && control.touched)
-      return {
-        emailError: true
-      };
-    else return null;
+  getControl(name: any) : AbstractControl | null {
+    return this.registerForm.get(name)
   }
 
-  submitForm():void {
-    if (this.form.invalid) {
-      this.form.markAllAsTouched();
-    } else {
-      this.successMessage = 'Форма відправлена успішно!';
-
-      setTimeout(() => {
-        this.form.reset();
-        this.successMessage = '';
-      }, 3000);
-    }
+  passwordsMatch(): boolean {
+    const password = this.registerForm.get('password')?.value;
+    const confirmPassword = this.registerForm.get('confirmPassword')?.value;
+    return password === confirmPassword;
   }
 
-  constructor() { }
+  registerFn() {
+    console.log(this.registerForm.value)
+  }
 
 }

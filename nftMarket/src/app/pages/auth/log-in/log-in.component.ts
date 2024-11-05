@@ -1,18 +1,21 @@
 import { Component } from '@angular/core';
 import {FirstUppercasePipe} from "../../../shared/pipe/first-uppercase.pipe";
 import {FooterComponent} from "../../../components/footer/footer.component";
-import {AbstractControl, FormControl, FormGroup, FormsModule, Validators} from "@angular/forms";
+import {AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {NavMenuComponent} from "../../../components/nav-menu/nav-menu.component";
+import {NgClass} from '@angular/common';
 
 @Component({
   selector: 'app-log-in',
   standalone: true,
-    imports: [
-        FirstUppercasePipe,
-        FooterComponent,
-        FormsModule,
-        NavMenuComponent
-    ],
+  imports: [
+    FirstUppercasePipe,
+    FooterComponent,
+    FormsModule,
+    NavMenuComponent,
+    NgClass,
+    ReactiveFormsModule
+  ],
   templateUrl: './log-in.component.html',
   styleUrl: './log-in.component.scss'
 })
@@ -21,23 +24,29 @@ export class LogInComponent {
   email: string = "/icons/messageGray.svg";
   pasword: string = "/icons/LockKeyGray.svg";
   bg: string = "/img/authImage.png";
-  password : string = "";
-  Email: string = "";
 
   form: FormGroup = new FormGroup({
     email: new FormControl("", [Validators.required, this.customeEmailValidator]),
     username: new FormControl("", [Validators.required]),
+    password: new FormControl("", [Validators.required, Validators.maxLength(32), Validators.minLength(8) ]),
   });
 
   successMessage: string = '';
 
-  getError(control:any) : string {
-    if(control.errors?.required && control.touched)
+  getError(control: AbstractControl): string {
+    if (control.errors?.['required'] && control.touched) {
       return 'Ви нічого не ввели!';
-    else if(control.errors?.emailError && control.touched)
+    } else if (control.errors?.['emailError'] && control.touched) {
       return 'Будь ласка введіть правильну пошту!';
-    else return '';
+    } else if (control.errors?.['minlength'] && control.touched) {
+      return `Пароль повинен містити щонайменше ${control.errors['minlength'].requiredLength} символів!`;
+    } else if (control.errors?.['maxlength'] && control.touched) {
+      return `Пароль не повинен перевищувати ${control.errors['maxlength'].requiredLength} символів!`;
+    } else {
+      return '';
+    }
   }
+
 
   customeEmailValidator(control: AbstractControl) {
     const pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,20}$/;
@@ -53,7 +62,7 @@ export class LogInComponent {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
     } else {
-      this.successMessage = 'Форма відправлена успішно!';
+      this.successMessage = 'Вхід успішний!';
 
       setTimeout(() => {
         this.form.reset();

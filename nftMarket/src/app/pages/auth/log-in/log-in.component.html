@@ -8,16 +8,43 @@
       <h2 class="font-work font-semibold text-h2 text-white leading-[110%]">Create account</h2>
       <h5 class="font-work font-semibold text-h5 text-white leading-[160%] w-[460px] mt-5">{{ 'Welcome! enter your details and start creating, collecting and selling NFTs.' | firstUppercase}}</h5>
     </div>
-    <div class="mt-[40px] ml-[450px]" id="form-create-account">
+    <div class="mt-[40px] ml-[450px]" id="form-create-account" [formGroup]="form">
       <div class="flex items-center relative mt-[15px]">
         <img [src]="email" alt="" class="ml-[40px] w-[20px] h-[20px] absolute -left-[20px] z-10 color-gray">
-        <input type="text" placeholder="Email Address" class="pl-[52px] w-[330px] h-[46px] border-[1px] border-lightGray rounded-[20px] placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]">
+        <input type="text" placeholder="Email Address" class="pl-[52px] w-[330px] h-[46px] border-[1px] border-lightGray rounded-[20px] placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]"
+               formControlName="email"
+               [ngClass]="{'border-red-500': form.get('email')?.invalid && form.get('email')?.touched}">
+      @if (form.get('email')) {
+        <label class="text-red-500 ml-[10px]">
+          {{ getError(form.get('email')!) }}
+        </label>
+      }
       </div>
       <div class="flex items-center relative mt-[15px]">
         <img [src]="pasword" alt="" class="ml-[40px] w-[20px] h-[20px] absolute -left-[20px] z-10 color-gray">
-        <input type="text" placeholder="Password" class="pl-[52px] w-[330px] h-[46px] border-[1px] border-lightGray rounded-[20px] placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]">
+        <input type="text" placeholder="Password" class="pl-[52px] w-[330px] h-[46px] border-[1px] border-lightGray rounded-[20px] placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]"
+               formControlName="password"
+               [ngClass]="{'border-red-500': form.get('password')?.invalid && form.get('password')?.touched}">
+        @if (form.get('password')) {
+          <label class="text-red-500 ml-[10px]">
+            {{ getError(form.get('password')!) }}
+          </label>
+        }
       </div>
-      <button class="mt-[30px] w-[330px] h-[46px] bg-purple rounded-[20px] font-work font-semibold text-base text-white leading-[140%] cursor-pointer transition-transform duration-500 hover:scale-90">Log In</button>
+<!--      <div>-->
+<!--        @if( successMessage ) {-->
+<!--          <label class="ml-[60px] text-green-500">-->
+<!--            {{ successMessage }}-->
+<!--          </label>-->
+<!--        }-->
+<!--      </div>-->
+      <div *ngIf="successMessage" class="ml-[60px] text-green-500">
+        {{ successMessage }}
+      </div>
+
+      <button class="mt-[30px] w-[330px] h-[46px] bg-purple rounded-[20px] font-work font-semibold text-base text-white leading-[140%] cursor-pointer transition-transform duration-500 hover:scale-90"
+              (click)="submitForm()">Log In
+      </button>
     </div>
   </div>
 </div>
