@@ -6,7 +6,7 @@
   <div id="form">
     <div class="mt-[100px] ml-[450px]" id="form-title">
       <h2 class="font-work font-semibold text-h2 text-white leading-[110%]">Create account</h2>
-      <h5 class="font-work font-semibold text-h5 text-white leading-[160%] w-[460px] mt-5">Welcome! enter your details and start creating, collecting and selling NFTs.</h5>
+      <h5 class="font-work font-semibold text-h5 text-white leading-[160%] w-[460px] mt-5">{{ 'Welcome! enter your details and start creating, collecting and selling NFTs.' | firstUppercase}}</h5>
     </div>
     <div class="mt-[40px] ml-[450px]" id="form-create-account">
       <div class="flex items-center relative">
@@ -15,17 +15,22 @@
       </div>
       <div class="flex items-center relative mt-[15px]">
         <img [src]="email" alt="" class="ml-[40px] w-[20px] h-[20px] absolute -left-[20px] z-10 color-gray">
-        <input type="text" placeholder="Email Address" class="pl-[52px] w-[330px] h-[46px] border-[1px] border-lightGray rounded-[20px] placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]">
+        <input type="text" placeholder="Email Address" class="pl-[52px] w-[330px] h-[46px] border-[1px] border-lightGray rounded-[20px] placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]" [(ngModel)]="Email">
         </div>
       <div class="flex items-center relative mt-[15px]">
-        <img [src]="password" alt="" class="ml-[40px] w-[20px] h-[20px] absolute -left-[20px] z-10 color-gray">
-        <input type="text" placeholder="Password" class="pl-[52px] w-[330px] h-[46px] border-[1px] border-lightGray rounded-[20px] placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]">
+        <img [src]="pasword" alt="" class="ml-[40px] w-[20px] h-[20px] absolute -left-[20px] z-10 color-gray">
+        <input type="text" placeholder="Password" class="pl-[52px] w-[330px] h-[46px] border-[1px] border-lightGray rounded-[20px] placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]" [(ngModel)]="password">
       </div>
       <div class="flex items-center relative mt-[15px]">
-        <img [src]="password" alt="" class="ml-[40px] w-[20px] h-[20px] absolute -left-[20px] z-10 color-gray">
+        <img [src]="pasword" alt="" class="ml-[40px] w-[20px] h-[20px] absolute -left-[20px] z-10 color-gray">
         <input type="text" placeholder="Confirm Password" class="pl-[52px] w-[330px] h-[46px] border-[1px] border-lightGray rounded-[20px] placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]">
       </div>
       <button class="mt-[30px] w-[330px] h-[46px] bg-purple rounded-[20px] font-work font-semibold text-base text-white leading-[140%] cursor-pointer transition-transform duration-500 hover:scale-90">Create account</button>
+      <div>
+        <a routerLink="/log-in" routerLinkActive="" >
+          <h2 class="font-work font-semibold text-base text-white leading-[140%] cursor-pointer transition-transform duration-500 hover:underline ml-[80px] mt-[10px]">Already have account?</h2>
+        </a>
+      </div>
     </div>
   </div>
 </div>

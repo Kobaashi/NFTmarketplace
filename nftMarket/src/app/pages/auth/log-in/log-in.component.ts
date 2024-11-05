@@ -1,26 +1,22 @@
 import { Component } from '@angular/core';
-import {NavMenuComponent} from '../../components/nav-menu/nav-menu.component';
-import {FooterComponent} from '../../components/footer/footer.component';
-import {AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
-import {FirstUppercasePipe} from '../../shared/pipe/first-uppercase.pipe';
-import {RouterLink, RouterLinkActive} from '@angular/router';
+import {FirstUppercasePipe} from "../../../shared/pipe/first-uppercase.pipe";
+import {FooterComponent} from "../../../components/footer/footer.component";
+import {AbstractControl, FormControl, FormGroup, FormsModule, Validators} from "@angular/forms";
+import {NavMenuComponent} from "../../../components/nav-menu/nav-menu.component";
 
 @Component({
-  selector: 'app-auth',
+  selector: 'app-log-in',
   standalone: true,
-  imports: [
-    NavMenuComponent,
-    FooterComponent,
-    ReactiveFormsModule,
-    FormsModule,
-    FirstUppercasePipe,
-    RouterLink,
-    RouterLinkActive
-  ],
-  templateUrl: './auth.component.html',
-  styleUrl: './auth.component.scss'
+    imports: [
+        FirstUppercasePipe,
+        FooterComponent,
+        FormsModule,
+        NavMenuComponent
+    ],
+  templateUrl: './log-in.component.html',
+  styleUrl: './log-in.component.scss'
 })
-export class AuthComponent {
+export class LogInComponent {
   user: string = "/icons/UserGray.svg";
   email: string = "/icons/messageGray.svg";
   pasword: string = "/icons/LockKeyGray.svg";
@@ -67,5 +63,4 @@ export class AuthComponent {
   }
 
   constructor() { }
-
 }
