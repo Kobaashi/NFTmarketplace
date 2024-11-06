@@ -1,0 +1,100 @@
+<app-nav-menu />
+<div class="flex bg-lightBlack w-full">
+  <div id="image">
+    <img [src]="bg" alt="">
+  </div>
+  <div id="form">
+    <div class="mt-[100px] ml-[420px]" id="form-title">
+      <h2 class="font-work font-semibold text-h2 text-white leading-[110%]">Create account</h2>
+      <h5 class="font-work font-semibold text-h5 text-white leading-[160%] w-[460px] mt-5">{{ 'Welcome! enter your details and start creating, collecting and selling NFTs.' | firstUppercase}}</h5>
+    </div>
+    <div class="mt-[40px] ml-[450px]" id="form-create-account" [formGroup]="registerForm" (ngSubmit)="registerForm.valid && registerFn()">
+      <div class="flex items-center relative">
+        <img [src]="user" alt="" class="ml-[40px] w-[20px] h-[20px] absolute -left-[20px] z-10 color-gray">
+        <input type="text" placeholder="Username" class="pl-[52px] w-[330px] h-[46px] border-[1px] border-lightGray rounded-[20px] placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]"
+               formControlName="username"
+               [ngClass]="{error : getControl('username')?.errors && getControl('username')?.touched }">
+        @if(getControl('username')?.errors && getControl('username')?.touched) {
+          @if(getControl('username')?.errors?.['required']) {
+            <label class="text-red-500 ml-[10px]">
+              Username is required!
+            </label>
+          }
+          @if(getControl('username')?.errors?.['maxlength']) {
+            <label class="text-red-500 ml-[10px]">
+              Must be in between minimum 8 characters and maximum 32 characters
+            </label>
+          }
+        }
+      </div>
+      <div class="flex items-center relative mt-[15px]">
+        <img [src]="Email" alt="" class="ml-[40px] w-[20px] h-[20px] absolute -left-[20px] z-10 color-gray">
+        <input type="text" placeholder="Email Address" class="pl-[52px] w-[330px] h-[46px] border-[1px] border-lightGray rounded-[20px] placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]"
+               formControlName="email"
+               [ngClass]="{error : getControl('email')?.errors && getControl('email')?.touched }">
+        @if(getControl('email')?.errors && getControl('email')?.touched) {
+          @if(getControl('email')?.errors?.['required']) {
+            <label class="text-red-500 ml-[10px]">
+              Email is required!
+            </label>
+          }
+          @if(getControl('email')?.errors?.['maxlength']) {
+            <label class="text-red-500 ml-[10px]">
+              Only 32 characters are allowed.
+            </label>
+          }
+        }
+      </div>
+      <div class="flex items-center relative mt-[15px]">
+        <img [src]="Password" alt="" class="ml-[40px] w-[20px] h-[20px] absolute -left-[20px] z-10 color-gray">
+        <input type="text" placeholder="Password" class="pl-[52px] w-[330px] h-[46px] border-[1px] border-lightGray rounded-[20px] placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]"
+               formControlName="password"
+               [ngClass]="{error : getControl('password')?.errors && getControl('password')?.touched }">
+        @if(getControl('password')?.errors && getControl('password')?.touched) {
+          @if(getControl('password')?.errors?.['required']) {
+            <label class="text-red-500 ml-[10px]">
+              Password is required!
+            </label>
+          }
+          @if(getControl('password')?.errors?.['minlength'] || getControl('password')?.errors?.['maxlength']) {
+            <label class="text-red-500 ml-[10px]">
+              Minimum 8 character maximum 32 character
+            </label>
+          }
+        }
+      </div>
+      <div class="flex items-center relative mt-[15px]">
+        <img [src]="Password" alt="" class="ml-[40px] w-[20px] h-[20px] absolute -left-[20px] z-10 color-gray">
+        <input type="text" placeholder="Confirm Password" class="pl-[52px] w-[330px] h-[46px] border-[1px] border-lightGray rounded-[20px] placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]"
+               formControlName="confirmPassword"
+               [ngClass]="{error : getControl('confirmPassword')?.errors && getControl('confirmPassword')?.touched }">
+        @if(getControl('confirmPassword')?.errors && getControl('confirmPassword')?.touched) {
+          @if(getControl('confirmPassword')?.errors?.['required']) {
+            <label class="text-red-500 ml-[10px]">
+              Confirm password is required!
+            </label>
+          }
+          @if(getControl('confirmPassword')?.errors?.['minlength'] || getControl('confirmPassword')?.errors?.['maxlength']) {
+            <label class="text-red-500 ml-[10px]">
+              Minimum 8 character maximum 32 character
+            </label>
+          }
+        }
+      </div>
+      <button type="submit" class="mt-[30px] w-[330px] h-[46px] bg-purple rounded-[20px] font-work font-semibold text-base text-white leading-[140%] cursor-pointer transition-transform duration-500 hover:scale-90" (click)="registerFn()"
+              [disabled]="registerForm.invalid || !passwordsMatch()">Create account</button>
+      @if(!passwordsMatch()) {
+        <label class="text-red-500">
+          Wrong password, please enter password again
+        </label>
+      }
+      <div>
+        <a routerLink="/log-in" routerLinkActive="" >
+          <h2 class="font-work font-semibold text-base text-white leading-[140%] cursor-pointer transition-transform duration-500 hover:underline ml-[80px] mt-[10px]">Already have account?</h2>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer />
+

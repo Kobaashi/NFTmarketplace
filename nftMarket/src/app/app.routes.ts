@@ -7,13 +7,15 @@ import {ArtistComponent} from './pages/artist/artist.component';
 import {MarketplaceComponent} from './pages/marketplace/marketplace.component';
 import {NftComponent} from './pages/nft/nft.component';
 import {LogInComponent} from './pages/auth/log-in/log-in.component';
+import {SignUpComponent} from './pages/auth/sign-up/sign-up.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'marketplace', component: MarketplaceComponent },
   { path: 'ranking', component: RankingComponent },
   { path: 'connect-a-wallet', component: ConnectComponent },
-  { path: 'sign-up', component: AuthComponent },
+  { path: 'sign-up-or-log-in', component: AuthComponent },
+  { path: 'sign-up', component: SignUpComponent },
   { path: 'log-in', component: LogInComponent },
   { path: 'artist', component: ArtistComponent },
   { path: 'nft-page', component: NftComponent },

@@ -1,40 +1,67 @@
-<div class="flex bg-lightBlack w-full h-auto pl-[60px] pr-[50px]">
-  <div class="pl-[330px] pt-40" id="info">
-    <h1 class="font-work font-semibold text-white text-h1 leading-[110%] w-[510px] ">Discover digital art & Collect NFTs</h1>
-    <p class="font-work font-regular text-white text-base leading-[160%] w-[350px] h-[105px] mt-5">{{ 'NFT marketplace UI created with Anima for Figma. Collect, buy and sell art from more than 20k NFT artists.' | firstUppercase }}</p>
-    <div class="inline-flex mt-[30px] cursor-pointer transition-transform duration-500 hover:scale-90">
+<div class="flex
+              desk:bg-lightBlack desk:w-full desk:h-auto desk:pl-[60px] desk:pr-[50px]
+              mob:bg-lightBlack mob:w-full mob:h-auto mob:pl-[30px] mob:pr-[30px]">
+  <div class="desk:pl-[330px] desk:pt-40
+              mob:center mob:pt-10" id="info">
+    <h1 class="desk:font-work desk:font-semibold desk:text-white desk:text-h1 desk:leading-[110%] desk:w-[510px]
+               mob:font-work mob:font-semibold mob:text-white mob:text-h4 mob:leading-[130%] mob:w-[315px] ">Discover digital art & Collect NFTs</h1>
+    <p class="desk:font-work desk:font-regular desk:text-white desk:text-base desk:leading-[160%] desk:w-[350px] desk:h-[105px] desk:mt-5
+             mob:font-work mob:font-regular mob:text-white mob:text-base mob:leading-[140%] mob:w-[315px] mob:h-[66px] mob:mt-[10px]">{{ 'NFT marketplace UI created with Anima for Figma. Collect, buy and sell art from more than 20k NFT artists.' | firstUppercase }}</p>
+    <div class="inline-flex
+                  desk:mt-[40px] desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90
+                  mob:mt-[540px] mob:cursor-pointer">
       <a routerLink="/sign-up" routerLinkActive="active">
-        <button class="flex font-work font-semibold text-base text-white leading-[140%] items-center justify-center bg-purple w-[224px] h-[60px] rounded-[20px]">
-          <img [src]="rocket" alt="" class="w-[19px] h-[19px] mr-[12px]">Get Started</button>
+        <button class="flex
+                         desk:font-work desk:font-semibold desk:text-base desk:text-white desk:leading-[140%] desk:items-center desk:justify-center desk:bg-purple desk:w-[224px] desk:h-[60px] desk:rounded-[20px]                         mob:font-work mob:font-semibold mob:text-base mob:text-white mob:leading-[140%] mob:items-center mob:justify-center mob:bg-purple mob:w-[315px] mob:h-[60px] mob:rounded-[20px]">
+          <img [src]="rocket" alt="" class="desk:w-[19px] desk:h-[19px] desk:mr-[12px]">Get Started</button>
       </a>
     </div>
-    <div class="flex mt-[30px]">
-      <div class="w-[150px] mr-[30px]">
-        <h4 class="font-mono font-bold text-h4 text-white leading-[140%]">240k+</h4>
-        <p class="font-mono font-regular text-[24px] text-white leading-[160%]">Total Sale</p>
+    <div class="flex
+                  desk:mt-[30px]
+                  mob:mt-[40px] mob:bg-lightBlack mob:ml-[15px]">
+      <div class="desk:w-[150px] desk:mr-[30px]
+                  mob:w-[85px]">
+        <h4 class="desk:font-mono desk:font-bold desk:text-h4 desk:text-white desk:leading-[140%]
+                   mob:font-mono mob:font-bold mob:text-h5 mob:text-white mob:leading-[160%]">240k+</h4>
+        <p class="desk:font-work desk:font-regular desk:text-[24px] desk:text-white desk:leading-[160%]
+                  mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[140%]">Total Sale</p>
       </div>
-      <div class="ml-[30px] w-[150px]">
-        <h4 class="font-mono font-bold text-h4 text-white leading-[140%]">100k+</h4>
-        <p class="font-mono font-regular text-[24px] text-white leading-[160%]">Auctions</p>
+      <div class="desk:ml-[30px] desk:w-[150px]
+                  mob:ml-[30px] mob:w-[85px]">
+        <h4 class="desk:font-mono desk:font-bold desk:text-h4 desk:text-white desk:leading-[140%]
+                    mob:font-mono mob:font-bold mob:text-h5 mob:text-white mob:leading-[160%]">100k+</h4>
+        <p class="desk:font-work desk:font-regular desk:text-[24px] desk:text-white desk:leading-[160%]
+                  mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[140%]">Auctions</p>
       </div>
-      <div class="ml-[30px] w-[150px]">
-        <h4 class="font-mono font-bold text-h4 text-white leading-[140%]">240k+</h4>
-        <p class="font-mono font-regular text-[24px] text-white leading-[160%]">Artists</p>
+      <div class="desk:ml-[30px] desk:w-[150px]
+                  mob:ml-[30px] mob:w-[85px]">
+        <h4 class="desk:font-mono desk:font-bold desk:text-h4 desk:text-white desk:leading-[140%]
+                   mob:font-mono mob:font-bold mob:text-h5 mob:text-white mob:leading-[160%]">240k+</h4>
+        <p class="desk:font-work desk:font-regular desk:text-[24px] desk:text-white desk:leading-[160%]
+                  mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[140%]">Artists</p>
       </div>
     </div>
   </div>
+  <div class="desk:ml-[30px] desk:-mt-[10px] desk:
+                  mob:-ml-[365px] mob:mt-[150px]" id="images">
     <a routerLink="nft-page" routerLinkActive="active">
-    <div class="ml-[60px]" id="image">
-      <div class="transition-transform duration-500 hover:scale-90">
-        <img [src]="spaceWalking" alt="" class="ml-[30px] mt-40 rounded-t-[20px]">
-        <div class="bg-darkGray w-[510px] h-[109px] ml-[30px] rounded-b-[20px]">
-          <h5 class="font-work font-semibold text-white text-h5 leading-[140%] ml-[20px] pt-[22px]">Space Walking</h5>
-          <div class="flex pt-[10px] ml-[20px]">
-            <img [src]="avatar" alt="" class="w-[24px] h-[24px] rounded-full">
-            <p class="ml-3 font-work font-regular text-base text-white leading-[140%]">Animakid</p>
+      <div class="desk:transition-transform desk:duration-500 desk:hover:scale-90">
+        <img [src]="spaceWalking" alt="" class="desk:ml-[30px] desk:mt-40 desk:rounded-t-[20px] mob:w-[510px] mob:fill-[401px]
+                                                mob:ml-[30px] mob:mt-[80px] mob:rounded-t-[20px] mob:w-[314.5px] mob:fill-[206px]">
+        <div class="desk:bg-darkGray desk:w-[510px] desk:h-[109px] desk:ml-[30px] desk:rounded-b-[20px]
+                        mob:bg-darkGray mob:w-[315px] mob:h-[109px] mob:ml-[30px] mob:rounded-b-[20px]">
+          <h5 class="desk:font-work desk:font-semibold desk:text-white desk:text-h5 desk:leading-[140%] desk:ml-[20px] desk:pt-[22px]
+                          mob:font-work mob:font-semibold mob:text-white mob:text-h5 mob:leading-[140%] mob:ml-[20px] mob:pt-[22px]">Space Walking</h5>
+          <div class="flex
+                          desk:pt-[10px] desk:ml-[20px]
+                          mob:pt-[10px] mob:ml-[20px]">
+            <img [src]="avatar" alt="" class="desk:w-[24px] desk:h-[24px] desk:rounded-full
+                                                 mob:w-[24px] mob:h-[24px] mob:rounded-full">
+            <p class="desk:ml-3 desk:font-work desk:font-regular desk:text-base desk:text-white desk:leading-[140%]
+                          mob:ml-3 mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[140%]">Animakid</p>
           </div>
         </div>
       </div>
-    </div>
-  </a>
+    </a>
+  </div>
 </div>

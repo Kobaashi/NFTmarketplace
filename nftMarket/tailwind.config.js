@@ -26,6 +26,11 @@ module.exports = {
         'gradientone': 'linear-gradient(-45deg, #A259FF 0%, #377DF7 100%)',
         'gradienttwo': 'linear-gradient(-45deg, #A259FF 0%, #FF6250 100%)'
       },
+      screens: {
+        'mob': '375px',
+        'tab': '838px',
+        'desk': '1220px',
+      },
     },
   },
   plugins: [],

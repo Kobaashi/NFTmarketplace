@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import {FirstUppercasePipe} from "../../../shared/pipe/first-uppercase.pipe";
-import {FooterComponent} from "../../../components/footer/footer.component";
 import {
   AbstractControl,
   FormBuilder,
@@ -9,32 +7,32 @@ import {
   FormsModule,
   ReactiveFormsModule,
   Validators
-} from "@angular/forms";
-import {NavMenuComponent} from "../../../components/nav-menu/nav-menu.component";
-import {NgClass, NgIf} from '@angular/common';
-import {RouterLink, RouterLinkActive} from '@angular/router';
+} from '@angular/forms';
+import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
+import {NgClass} from '@angular/common';
+import {FirstUppercasePipe} from '../../../shared/pipe/first-uppercase.pipe';
+import {FooterComponent} from '../../../components/footer/footer.component';
+import {NavMenuComponent} from '../../../components/nav-menu/nav-menu.component';
 
 @Component({
-  selector: 'app-log-in',
+  selector: 'app-sign-up',
   standalone: true,
   imports: [
     FirstUppercasePipe,
     FooterComponent,
-    FormsModule,
     NavMenuComponent,
-    NgClass,
     ReactiveFormsModule,
-    NgIf,
     RouterLink,
-    RouterLinkActive
+    RouterLinkActive,
+    NgClass
   ],
-  templateUrl: './log-in.component.html',
-  styleUrl: './log-in.component.scss'
+  templateUrl: './sign-up.component.html',
+  styleUrl: './sign-up.component.scss'
 })
-export class LogInComponent {
+export class SignUpComponent {
   user: string = "/icons/UserGray.svg";
-  email: string = "/icons/messageGray.svg";
-  pasword: string = "/icons/LockKeyGray.svg";
+  Email: string = "/icons/messageGray.svg";
+  Password: string = "/icons/LockKeyGray.svg";
   bg: string = "/img/authImage.png";
 
   password: string = '';
@@ -48,7 +46,9 @@ export class LogInComponent {
   constructor(private fb: FormBuilder) {
     this.registerForm = this.fb.group({
       email: new FormControl("", [Validators.required, Validators.maxLength(32), Validators.minLength(8), Validators.pattern(this.emailRegex)]),
+      username: new FormControl("", [Validators.required, Validators.maxLength(32)]),
       password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(32)]],
+      confirmPassword: ['', [Validators.required]]
     });
   }
 
