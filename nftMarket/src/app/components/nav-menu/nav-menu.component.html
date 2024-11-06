@@ -1,4 +1,4 @@
-<nav class="bg-lightBlack flex w-full">
+<nav class="bg-lightBlack flex desk:z-20 w-full">
   <div
     class="flex desk:z-20 w-full
             desk:mt-[34px] desk:mb-[34px] desk:ml-[50px] desk:w-auto
@@ -66,17 +66,19 @@
             mob:px-10 mob:py-3 mob:ml-[190px] mob:cursor-pointer"><a routerLink="/marketplace" routerLinkActive="active">Marketplace</a></li>
           <li class="desk:px-10 desk:py-3 desk:ml-[10px] desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90
             mob:px-10 mob:py-3 mob:ml-[190px] mob:cursor-pointer"><a routerLink="/ranking" routerLinkActive="active">Rankings</a></li>
-          <li class="desk:px-10 desk:py-3 desk:ml-[10px] desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90
-            mob:px-10 mob:py-3 mob:ml-[190px] mob:cursor-pointer"><a routerLink="/connect-a-wallet" routerLinkActive="active">Connect a wallet</a></li>
-          <div class="inline-flex desk:-mt-[25px] desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90 desk:-ml-[220px] desk:mr-[30px]
-              mob:-mt-[7px] mob:cursor-pointer">
-            <button class="mob:hidden desk:flex desk:font-mono desk:font-semibold desk:text-base desk:leading-[140%] desk:items-center desk:justify-center desk:bg-purple desk:px-[20px] desk:w-[230px] desk:h-[60px] desk:rounded-[20px]
+          <li class="desk:px-10 desk:py-3 desk:ml-[10px] desk:cursor-pointer desk:transition-transform desk:duration-500 hover:scale-90 desk:w-[220px]
+            mob:px-10 mob:py-3 mob:ml-[190px]"><a routerLink="/connect-a-wallet" routerLinkActive="active">Connect a wallet</a></li>
+
+          <div class="flex desk:-mt-[25px] cursor-pointer transition-transform duration-500 hover:scale-90 desk:-ml-[150px]
+              mob:-mt-[7px]">
+            <button class="mob:hidden desk:flex desk:font-mono desk:font-semibold desk:text-base desk:leading-[140%] desk:items-center desk:justify-center desk:bg-purple desk:px-[20px] desk:w-[210px] desk:h-[60px] desk:rounded-[20px]
                     mob:font-mono mob:font-semibold mob:caption mob:leading-[140%] mob:items-center mob:justify-center mob:bg-purple mob:w-[90px] mob:h-[30px] mob:rounded-[20px] mob:mt-[20px] mob:ml-[220px]">
               <img [src]="user" alt="" class="desk:w-[24px] desk:h-[24px] desk:mr-[12px] mob:w-[12px] mob:h-[12px] mob:mr-[12px]">
               <a routerLink="/sign-up-or-log-in" routerLinkActive="active">Sign Up/Log In</a>
             </button>
           </div>
-          <div class="inline-flex desk:-mt-[25px] desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90 desk:-ml-[220px] desk:mr-[30px]
+
+          <div class="inline-flex desk:-mt-[25px] desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90 desk:ml-[250px] desk:mr-[30px]
               mob:-mt-[7px] mob:cursor-pointer">
             <button class="flex desk:hidden desk:font-mono desk:font-semibold desk:text-base desk:leading-[140%] desk:items-center desk:justify-center desk:bg-purple desk:px-[20px] desk:w-[152px] desk:h-[60px] desk:rounded-[20px]
                     mob:font-mono mob:font-semibold mob:caption mob:leading-[140%] mob:items-center mob:justify-center mob:bg-purple mob:w-[90px] mob:h-[30px] mob:rounded-[20px] mob:mt-[20px] mob:ml-[220px]">
