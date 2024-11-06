@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {RouterLink, RouterLinkActive} from '@angular/router';
-
 @Component({
   selector: 'app-nav-menu',
   standalone: true,
@@ -14,4 +13,10 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
 export class NavMenuComponent {
   logo: string = "/icons/LogoPurple.svg";
   user: string = "/icons/User.svg";
+
+  isActive: boolean = false;
+
+  toggleActive() {
+    this.isActive = !this.isActive
+  }
 }
