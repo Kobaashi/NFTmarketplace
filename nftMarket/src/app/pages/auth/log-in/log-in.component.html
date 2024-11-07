@@ -1,5 +1,5 @@
 <app-nav-menu />
-<div class="flex bg-lightBlack w-full desk:-mt-[100px]">
+<div class="flex bg-lightBlack w-full">
   <div id="image">
     <img [src]="bg" alt="">
   </div>
@@ -47,11 +47,16 @@
       </div>
       <button type="submit" class="mt-[30px] w-[330px] h-[46px] bg-purple rounded-[20px] font-work font-semibold text-base text-white leading-[140%] cursor-pointer transition-transform duration-500 hover:scale-90" (click)="registerFn()"
               [disabled]="registerForm.invalid || !passwordsMatch()">Log In</button>
-      @if(!passwordsMatch()) {
+      @if(passwordsMatch()) {
         <label class="text-red-500">
           Wrong password, please enter password again
         </label>
       }
+    </div>
+    <div>
+      <a routerLink="/sign-up" routerLinkActive="" >
+        <h2 class="font-work font-semibold text-base text-white leading-[140%] cursor-pointer transition-transform duration-500 hover:underline ml-[570px] mt-[10px]">Don't have a account?</h2>
+      </a>
     </div>
     </div>
   </div>
