@@ -107,4 +107,111 @@
 }
 
 
+@if(!showFirstBlock) {
+  <div class="" id="two" >
+    <div class="desk:relative desk:w-full desk:min-h-screen desk:overflow-hidden desk:pt-20 desk:bg-lightBlack
+                 mob:relative mob:w-full mob:min-h-screen mob:overflow-hidden mob:pt-[60px] mob:bg-lightBlack">
+      <img [src]="bg2" alt="Background Image" class="desk:block desk:w-full desk:h-full desk:object-cover desk:-z-10
+                                                      mob:hidden">
+      <img [src]="bg2" alt="Background Image" class="desk:hidden
+                                                      mob:block mob:w-[375px] mob:h-[590px] mob:object-cover mob:-z-10">
+      <div class="desk:absolute desk:inset-0 desk:bg-purple desk:bg-opacity-50 desk:blur-3xl desk:h-1/2 desk:-z-1 desk:mt-[380px] desk:overflow-hidden
+                   mob:absolute mob:inset-0 mob:bg-purple mob:bg-opacity-50 mob:blur-3xl mob:h-1/2 mob:-z-1 mob:mt-[250px]"></div>
+      <div class="desk:absolute desk:inset-0 desk:bg-gradient-radial desk:from-purple-500/60 desk:via-purple-500/20 desk:to-transparent desk:opacity-30 desk:blur-2xl
+                   mob:absolute mob:inset-0 mob:bg-gradient-radial mob:from-purple-500/60 mob:via-purple-500/20 mob:to-transparent mob:opacity-30 mob:blur-2xl"></div>
+      <div class="desk:-mt-[460px] desk:relative desk:z-10
+                   mob:-mt-[360px] mob:relative mob:z-10">
+        <div class="mob:absolute mob:-mt-[190px]
+                      desk:absolute desk:-mt-[70px]" id="highlight">
+          <div class="desk:ml-[390px] desk:w-[151px] desk:h-[44px] desk:flex desk:bg-lightBlack desk:rounded-[20px]
+                       mob:ml-[30px] mob:w-[151px] mob:h-[44px] mob:flex mob:bg-lightBlack mob:rounded-[20px] ">
+            <img [src]="ava" alt="" class="desk:w-6 desk:h-6 desk:mt-[10px] desk:ml-5
+                                            mob:w-6 mob:h-6 mob:mt-[10px] mob:ml-5">
+            <p class="desk:font-work desk:font-regular desk:text-base desk:text-white desk:leading-[140%] desk:mt-[11px] desk:ml-3
+                       mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[140%] mob:mt-[11px] mob:mb-[30px] mob:ml-3">Shroomie</p>
+          </div>
+          <h2 class="desk:ml-[390px] desk:mt-[30px] desk:font-work desk:font-semibold desk:text-h2 desk:text-white desk:leading-[110%]
+                      mob:ml-[30px] mob:mt-[30px] mob: mob:font-work mob:font-semibold mob:text-h3 mob:text-white mob:leading-[120%] mob:w-[315px]">Magic Mashrooms</h2>
+          <a routerLink="/nft-page" routerLinkActive="active">
+            <div class="mob:hidden desk:block desk:inline-flex desk:mt-[30px] desk:ml-[390px] desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90">
+              <button class="flex desk:font-work desk:font-semibold desk:text-base desk:text-black desk:leading-[140%] desk:items-center desk:justify-center desk:w-[198px] desk:h-[60px] desk:rounded-[20px] desk:bg-white">
+                <img [src]="eye" alt="" class="desk:w-[19px] desk:h-[19px] desk:mr-[12px]">See NFT
+              </button>
+            </div>
+          </a>
+        </div>
+        <div class="desk:w-[355px] desk:h-[207px] desk:bg-darkGray desk:bg-opacity-50 desk:-mt-[210px] desk:ml-[1144px] desk:rounded-[20px]
+                     mob:w-[315px] mob:h-[147px] mob:bg-darkGray mob:bg-opacity-50 mob:mt-[90px] mob:ml-[30px] mob:rounded-[20px]">
+          <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-white desk:leading-[110%] desk:pt-[60px] desk:ml-[30px]
+                     mob:font-mono mob:font-regular mob:text-caption mob:text-white mob:leading-[110%] mob:pt-[30px] mob:ml-[30px]">Auction ends in:</p>
+          @if(countdownTime >= 1000) {
+            <div class="flex desk:ml-[10px]
+                         mob:ml-[10px]">
+              <!--            Hours-->
+              <div>
+                <span class="desk:font-mono desk:font-bold desk:text-h3 desk:text-white desk:leading-[120%] desk:pt-[10px] desk:ml-[40px]
+                              mob:font-mono mob:font-bold mob:text-h3 mob:text-white mob:leading-[120%] mob:pt-[10px] mob:ml-[20px]">{{ hours }} :</span>
+              </div>
+              <!--            Minuts-->
+              <div>
+                <span class="desk:font-mono desk:font-bold desk:text-h3 desk:text-white desk:leading-[120%] desk:pt-[10px] desk:ml-[20px]
+                              mob:font-mono mob:font-bold mob:text-h3 mob:text-white mob:leading-[120%] mob:pt-[10px] mob:ml-[20px]">{{ minutes }} :</span>
+              </div>
+              <!--            Seconds-->
+              <div>
+                <span class="desk:font-mono desk:font-bold desk:text-h3 desk:text-white desk:leading-[120%] desk:pt-[10px] desk:ml-[20px]
+                              mob:font-mono mob:font-bold mob:text-h3 mob:text-white mob:leading-[120%] mob:pt-[10px] mob:ml-[20px]">{{ seconds }}</span>
+              </div>
+            </div>
+            <div class="flex desk:pt-[5px] desk:ml-10
+                         mob:pt-[5px] mob:ml-8">
+              <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-white desk:leading-[110%] desk:ml-1 desk:-pl-10 desk:mr-14
+                         mob:font-mono mob:font-regular mob:text-caption mob:text-white mob:leading-[110%] mob:-ml-1 mob:-pl-10 mob:mr-14">Hours</p>
+              <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-white desk:leading-[110%] desk:mr-[65px]
+                         mob:font-mono mob:font-regular mob:text-caption mob:text-white mob:leading-[110%] mob:mr-[65px]">Minutes</p>
+              <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-white desk:leading-[110%]
+                         mob:font-mono mob:font-regular mob:text-caption mob:text-white mob:leading-[110%] ">Seconds</p>
+            </div>
+          }
+          @else {
+            <div class="flex desk:relative
+                         mob:relative">
+              <!--            Hours-->
+              <div>
+                <span class="desk:font-mono desk:font-bold desk:text-h3 desk:text-white desk:leading-[120%] desk:pt-[10px] desk:ml-[60px]
+                              mob:font-mono mob:font-bold mob:text-h3 mob:text-white mob:leading-[120%] mob:pt-[10px] mob:ml-[40px]">{{ hours }} :</span>
+              </div>
+              <!--            Minuts-->
+              <div>
+                <span class="desk:font-mono desk:font-bold desk:text-h3 desk:text-white desk:leading-[120%] desk:pt-[10px] desk:ml-[20px]
+                              mob:font-mono mob:font-bold mob:text-h3 mob:text-white mob:leading-[120%] mob:pt-[10px] mob:ml-[20px]">{{ minutes }} :</span>
+              </div>
+              <!--            Seconds-->
+              <div>
+                <span class="desk:font-mono desk:font-bold desk:text-h3 desk:text-white desk:leading-[120%] desk:pt-[10px] desk:ml-[20px]
+                              mob:font-mono mob:font-bold mob:text-h3 mob:text-white mob:leading-[120%] mob:pt-[10px] mob:ml-[20px]">{{ seconds }}</span>
+              </div>
+            </div>
+            <div class="flex desk:pt-[5px]
+                         mob:pt-[5px]">
+              <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-white desk:leading-[110%] desk:ml-[55px] desk:mr-[50px]
+                         mob:font-mono mob:font-regular mob:text-caption mob:text-white mob:leading-[110%] mob:ml-[35px] mob:mr-[50px]">Hours</p>
+              <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-white desk:leading-[110%] desk:mr-[45px]
+                         mob:font-mono mob:font-regular mob:text-caption mob:text-white mob:leading-[110%] mob:mr-[45px]">Minutes</p>
+              <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-white desk:leading-[110%]
+                          mob:font-mono mob:font-regular mob:text-caption mob:text-white mob:leading-[110%]">Seconds</p>
+            </div>
+          }
+        </div>
+        <a routerLink="/nft-page" routerLinkActive="active">
+          <div class="mob:block desk:hidden mob:inline-flex mob:mt-[30px] mob:ml-[30px] mob:cursor-pointer mob:transition-transform mob:duration-500 mob:hover:scale-90">
+            <button class="flex mob:font-work mob:font-semibold mob:text-base mob:text-black mob:leading-[140%] mob:items-center mob:justify-center mob:w-[315px] mob:h-[60px] mob:rounded-[20px] mob:bg-white">
+              <img [src]="eye" alt="" class="mob:w-[20px] mob:h-[20px] mob:mr-[12px]">See NFT
+            </button>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+}
 
