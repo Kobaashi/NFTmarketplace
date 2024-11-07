@@ -111,10 +111,12 @@
   <div class="" id="two" >
     <div class="desk:relative desk:w-full desk:min-h-screen desk:overflow-hidden desk:pt-20 desk:bg-lightBlack
                  mob:relative mob:w-full mob:min-h-screen mob:overflow-hidden mob:pt-[60px] mob:bg-lightBlack">
-      <img [src]="bg2" alt="Background Image" class="desk:w-lful desk:h-full desk:object-cover desk:-z-10
-                                                      mob:w-[375px] mob:h-[590px] mob:object-cover mob:-z-10">
-      <div class="desk:absolute desk:inset-0 desk:bg-purple desk:bg-opacity-50 desk:blur-3xl desk:h-1/2 desk:-z-1 desk:mt-[500px]
-                   mob:absolute mob:inset-0 mob:bg-purple mob:bg-opacity-50 mob:blur-3xl mob:h-1/2 mob:-z-1 mob:mt-[200px]"></div>
+      <img [src]="bg2" alt="Background Image" class="desk:block desk:w-full desk:h-full desk:object-cover desk:-z-10
+                                                      mob:hidden">
+      <img [src]="bg2" alt="Background Image" class="desk:hidden
+                                                      mob:block mob:w-[375px] mob:h-[590px] mob:object-cover mob:-z-10">
+      <div class="desk:absolute desk:inset-0 desk:bg-purple desk:bg-opacity-50 desk:blur-3xl desk:h-1/2 desk:-z-1 desk:mt-[380px] desk:overflow-hidden
+                   mob:absolute mob:inset-0 mob:bg-purple mob:bg-opacity-50 mob:blur-3xl mob:h-1/2 mob:-z-1 mob:mt-[250px]"></div>
       <div class="desk:absolute desk:inset-0 desk:bg-gradient-radial desk:from-purple-500/60 desk:via-purple-500/20 desk:to-transparent desk:opacity-30 desk:blur-2xl
                    mob:absolute mob:inset-0 mob:bg-gradient-radial mob:from-purple-500/60 mob:via-purple-500/20 mob:to-transparent mob:opacity-30 mob:blur-2xl"></div>
       <div class="desk:-mt-[460px] desk:relative desk:z-10
@@ -213,66 +215,3 @@
   </div>
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@if (!showFirstBlock) {
-  <div class="" id="twso">
-    <div class="relative w-full min-h-screen overflow-hidden pt-20 bg-lightBlack">
-      <img [src]="bg2" alt="Background Image" class="w-full h-full object-cover -z-10 mt-[40px]">
-      <div class="absolute inset-0 bg-purple bg-opacity-50 blur-3xl h-1/2 -z-1 mt-[500px]"></div>
-      <div class="absolute inset-0 bg-gradient-radial from-purple-500/60 via-purple-500/20 to-transparent opacity-30 blur-2xl "></div>
-      <div class="-mt-[360px] relative z-10">
-        <div id="highlight2">
-          <div class="ml-[390px] w-[151px] h-[44px] flex bg-black rounded-[20px]">
-            <img [src]="ava2" alt="" class="w-6 h-6 mt-[10px] ml-5">
-            <p class="font-work font-regular text-base text-white leading-[140%] mt-[11px] ml-3">Shroomie</p>
-          </div>
-          <h2 class="ml-[390px] mt-[30px] font-work font-semibold text-h2 text-white leading-[110%]">Magic Mashrooms</h2>
-          <div class="inline-flex mt-[30px] ml-[390px] cursor-pointer transition-transform duration-500 hover:scale-90">
-            <button class="flex font-work font-semibold text-base text-black leading-[140%] items-center justify-center w-[198px] h-[60px] rounded-[20px] bg-white">
-              <img [src]="eye" alt="" class="w-[19px] h-[19px] mr-[12px]">See NFT
-            </button>
-          </div>
-        </div>
-        <div class="w-[355px] h-[207px] bg-darkGray bg-opacity-50 -mt-[210px] ml-[1144px] rounded-[20px]">
-          <p class="font-mono font-regular text-caption text-white leading-[110%] pt-[60px] ml-[30px]">Auction ends in:</p>
-          <!--          <h3 class="font-mono font-bold text-h3 text-white leading-[120%] pt-[10px] ml-[30px]">59 : 59 : 59</h3>-->
-          <div class="flex" >
-            <div >
-              <span class="font-mono font-bold text-h3 text-white leading-[120%] pt-[10px] ml-[50px]">{{ hours }} :</span>
-            </div>
-            <div>
-              <span class="font-mono font-bold text-h3 text-white leading-[120%] pt-[10px] ml-[30px]">{{ minutes }} :</span>
-            </div>
-            <div>
-              <span class="font-mono font-bold text-h3 text-white leading-[120%] pt-[10px] ml-[30px]">{{ seconds }}</span>
-            </div>
-          </div>
-          <div class="flex pt-[5px]">
-            <p class="font-mono font-regular text-caption text-white leading-[110%] ml-[45px] mr-[55px]">Hours</p>
-            <p class="font-mono font-regular text-caption text-white leading-[110%] mr-[58px]">Minutes</p>
-            <p class="font-mono font-regular text-caption text-white leading-[110%] ">Seconds</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-}

@@ -22,7 +22,7 @@ export class HighlightComponent {
   bg2: string = "/img/Orbitations.png";
   ava2: string = "/icons/Avatar.svg";
 
-  @Input() countdownTime: number = 10;
+  @Input() countdownTime: number = 1;
   remainingTime: number = 0;
   hours: number = 0;
   minutes: number = 0;
