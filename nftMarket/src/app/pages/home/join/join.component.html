@@ -1,21 +1,33 @@
-<div class="pt-[120px] pb-[80px] bg-lightBlack">
-  <div class="w-[1120px] h-[430px] bg-darkGray ml-[390px] rounded-[20px] flex">
-    <div class="pt-[60px] ml-[60px]" id="image">
-      <img [src]="actronavt" alt="" class="w-[425px] h-[310px]">
+<div class="bg-lightBlack desk:pt-[120px] desk:pb-[80px]
+             mob:pt-10 mob:pb-[40px]">
+  <div class="desk:w-[1120px] desk:h-[430px] desk:bg-darkGray desk:ml-[390px] desk:rounded-[20px] desk:flex
+               mob:w-[315px] mob:h-[565px] mob:ml-[30px] mob:block">
+    <div class="desk:pt-[60px] desk:ml-[60px]
+                 mob:pt-10 mob:ml-[10px]" id="image">
+      <img [src]="actronavt" alt="" class="desk:w-[425px] desk:h-[310px]
+                                            mob:w-[315px] mob:h-auto mob:rounded-[20px]">
     </div>
-    <div class="ml-20 mt-[79px]" id="info">
-      <h3 class="w-[425px] font-work font-semibold text-h3 text-white leading-[120%]">{{ 'Join our weekly digest' | firstUppercase }}</h3>
-      <h5 class="w-[425px] font-work font-regular text-h5 text-white leading-[160%] mt-[10px]">{{ 'Get exclusive promotions & updates straight to your inbox.' | firstUppercase }}</h5>
-      <div class="flex mt-10" id="form" [formGroup]="form" >
-
-        <input type="text" placeholder="Enter your email here" class="font-work font-regular text-base text-black leading-[140%] w-[425px] h-[60px] rounded-[20px] px-[19px] py-[20px] border-none placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]" formControlName="email">
-        <button type="submit" class="w-[211px] h-[60px] rounded-[20px] bg-purple -ml-[210px] transition-transform duration-500 hover:scale-90" (click)="submitForm()"><img [src]="message" alt="" class=" ml-[50px] mt-[5px]"><h5 class="font-work font-semibold text-base text-white leading-[140%] -mt-[22px] ml-[24px]">Subscribe</h5></button>
-        <div class="text-red-500 text-center mt-[70px] -ml-[300px]">
+    <div class="desk:ml-20 desk:mt-[79px]
+                 mob:ml-[10px] mob:mt-[30px]" id="info">
+      <h3 class="desk:w-[425px] desk:font-work desk:font-semibold desk:text-h3 desk:text-white desk:leading-[120%]
+                  mob:w-[315px] mob:font-work mob:font-semibold mob:text-h4 mob:text-white mob:leading-[140%]">{{ 'Join our weekly digest' | firstUppercase }}</h3>
+      <h5 class="desk:w-[425px] desk:font-work desk:font-regular desk:text-h5 desk:text-white desk:leading-[160%] desk:mt-[10px]
+                  mob:w-[315px] mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[140%] mob:mt-[10px]">{{ 'Get exclusive promotions & updates straight to your inbox.' | firstUppercase }}</h5>
+      <div class="desk:flex desk:mt-10
+                   mob:mt-10" id="form" [formGroup]="form">
+        <input type="text" placeholder="Enter your email here" class="desk:font-work desk:font-regular desk:text-base desk:text-black desk:leading-[140%] desk:w-[425px] desk:h-[60px] desk:rounded-[20px] desk:px-[19px] desk:py-[20px] desk:border-none desk:placeholder:font-work desk:placeholder:font-regular desk:placeholder:text-base desk:placeholder:text-black desk:placeholder:leading-[140%]
+                                                                       mob:font-work mob:font-regular mob:text-base mob:text-black mob:leading-[140%] mob:w-[315px] mob:h-[46px] mob:rounded-[20px] mob:px-[19px] mob:py-[20px] mob:border-none mob:placeholder:font-work mob:placeholder:font-regular mob:placeholder:text-base mob:placeholder:text-black mob:placeholder:leading-[140%]" formControlName="email">
+        <button type="submit" class="desk:w-[211px] desk:h-[60px] desk:rounded-[20px] desk:bg-purple desk:-ml-[210px] desk:transition-transform desk:duration-500 desk:hover:scale-90
+                                      mob:w-[315px] mob:h-[46px] mob:rounded-[20px] mob:bg-purple mob:ml-0 mob:mt-4 mob:transition-transform mob:duration-500 mob:hover:scale-90" (click)="submitForm()"><img [src]="message" alt="" class="desk:ml-[50px] desk:mt-[5px]
+                                                                                                                                                                                                                                           mob:ml-[102px] mob:mt-[5px]"><h5 class="desk:font-work desk:font-semibold desk:text-base desk:text-white desk:leading-[140%] desk:-mt-[22px] desk:ml-[24px]
+                                                                                                                                                                                                                                                                                   mob:font-work mob:font-semibold mob:text-base mob:text-white mob:leading-[140%] mob:-mt-[22px] mob:ml-[24px]">Subscribe</h5></button>
+        <div class="desk:text-red-500 desk:text-center desk:mt-[70px] desk:-ml-[300px]
+                     mob:text-red-500 mob:text-center mob:mt-[10px] mob:ml-[10px]">
           @if(getError(form.get('email'))) {
             <label  id="text-danger">{{getError(form.get('email')) }}</label>
           }
         </div>
-        <div class="text-green-500 text-center mt-[80px] -ml-[100px]">
+        <div class="desk:text-green-500 desk:text-center desk:mt-[80px] desk:-ml-[100px]">
           @if(successMessage) {
             <label id="text-safe ">{{successMessage}}</label>
           }
