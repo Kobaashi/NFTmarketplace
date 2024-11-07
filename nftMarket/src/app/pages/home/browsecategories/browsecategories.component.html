@@ -1,19 +1,29 @@
-<div class="pt-[160px] bg-lightBlack">
-  <div class="ml-[390px]" id="title">
-    <h3 class="font-work font-semibold text-h3 text-white leading-[120%]">Browse Categories</h3>
+<div class="bg-lightBlack desk:pt-[160px]
+             mob:pt-[80px]">
+  <div class="desk:ml-[390px]
+               mob:ml-[40px]" id="title">
+    <h3 class="desk:font-work desk:font-semibold desk:text-h3 desk:text-white desk:leading-[120%]
+                mob:font-work mob:font-semibold mob:text-h4 mob:text-white mob:leading-[140%]">Browse Categories</h3>
   </div>
-  <div class="mt-[60px] ml-[390px] flex flex-wrap justify-between w-[60%]">
+  <div class="desk:mt-[60px] desk:ml-[390px] desk:flex desk:flex-wrap desk:justify-between desk:w-[60%]
+                mob:mt-[40px] mob:ml-[40px] mob:mr-[30px] mob:flex mob:flex-wrap mob:justify-between mob:w-[70%]">
     @for(categorie of categories; track categorie) {
-        <div class="mr-[30px] mb-[30px] w-[240px] overflow-hidden rounded-[20px] transition-transform duration-500 hover:scale-90">
+        <div class="desk:mr-[30px] desk:mb-[30px] desk:w-[240px] desk:overflow-hidden desk:rounded-[20px] desk:transition-transform desk:duration-500 desk:hover:scale-90
+                     mob:-mr-[50px] mob:mb-5 mob:w-[148px] mob:overflow-hidden mob:rounded-[20px] mob:transition-transform mob:duration-500 mob:hover:scale-90">
           <div class="">
-            <div class="relative w-[240px] h-[240px]">
-              <img [src]="categorie.image" alt="" class="inset-0 w-full h-full blur-lg object-cover">
-              <img [src]="categorie.icon" alt="" class="absolute -mt-[150px] ml-[80px] w-[80px] h-[80px]">
+            <div class="desk:relative desk:w-[240px] desk:h-[240px]
+                         mob:relative mob:w-[148px] mob:h-[142px]">
+              <img [src]="categorie.image" alt="" class="desk:inset-0 desk:w-full desk:h-full desk:blur-lg desk:object-cover
+                                                          mob:inset-0 mob:w-full mob:h-full mob:blur-lg mob:object-cover">
+              <img [src]="categorie.icon" alt="" class="desk:absolute desk:-mt-[150px] desk:ml-[80px] desk:w-[80px] desk:h-[80px]
+                                                         mob:absolute mob:-mt-[120px] mob:ml-[34px] mob:w-[80px] mob:h-[80px]">
             </div>
 
           </div>
-          <div class="w-[240px] h-[76px] rounded-b-[20px] bg-darkGray">
-            <h5 class="font-work font-semibold text-h5 text-white leading-[140%] px-[30px] py-5">
+          <div class="desk:w-[240px] desk:h-[76px] desk:rounded-b-[20px] bg-darkGray desk:z-10
+                       mob:w-[148px] mob:h-[89px] mob:rounded-b-[20px] mob:z-10">
+            <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-white desk:leading-[140%] desk:px-[30px] desk:py-5
+                        mob:font-work mob:font-semibold mob:text-base mob:text-white mob:leading-[140%] mob:px-5 mob:py-5">
               {{ categorie.name | firstUppercase }}
             </h5>
           </div>
