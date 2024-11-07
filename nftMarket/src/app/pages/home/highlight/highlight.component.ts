@@ -16,12 +16,13 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
 })
 export class HighlightComponent {
   bg: string = "/img/NFTHighlight.png";
+  bgMobile: string = "/img/bgMobile.png";
   eye: string = "/icons/Eye.svg";
   ava: string = "/icons/Phillip.svg";
   bg2: string = "/img/Orbitations.png";
   ava2: string = "/icons/Avatar.svg";
 
-  @Input() countdownTime: number = 3600;
+  @Input() countdownTime: number = 10;
   remainingTime: number = 0;
   hours: number = 0;
   minutes: number = 0;
