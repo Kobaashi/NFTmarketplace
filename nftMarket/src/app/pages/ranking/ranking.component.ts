@@ -31,7 +31,7 @@ export class RankingComponent {
     {
       id: 1,
       ava: "/icons/Jaydon.svg",
-      fullname: "jaydon ekstorm bothman",
+      fullname: "jaydon ekstorm",
       change: "+1.41%",
       sold: 602,
       volume: 12.4
