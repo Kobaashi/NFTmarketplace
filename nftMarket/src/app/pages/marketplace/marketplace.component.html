@@ -1,52 +1,77 @@
 <app-nav-menu />
-<div class="bg-lightBlack desk:pt-[100px]">
+<div class="bg-lightBlack desk:pt-[100px]
+             mob:pt-10">
   <div class="border-b-[2px] border-darkGray">
-    <h2 class="font-work font-semibold text-h2 text-white leading-[110%] ml-[390px]">Browse Marketplace</h2>
-    <h5 class="font-work font-regular text-h5 text-white leading-[160%] pt-[10px] ml-[390px] ">Browse through more than 50k NFTs on the NFT Marketplace.</h5>
-    <div class="flex mt-[30px] pb-20 ml-[390px]">
-      <input type="text" placeholder="Search your favourite NFTs" class="w-[1050px] h-[60px] border-[1px] border-darkGray bg-transparent rounded-[20px] pl-5 placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-lightGray placeholder:leading-[160%]"><img [src]="search" alt="" class="relative w-[24px] h-[24px] mt-[15px] -left-10">
+    <h2 class="desk:font-work desk:font-semibold desk:text-h2 desk:text-white desk:leading-[110%] desk:ml-[390px]
+                mob:font-work mob:font-semibold mob:text-h4 mob:text-white mob:leading-[140%] mob:ml-[30px]">Browse Marketplace</h2>
+    <h5 class="desk:font-work desk:font-regular desk:text-h5 desk:text-white desk:leading-[160%] desk:pt-[10px] desk:ml-[390px] desk:w-auto
+                mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[140%] mob:pt-[10px] mob:ml-[30px] mob:w-[315px]">Browse through more than 50k NFTs on the NFT Marketplace.</h5>
+    <div class="desk:flex desk:mt-[30px] desk:pb-20 desk:ml-[390px]
+                 mob:flex mob:mt-[30px] mob:pb-10 mob:ml-[30px]">
+      <input type="text" placeholder="Search your favourite NFTs" class="w-[1050px] h-[60px] border-[1px] border-darkGray bg-transparent rounded-[20px] pl-5 placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-lightGray placeholder:leading-[160%]"><img [src]="search" alt="" class="relative w-[24px] h-[24px] desk:mt-[15px] -left-10
+                                                                                                                                                                                                                                                                                                                            mob:mt-5">
     </div>
   </div>
-  <div class="flex ml-[390px] mt-[10px]" id="ranking-time">
-    <div class="w-[525px] h-[60px] flex border-b-[2px] border-lightGray">
-      <h5 class="font-work font-semibold text-h5 text-white leading-[140%] py-[14.5px] px-[202.5px]">NFTs</h5>
-      <div class="w-auto h-8 bg-lightGray rounded-[20px] -ml-[184px] mt-[14px]">
-        <p class="font-mono font-regular text-base text-white leading-[140%] py-[5px] px-[10px]">{{ NFTs.length }}</p>
+  <div class="flex desk:ml-[390px] desk:mt-[10px]
+               mob:ml-[30px] mob:mt-[10px]" id="ranking-time">
+    <div class="desk:w-[525px] desk:h-[60px] flex border-b-[2px] border-lightGray
+                 mob:w-[157.5px] mob:h-[60px]">
+      <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-white desk:leading-[140%] desk:py-[14.5px] desk:px-[202.5px]
+                  mob:font-work mob:font-semibold mob:text-base mob:text-white mob:leading-[140%] mob:py-[19px] mob:px-[59.25px]">NFTs</h5>
+      <div class="desk:w-auto desk:h-8 bg-lightGray rounded-[20px] desk:-ml-[184px] desk:mt-[14px]
+                   mob:w-auto mob:h-8 mob:ml-[30px] mob:mt-[14px]">
+        <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%] desk:py-[5px] desk:px-[10px]
+                   mob:hidden">{{ NFTs.length }}</p>
       </div>
     </div>
-    <div class="w-[525px] h-[60px] flex">
-      <h5 class="font-work font-semibold text-h5 text-lightGray leading-[140%] py-[14.5px] px-[202.5px]">Collections</h5>
-      <div class="w-auto h-8 bg-darkGray rounded-[20px] -ml-[184px] mt-[14px]">
-        <p class="font-mono font-regular text-base text-white leading-[140%] py-[5px] px-[10px]">0</p>
+    <div class="desk:w-[525px] desk:h-[60px] flex
+                 mob:w-[157.5px] mob:h-[60px]">
+      <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-lightGray desk:leading-[140%] desk:py-[14.5px] desk:px-[202.5px]
+                  mob:font-work mob:font-semibold mob:text-base mob:text-lightGray mob:leading-[140%] mob:py-[19px] mob:px-[34.25px]">Collections</h5>
+      <div class="desk:w-auto h-8 desk:bg-darkGray desk:rounded-[20px] desk:-ml-[184px] desk:mt-[14px]
+                   mob:w-auto h-8 mob:bg-darkGray mob:rounded-[20px] mob:mr-[30px] mob:mt-[14px]">
+        <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%] desk:py-[5px] desk:px-[10px]
+                   mob:hidden">0</p>
       </div>
     </div>
   </div>
 </div>
-<div class="bg-darkGray border-b-[2px] border-lightBlack pb-20">
-  <div class="flex flex-wrap pt-[50px] w-[60%] ml-[360px]">
+<div class="bg-darkGray border-b-[2px] border-lightBlack desk:pb-20
+             mob:pb-10">
+  <div class="desk:flex desk:flex-wrap desk:pt-[50px] desk:w-[60%] desk:ml-[360px]
+               mob:flex mob:flex-wrap mob:pt-10 mob:w-[80%] mob:ml-[35px]">
     @for(nfts of NFTs; track nfts) {
-
-
-
-      <div class="ml-[30px] mt-[30px] transition-transform duration-500 hover:scale-90">
+      <div class="desk:ml-[30px] desk:mt-[30px] transition-transform duration-500 hover:scale-90">
         <a routerLink="/nft-page" routerLinkActive="active">
           <div >
-            <img [src]="nfts.img" alt="" class="w-[330px] h-[295px] rounded-t-[20px]">
+            <img [src]="nfts.img" alt="" class="desk:w-[330px] desk:h-[295px] rounded-t-[20px]
+                                                 mob:w-[315px] mob:h-[238px] mob:object-cover">
           </div>
-          <div class="w-[330px] h-[173px] bg-lightBlack rounded-b-[20px]">
-            <h5 class="font-work font-semibold text-h5 text-white leading-[140%] pt-5 ml-[30px]">{{ nfts.name | firstUppercase }}</h5>
-            <div class="flex">
-              <img [src]="nfts.authorAva" alt="" class="w-[24px] h-[24px] rounded-full mt-[5px] ml-[30px]">
-              <p class="font-mono font-regular text-base text-white leading-[140%] ml-3 mt-1">{{ nfts.authorName | firstUppercase }}</p>
+          <div class="desk:w-[330px] desk:h-[173px] bg-lightBlack rounded-b-[20px]
+                       mob:w-[315px] mob:h-[164px] mob:mb-5">
+            <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-white desk:leading-[140%] desk:pt-5 desk:ml-[30px]
+                        mob:font-work mob:font-semibold mob:text-h5 mob:text-white mob:leading-[140%] mob:pt-5 mob:ml-5">{{ nfts.name | firstUppercase }}</h5>
+            <div class="desk:flex
+                         mob:flex">
+              <img [src]="nfts.authorAva" alt="" class="desk:w-[24px] desk:h-[24px] rounded-full desk:mt-[5px] desk:ml-[30px]
+                                                         mob:w-[24px] mob:h-[24px] mob:mt-[5px] mob:ml-[22px]">
+              <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%] ml-3 mt-1
+                         mob:font-mono mob:font-regular mob:text-base mob:text-white mob:leading-[140%] mob:mt-[5px]">{{ nfts.authorName | firstUppercase }}</p>
             </div>
-            <div class="flex pt-[25px]">
-              <div class="w-[135px] h-[43px] text-left ml-[30px]">
-                <p class="font-mono font-regular text-caption text-lightGray leading-[110%]">Price</p>
-                <p class="font-mono font-regular text-base text-white leading-[140%]">{{ nfts.price }} ETH</p>
+            <div class="desk:flex desk:pt-[25px]
+                         mob:flex mob:mt-[25px] mob:w-[137.5px]">
+              <div class="desk:w-[135px] desk:h-[43px] desk:text-left desk:ml-[30px]
+                           mob:w-[275px] mob:h-[34px] mob:text-left mob:ml-[22px]">
+                <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-lightGray desk:leading-[110%]
+                           mob:font-mono mob:font-regular mob:text-caption mob:text-lightGray mob:leading-[110%] mob:w-[137.5px]">Price</p>
+                <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%]
+                           mob:font-mono mob:font-regular mob:text-caption mob:text-white mob:leading-[140%] mob:mt-2">{{ nfts.price }} ETH</p>
               </div>
-              <div>
-                <p class="font-mono font-regular text-caption text-lightGray leading-[110%]">Highest Bid</p>
-                <p class="font-mono font-regular text-base text-white leading-[140%]">{{ nfts.bid }} wETH</p>
+              <div class="mob:ml-10">
+                <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-lightGray desk:leading-[110%]
+                           mob:font-mono mob:font-regular mob:text-caption mob:text-lightGray mob:leading-[110%] mob:w-[137.5px]">Highest Bid</p>
+                <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%]
+                           mob:font-mono mob:font-regular mob:text-base mob:text-white mob:leading-[140%]">{{ nfts.bid }} wETH</p>
               </div>
             </div>
           </div>
