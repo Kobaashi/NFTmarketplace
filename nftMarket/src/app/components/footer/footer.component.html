@@ -33,8 +33,8 @@
                                                                          mob:w-[315px] mob:h-[46px]"  formControlName="email">
           <button type="submit" class="desk:w-[179px] desk:h-[60px] rounded-[20px] bg-purple desk:-ml-[175px] desk:-mt-[0px] transition-transform duration-500 hover:scale-90
                                         mob:w-[315px] mob:h-[46px] mob:mt-[16px]" (click)="submitForm()"><img [src]="message" alt="" class="desk:hidden
-                                                                                                                                             mob:block mob:relative mob:ml-[102px] mt-[5px]"><h5 class="font-work font-semibold text-base text-white leading-[140%] pt-[19px] ml-[15px]
-                                                                                                                                                                                                         mob:-mt-[21px]">Subscribe</h5></button>
+                                                                                                                                             mob:block mob:relative mob:ml-[102px] mob:mt-[5px]"><h5 class="font-work font-semibold text-base text-white leading-[140%] pt-[19px] ml-[15px]
+                                                                                                                                                                                                         mob:-mt-[41px]">Subscribe</h5></button>
           <div class="text-red-500 text-center mt-[70px] -ml-[300px]">
             @if(getError(form.get('email'))) {
               <label  id="text-danger">{{getError(form.get('email')) }}</label>
@@ -51,6 +51,6 @@
   <div class="border-t border-[#cccccc] desk:w-[1220px] desk:pt-[30px] desk:ml-[327px]
                mob:w-[315px] mob:pt-[30px] mob:ml-[30px]">
     <p class="font-work font-regular text-base text-[#cccccc] leading-[110%] desk:ml-[93px]
-               mob:-ml-[5px]">Ⓒ NFT Market. Use this template freely.</p>
+               mob:-ml-[5px] mob:-mb-5">Ⓒ NFT Market. Use this template freely.</p>
   </div>
 </div>

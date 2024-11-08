@@ -17,7 +17,7 @@
                  mob:mt-[30px] mob:ml-[30px]" id="form-create-account" [formGroup]="registerForm" (ngSubmit)="registerForm.valid && registerFn()">
       <div class="flex items-center relative">
         <img [src]="user" alt="" class="ml-[40px] w-[20px] h-[20px] absolute -left-[20px] z-10 color-gray">
-        <input type="text" placeholder="Username" class="pl-[52px] w-[330px] h-[46px] border-[1px] border-lightGray rounded-[20px] placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]"
+        <input type="text" placeholder="Username" class="pl-[52px] w-[315px] h-[46px] border-[1px] border-lightGray rounded-[20px] placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]"
                formControlName="username"
                [ngClass]="{error : getControl('username')?.errors && getControl('username')?.touched }">
         @if(getControl('username')?.errors && getControl('username')?.touched) {
@@ -35,7 +35,7 @@
       </div>
       <div class="flex items-center relative mt-[15px]">
         <img [src]="Email" alt="" class="ml-[40px] w-[20px] h-[20px] absolute -left-[20px] z-10 color-gray">
-        <input type="text" placeholder="Email Address" class="pl-[52px] w-[330px] h-[46px] border-[1px] border-lightGray rounded-[20px] placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]"
+        <input type="text" placeholder="Email Address" class="pl-[52px] w-[315px] h-[46px] border-[1px] border-lightGray rounded-[20px] placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]"
                formControlName="email"
                [ngClass]="{error : getControl('email')?.errors && getControl('email')?.touched }">
         @if(getControl('email')?.errors && getControl('email')?.touched) {
@@ -53,7 +53,7 @@
       </div>
       <div class="flex items-center relative mt-[15px]">
         <img [src]="Password" alt="" class="ml-[40px] w-[20px] h-[20px] absolute -left-[20px] z-10 color-gray">
-        <input type="text" placeholder="Password" class="pl-[52px] w-[330px] h-[46px] border-[1px] border-lightGray rounded-[20px] placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]"
+        <input type="text" placeholder="Password" class="pl-[52px] w-[315px] h-[46px] border-[1px] border-lightGray rounded-[20px] placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]"
                formControlName="password"
                [ngClass]="{error : getControl('password')?.errors && getControl('password')?.touched }">
         @if(getControl('password')?.errors && getControl('password')?.touched) {
@@ -71,7 +71,7 @@
       </div>
       <div class="flex items-center relative mt-[15px]">
         <img [src]="Password" alt="" class="ml-[40px] w-[20px] h-[20px] absolute -left-[20px] z-10 color-gray">
-        <input type="text" placeholder="Confirm Password" class="pl-[52px] w-[330px] h-[46px] border-[1px] border-lightGray rounded-[20px] placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]"
+        <input type="text" placeholder="Confirm Password" class="pl-[52px] w-[315px] h-[46px] border-[1px] border-lightGray rounded-[20px] placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]"
                formControlName="confirmPassword"
                [ngClass]="{error : getControl('confirmPassword')?.errors && getControl('confirmPassword')?.touched }">
         @if(getControl('confirmPassword')?.errors && getControl('confirmPassword')?.touched) {
@@ -87,7 +87,7 @@
           }
         }
       </div>
-      <button type="submit" class="mt-[30px] w-[330px] h-[46px] bg-purple rounded-[20px] font-work font-semibold text-base text-white leading-[140%] cursor-pointer transition-transform duration-500 hover:scale-90" (click)="registerFn()"
+      <button type="submit" class="mt-[30px] w-[315px] h-[46px] bg-purple rounded-[20px] font-work font-semibold text-base text-white leading-[140%] cursor-pointer transition-transform duration-500 hover:scale-90" (click)="registerFn()"
               [disabled]="registerForm.invalid || !passwordsMatch()">Create account</button>
       @if(!passwordsMatch()) {
         <label class="text-red-500">
@@ -97,7 +97,7 @@
       <div>
         <a routerLink="/log-in" routerLinkActive="" >
           <h2 class="font-work font-semibold text-base text-white leading-[140%] cursor-pointer transition-transform duration-500 hover:underline ml-[80px] mt-[10px]
-                      mob:mt-[10px] mob:pb-[30px]">Already have account?</h2>
+                      mob:ml-[70px] mob:mt-[10px] mob:pb-[30px]">Already have account?</h2>
         </a>
       </div>
     </div>
