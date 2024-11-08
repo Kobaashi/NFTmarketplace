@@ -1,15 +1,15 @@
 @if(showFirstBlock) {
     <div class="" id="one" >
       <div class="desk:relative desk:w-full desk:min-h-screen desk:overflow-hidden desk:pt-20 desk:bg-lightBlack
-                 mob:relative mob:w-full mob:min-h-screen mob:overflow-hidden mob:pt-[60px] mob:bg-lightBlack">
+                 mob:relative mob:w-full mob:min-h-screen mob:overflow-hidden mob:pt-[60px] mob:bg-lightBlack mob:overflow-hidden">
         <img [src]="bg" alt="Background Image" class="desk:block desk:w-full desk:h-full desk:cover desk:-z-10
-                                                     mob:hidden">
+                                                       mob:hidden">
         <img [src]="bgMobile" alt="Background Image" class="desk:hidden
-                                                     mob:block mob:w-[375px] mob:h-[593px] mob:object-cover mob:-z-10 ">
-        <div class="desk:absolute desk:inset-0 desk:bg-purple desk:bg-opacity-50 desk:blur-3xl desk:h-1/2 desk:-z-1 desk:mt-[500px]
-                   mob:absolute mob:inset-0 mob:bg-purple mob:bg-opacity-50 mob:blur-3xl mob:h-1/2 mob:-z-1 mob:mt-[200px]"></div>
+                                                             mob:block mob:w-[375px] mob:h-[593px] mob:object-cover mob:-z-10">
+        <div class="desk:absolute desk:inset-0 desk:bg-purple desk:bg-opacity-50 desk:blur-3xl desk:h-1/2 desk:-z-1 desk:pt-[900px]
+                   mob:absolute mob:inset-0 mob:bg-purple mob:bg-opacity-50 mob:blur-3xl mob:h-1/2 mob:-z-1 mob:mt-[100px]"></div>
         <div class="desk:absolute desk:inset-0 desk:bg-gradient-radial desk:from-purple-500/60 desk:via-purple-500/20 desk:to-transparent desk:opacity-30 desk:blur-2xl
-                   mob:absolute mob:inset-0 mob:bg-gradient-radial mob:from-purple-500/60 mob:via-purple-500/20 mob:to-transparent mob:opacity-30 mob:blur-2xl"></div>
+                   mob:absolute mob:inset-0 mob:bg-gradient-radial mob:from-purple-500/60 mob:via-purple-500/20 mob:to-transparent mob:opacity-30 mob:blur-2xl "></div>
         <div class="desk:-mt-[460px] desk:relative desk:z-10
                    mob:-mt-[360px] mob:relative mob:z-10">
           <div class="mob:absolute mob:-mt-[190px]
@@ -109,7 +109,7 @@
 
 
 @if(!showFirstBlock) {
-    <div class="" id="two" >
+    <div class="mob:overflow-hidden" id="two" >
       <div class="desk:relative desk:w-full desk:min-h-screen desk:overflow-hidden desk:pt-20 desk:bg-lightBlack
                  mob:relative mob:w-full mob:min-h-screen mob:overflow-hidden mob:pt-[60px] mob:bg-lightBlack">
         <img [src]="bg2" alt="Background Image" class="desk:block desk:w-full desk:h-full desk:object-cover desk:-z-10
@@ -117,7 +117,7 @@
         <img [src]="bg2" alt="Background Image" class="desk:hidden
                                                       mob:block mob:w-[375px] mob:h-[590px] mob:object-cover mob:-z-10">
         <div class="desk:absolute desk:inset-0 desk:bg-purple desk:bg-opacity-50 desk:blur-3xl desk:h-1/2 desk:-z-1 desk:mt-[380px] desk:overflow-hidden
-                   mob:absolute mob:inset-0 mob:bg-purple mob:bg-opacity-50 mob:blur-3xl mob:h-1/2 mob:-z-1 mob:mt-[250px]"></div>
+                   mob:absolute mob:inset-0 mob:bg-purple mob:bg-opacity-50 mob:blur-3xl mob:h-1/2 mob:-z-1 mob:mt-[100px]"></div>
         <div class="desk:absolute desk:inset-0 desk:bg-gradient-radial desk:from-purple-500/60 desk:via-purple-500/20 desk:to-transparent desk:opacity-30 desk:blur-2xl
                    mob:absolute mob:inset-0 mob:bg-gradient-radial mob:from-purple-500/60 mob:via-purple-500/20 mob:to-transparent mob:opacity-30 mob:blur-2xl"></div>
         <div class="desk:-mt-[460px] desk:relative desk:z-10
