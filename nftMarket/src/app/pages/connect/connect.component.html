@@ -1,19 +1,26 @@
 <app-nav-menu />
-<div class="flex bg-lightBlack w-full">
+<div class="desk:flex bg-lightBlack desk:w-full
+             mob:block mob:w-[375px]">
   <div id="image">
-    <img [src]="bg" alt="">
+    <img [src]="bg" alt="" class="desk:w-auto desk:h-auto
+                                   mob:w-[375px] mob:h-[232px] mob:object-cover">
   </div>
   <div id="connect">
-    <div class="mt-[100px] ml-[450px]" id="connect-title">
-      <h2 class="font-work font-semibold text-h2 text-white leading-[110%]">Connect Wallet</h2>
-      <h5 class="font-work font-semibold text-h5 text-white leading-[160%] w-[460px] mt-5">Choose a wallet you want to connect. There are several wallet providers.</h5>
+    <div class="desk:mt-[100px] desk:ml-[450px]
+                 mob:mt-[30px] mob:ml-[30px]" id="connect-title">
+      <h2 class="desk:font-work desk:font-semibold desk:text-h2 desk:text-white desk:leading-[110%]
+                  mob:font-work mob:font-semibold mob:text-h3 mob:text-white mob:leading-[120%]">Connect Wallet</h2>
+      <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-white desk:leading-[160%] desk:w-[460px] desk:mt-5
+                  mob:font-work mob:font-semibold mob:text-base mob:text-white mob:leading-[140%] mob:w-[315px] mob:mt-5">Choose a wallet you want to connect. There are several wallet providers.</h5>
     </div>
-    <div id="connect-wallet" class="pt-10 space-y-5">
+    <div id="connect-wallet" class="pt-10 space-y-5 desk:ml-[30px]
+                                     mob:-ml-[430px] mob:pb-5">
       @for(wallet of wallets; track wallet) {
         <div class="ml-[450px] cursor-pointer transition-transform duration-500 hover:scale-90">
-          <div class="flex w-[320px] h-[72px] bg-darkGray border-[1px] border-purple rounded-[20px]">
-            <img [src]="wallet.image" alt="" class="w-[40px] h-[40px] ml-10 mr-5 mt-4">
-            <h5 class="font-work font-semibold text-h5 text-white leading-[140%] mt-5">{{ wallet.name | firstUppercase }}</h5>
+          <div class="flex w-[320px] h-[60px] bg-darkGray border-[1px] border-purple rounded-[20px]">
+            <img [src]="wallet.image" alt="" class="w-[32px] h-[32px] ml-10 mr-5 mt-[14px]">
+            <h5 class="font-work font-semibold text-h5 text-white leading-[140%] mt-5
+                        mob:ml-5 mob:mt-3">{{ wallet.name | firstUppercase }}</h5>
           </div>
         </div>
       }

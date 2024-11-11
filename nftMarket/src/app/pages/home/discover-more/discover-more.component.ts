@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import {FirstUppercasePipe} from '../../../shared/pipe/first-uppercase.pipe';
+import {RouterLink, RouterLinkActive} from "@angular/router";
 
 @Component({
   selector: 'app-discover-more',
   standalone: true,
-  imports: [
-    FirstUppercasePipe
-  ],
+    imports: [
+        FirstUppercasePipe,
+        RouterLink,
+        RouterLinkActive
+    ],
   templateUrl: './discover-more.component.html',
   styleUrl: './discover-more.component.scss'
 })

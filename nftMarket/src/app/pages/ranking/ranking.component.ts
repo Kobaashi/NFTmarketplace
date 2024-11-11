@@ -3,6 +3,7 @@ import { NavMenuComponent } from '../../components/nav-menu/nav-menu.component';
 import {FooterComponent} from '../../components/footer/footer.component';
 import {FirstUppercasePipe} from '../../shared/pipe/first-uppercase.pipe';
 import {CurrencyPipe, formatCurrency} from '@angular/common';
+import {RouterLink, RouterLinkActive} from '@angular/router';
 
 @Component({
   selector: 'app-ranking',
@@ -11,7 +12,9 @@ import {CurrencyPipe, formatCurrency} from '@angular/common';
     NavMenuComponent,
     FooterComponent,
     FirstUppercasePipe,
-    CurrencyPipe
+    CurrencyPipe,
+    RouterLink,
+    RouterLinkActive
   ],
   templateUrl: './ranking.component.html',
   styleUrl: './ranking.component.scss'
@@ -28,7 +31,7 @@ export class RankingComponent {
     {
       id: 1,
       ava: "/icons/Jaydon.svg",
-      fullname: "jaydon ekstorm bothman",
+      fullname: "jaydon ekstorm",
       change: "+1.41%",
       sold: 602,
       volume: 12.4

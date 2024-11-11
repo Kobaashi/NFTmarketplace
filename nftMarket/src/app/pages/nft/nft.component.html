@@ -1,1 +1,254 @@
-<p>nft works!</p>
+<app-nav-menu />
+<div class="bg-lightBlack">
+  <div>
+    <img [src]="orbitaions" alt="" class="desk:w-full desk:h-[565px] desk:object-cover
+                                           mob:w-[375px] mob:h-[320px] mob:object-cover">
+  </div>
+  <div class="desk: desk:pt-[250px]
+               mob:block mob:pt-[40px]">
+    <div class="desk:ml-[390px]
+                 mob:ml-[30px]">
+      <div class="desk:-mt-40">
+        <h2 class="desk:font-work desk:font-semibold desk:text-h2 desk:text-white desk:leading-[110%]
+                    mob:font-work mob:font-semibold mob:text-h4 mob:text-white mob:leading-[140%]">The Orbitians</h2>
+        <h5 class="desk:font-work desk:font-regular desk:text-h5 desk:text-lightGray desk:leading-[160%]
+                    mob:font-work mob:font-regular mob:text-base mob:text-lightGray mob:leading-[140%]">Minted on Sep 30, 2022</h5>
+      </div>
+      <div class="desk:hidden
+                   mob:-ml-[30px] mob: mr-[30px] mob:block">
+        <div class="mob:w-[315px] mob:h-[237px] mob:bg-darkGray mob:bg-opacity-50 mob:mt-5 mob:ml-[30px] mob:rounded-[20px]">
+          <p class="mob:font-mono mob:font-regular mob:text-caption mob:text-white mob:leading-[110%] mob:pt-[30px] mob:ml-[30px]">Auction ends in:</p>
+          @if(countdownTime >= 1000) {
+            <div class="mob:flex">
+              <!--            Hours-->
+              <div>
+                <span class="mob:font-mono mob:font-bold mob:text-h3 mob:text-white mob:leading-[120%] mob:pt-[10px] mob:pl-[30px]">{{ hours }} :</span>
+              </div>
+              <!--            Minuts-->
+              <div>
+                <span class="mob:font-mono mob:font-bold mob:text-h3 mob:text-white mob:leading-[120%] mob:pt-[10px] mob:pl-[10px]">{{ minutes }} :</span>
+              </div>
+              <!--            Seconds-->
+              <div>
+                <span class="mob:font-mono mob:font-bold mob:text-h3 mob:text-white mob:leading-[120%] mob:pt-[10px] mob:pl-[10px]">{{ seconds }}</span>
+              </div>
+            </div>
+            <div class="mob:flex mob:pt-[5px] mob:ml-[10px]">
+              <p class="mob:font-mono mob:font-regular mob:text-caption mob:text-white mob:leading-[110%] mob:ml-[25px] mob:mr-[60px]">Hours</p>
+              <p class="mob:font-mono mob:font-regular mob:text-caption mob:text-white mob:leading-[110%] mob:mr-[50px]">Minutes</p>
+              <p class="mob:font-mono mob:font-regular mob:text-caption mob:text-white mob:leading-[110%] ">Seconds</p>
+            </div>
+          }
+          @else {
+            <div class="mob:flex">
+              <!--            Hours-->
+              <div>
+                <span class="mob:font-mono mob:font-bold mob:text-h3 mob:text-white mob:leading-[120%] mob:pt-[10px] mob:ml-[30px]">{{ hours }} :</span>
+              </div>
+              <!--            Minuts-->
+              <div>
+                <span class="mob:font-mono mob:font-bold mob:text-h3 mob:text-white mob:leading-[120%] mob:pt-[10px] mob:ml-[5px]">{{ minutes }} :</span>
+              </div>
+              <!--            Seconds-->
+              <div>
+                <span class="mob:font-mono mob:font-bold mob:text-h3 mob:text-white mob:leading-[120%] mob:pt-[10px] mob:ml-[10px]">{{ seconds }}</span>
+              </div>
+            </div>
+            <div class="mob:flex mob:pt-[5px]">
+              <p class="mob:font-mono mob:font-regular mob:text-caption mob:text-white mob:leading-[110%] mob:ml-[25px] mob:mr-[55px]">Hours</p>
+              <p class="mob:font-mono mob:font-regular mob:text-caption mob:text-white mob:leading-[110%] mob:mr-[58px]">Minutes</p>
+              <p class="mob:font-mono mob:font-regular mob:text-caption mob:text-white mob:leading-[110%] ">Seconds</p>
+            </div>
+          }
+          <button type="submit" class="mob:w-[255px] mob:h-[60px] mob:bg-purple mob:rounded-[20px] mob:font-work mob:font-semibold mob:text-base mob:text-white mob:leading-[140%] mob:ml-[30px] mob:mt-[30px] mob:transition-transform mob:duration-500 mob:hover:scale-90">Place Bid</button>
+        </div>
+      </div>
+    </div>
+      <div class="desk:mt-[30px]
+                   mob:mt-5">
+        <h5 class="desk:font-mono desk:font-bold desk:text-h5 desk:text-lightGray desk:leading-[160%] desk:ml-[390px]
+                    mob:font-mono mob:font-regular mob:text-base mob:text-lightGray mob:leading-[140%] mob:ml-[30px]">Created By</h5>
+        <div class="flex mt-[10px] desk:ml-[390px]
+                     mob:ml-[30px] ">
+          <img [src]="ava" alt="" class="w-6 h-6">
+          <h5 class="desk:ml-3 desk:font-work desk:font-semibold desk:text-h5 desk:text-white desk:leading-[140%]
+                      mob:ml-3 mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[140%]">Orbitian</h5>
+        </div>
+      </div>
+      <div class="desk:mt-[30px] desk:ml-[390px]
+                   mob:ml-[30px] mob:mt-5">
+        <h5 class="desk:font-mono desk:font-bold desk:text-h5 desk:text-lightGray desk:leading-[160%]
+                    mob:font-mono mob:font-regular mob:text-base mob:text-lightGray mob:leading-[140%]">Description</h5>
+        <h5 class="desk:w-[605px] desk:h-[595px] desk:font-work desk:font-regular desk:text-h5 desk:text-white desk:leading-[160%] desk:mt-[10px]
+                    mob:w-[315px] mob:h-[484px] mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[140%] mob:mt-[10px]">
+          The Orbitians
+          is a collection of 10,000 unique NFTs on the Ethereum blockchain,
+          <br>
+          <br>
+          There are all sorts of beings in the NFT Universe. The most advanced and friendly of the bunch are Orbitians.
+          <br>
+          <br>
+          They live in a metal space machines, high up in the sky and only have one foot on Earth.
+          These Orbitians are a peaceful race, but they have been at war with a group of invaders for many generations.
+          The invaders are called Upside-Downs, because of their inverted bodies that live on the ground, yet do not know any other way to be.
+          Upside-Downs believe that they will be able to win this war if they could only get an eye into Orbitian territory, so they've taken to make human beings their target.
+        </h5>
+      </div>
+      <div class="desk:-mt-[10px] desk:ml-[390px]
+                   mob:mt-5 mob:ml-[30px]">
+        <h5 class="desk:font-work desk:font-bold desk:text-h5 desk:text-white desk:leading-[160%]
+                    mob:font-work mob:font-regular mob:text-base mob:text-lightGray mob:leading-[140%]">Details</h5>
+        <div class="flex mt-[10px]">
+          <img [src]="globe" alt="">
+          <h5 class="desk:ml-[10px] desk:font-work desk:font-regular desk:text-h5 desk:text-white desk:leading-[160%]
+                      mob:ml-[10px] mob:font-work mob:font-regular mob:text-h5 mob:text-white mob:leading-[160%]">View on Etherscan</h5>
+        </div>
+        <div class="flex mt-[10px]">
+          <img [src]="globe" alt="">
+          <h5 class="desk:ml-[10px] desk:font-work desk:font-regular desk:text-h5 desk:text-white desk:leading-[160%]
+                      mob:ml-[10px] mob:font-work mob:font-regular mob:text-h5 mob:text-white mob:leading-[160%]"> View Original </h5>
+        </div>
+      </div>
+      <div class="desk:mt-[30px] desk:ml-[390px]
+                   mob:mt-[30px] mob:ml-[30px]">
+        <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-lightGray desk:leading-[160%]
+                    mob:font-work mob:font-semibold mob:text-h5 mob:text-lightGray mob:leading-[140%]">Tags</h5>
+        <div class="desk:flex desk:mt-[10px]
+                      mob:mt-5">
+          @for(tag of tags; track tag) {
+            <p class="desk:inline-block desk:w-auto desk:h-[46px] desk:px-[30px] desk:py-3 desk:rounded-[20px] desk:bg-darkGray desk:font-work desk:font-semibold desk:text-base desk:text-white desk:leading-[140%] desk:mr-5
+                       mob:inline-block mob:w-auto mob:h-[46px] mob:px-[30px] mob:py-3 mob:rounded-[20px] mob:bg-darkGray mob:font-work mob:font-semibold mob:text-base mob:text-white mob:leading-[140%] mob:mr-5 mob:mt-5">{{ tag.name | uppercase }}</p>
+          }
+        </div>
+      </div>
+    </div>
+    <div class="desk:block desk:ml-[300px]
+                 mob:hidden">
+      <div class="desk:w-[295px] desk:h-[237px] desk:bg-darkGray desk:bg-opacity-50 desk:-mt-[210px] desk:ml-[1144px] desk:rounded-[20px] mob:absolute desk:-mt-[1130px]">
+        <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-white desk:leading-[110%] desk:pt-[60px] desk:ml-[30px] desk:-mt-5">Auction ends in:</p>
+        @if(countdownTime >= 1000) {
+          <div class="desk:flex">
+            <!--            Hours-->
+            <div>
+              <span class="desk:font-mono desk:font-bold desk:text-h3 desk:text-white desk:leading-[120%] desk:pt-[10px] desk:pl-[30px]">{{ hours }} :</span>
+            </div>
+            <!--            Minuts-->
+            <div>
+              <span class="desk:font-mono desk:font-bold desk:text-h3 desk:text-white desk:leading-[120%] desk:pt-[10px] desk:pl-[5px]">{{ minutes }} :</span>
+            </div>
+            <!--            Seconds-->
+            <div>
+              <span class="desk:font-mono desk:font-bold desk:text-h3 desk:text-white desk:leading-[120%] desk:pt-[10px] desk:pl-[10px]">{{ seconds }}</span>
+            </div>
+          </div>
+          <div class="desk:flex desk:pt-[5px]">
+            <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-white desk:leading-[110%] desk:ml-[25px] desk:mr-[40px]">Hours</p>
+            <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-white desk:leading-[110%] desk:mr-[40px]">Minutes</p>
+            <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-white desk:leading-[110%] ">Seconds</p>
+          </div>
+        }
+        @else {
+          <div class="desk:flex">
+            <!--            Hours-->
+            <div>
+              <span class="desk:font-mono desk:font-bold desk:text-h3 desk:text-white desk:leading-[120%] desk:pt-[10px] desk:ml-[30px]">{{ hours }} :</span>
+            </div>
+            <!--            Minuts-->
+            <div>
+              <span class="desk:font-mono desk:font-bold desk:text-h3 desk:text-white desk:leading-[120%] desk:pt-[10px] desk:ml-[5px]">{{ minutes }} :</span>
+            </div>
+            <!--            Seconds-->
+            <div>
+              <span class="desk:font-mono desk:font-bold desk:text-h3 desk:text-white desk:leading-[120%] desk:pt-[10px] desk:ml-[10px]">{{ seconds }}</span>
+            </div>
+          </div>
+          <div class="desk:flex desk:pt-[5px]">
+            <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-white desk:leading-[110%] desk:ml-[25px] desk:mr-[55px]">Hours</p>
+            <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-white desk:leading-[110%] desk:mr-[58px]">Minutes</p>
+            <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-white desk:leading-[110%] ">Seconds</p>
+          </div>
+        }
+        <button type="submit" class="desk:w-[235px] desk:h-[60px] desk:bg-purple desk:rounded-[20px] desk:font-work desk:font-semibold desk:text-base desk:text-white desk:leading-[140%] desk:ml-[30px] desk:mt-[30px] desk:transition-transform desk:duration-500 desk:hover:scale-90">Place Bid</button>
+      </div>
+    </div>
+  </div>
+  <div class="desk:pt-20 desk:pl-[390px] bg-lightBlack
+               mob:pt-20 mob:pl-[40px]">
+    <div class="flex">
+      <h3 class="desk:font-work desk:font-semibold desk:text-h3 desk:text-white desk:leading-[120%] desk:w-[638px]
+                  mob:font-work mob:font-semibold mob:text-h4 mob:text-white mob:leading-[140%] mob:w-[315px]">More from this artist</h3>
+      <a routerLink="/artist" routerLinkActive="active">
+        <button class="mob:hidden desk:block desk:flex desk:border-[2px] desk:border-purple desk:w-[267px] desk:h-[60px] desk:pl-[50px] desk:py-4 desk:rounded-[20px] desk:ml-[100px] desk:font-work desk:font-semibold desk:text-base desk:text-white desk:leading-[140%] desk:transition-transform desk:duration-500 group">
+          <img [src]="arrowR" alt="" class="desk:w-[20px] desk:h-[20px] desk:mt-[3px] desk:mr-3 desk:transition-transform desk:duration-500 desk:group-hover:translate-x-[10px]">
+          Go To Artist Page
+        </button>
+      </a>
+    </div>
+  </div>
+  <div class="desk:block bg-lightBlack desk:pb-5
+               mob:hidden">
+    <div class="desk:flex desk:flex-wrap desk:pt-[50px] desk:w-[60%] desk:ml-[360px]">
+      @for(nfts of NFTs; track nfts) {
+        <div class="desk:ml-[30px] desk:mt-[30px] desk:transition-transform desk:duration-500 desk:hover:scale-90">
+          <div >
+            <img [src]="nfts.img" alt="" class="desk:w-[330px] desk:h-[295px] rounded-t-[20px]">
+          </div>
+          <div class="desk:w-[330px] desk:h-[173px] bg-darkGray rounded-b-[20px]">
+            <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-white desk:leading-[140%] desk:pt-5 desk:ml-[30px]">{{ nfts.name | firstUppercase }}</h5>
+            <div class="flex">
+              <img [src]="nfts.authorAva" alt="" class="desk:w-[24px] desk:h-[24px] rounded-full desk:mt-[5px] desk:ml-[30px]">
+              <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%] desk:ml-3 desk:mt-1">{{ nfts.authorName | firstUppercase }}</p>
+            </div>
+            <div class="flex pt-[25px]">
+              <div class="desk:w-[135px] desk:h-[43px] desk:text-left desk:ml-[30px]">
+                <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-lightGray desk:leading-[110%]">Price</p>
+                <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%]">{{ nfts.price }} ETH</p>
+              </div>
+              <div>
+                <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-lightGray desk:leading-[110%]">Highest Bid</p>
+                <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%]">{{ nfts.bid }} wETH</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+  <div class="mob:block bg-lightBlack
+               desk:hidden">
+    <div class="mob:flex mob:flex-wrap mob:pt-[30px] mob:w-[90%] mob:ml-[5px] mob:object-cover">
+      @for(nfts of NFTs.slice(0,2); track nfts) {
+        <div class="mob:ml-[30px] mob:mt-[30px] mob:transition-transform mob:duration-500 mob:hover:scale-90">
+          <div >
+            <img [src]="nfts.img" alt="" class="mob:w-[315px] mob:h-[295px] mob:rounded-t-[20px]">
+          </div>
+          <div class="mob:w-[315px] mob:h-[173px] bg-darkGray rounded-b-[20px]">
+            <h5 class="mob:font-work mob:font-semibold mob:text-h5 mob:text-white mob:leading-[140%] mob:pt-5 mob:ml-[30px]">{{ nfts.name | firstUppercase }}</h5>
+            <div class="flex">
+              <img [src]="nfts.authorAva" alt="" class="mob:w-[24px] mob:h-[24px] rounded-full mob:mt-[5px] mob:ml-[30px]">
+              <p class="mob:font-mono mob:font-regular mob:text-base mob:text-white mob:leading-[140%] mob:ml-3 mob:mt-1">{{ nfts.authorName | firstUppercase }}</p>
+            </div>
+            <div class="flex pt-[25px]">
+              <div class="mob:w-[135px] mob:h-[43px] mob:text-left mob:ml-[30px]">
+                <p class="mob:font-mono mob:font-regular mob:text-caption mob:text-lightGray mob:leading-[110%]">Price</p>
+                <p class="mob:font-mono mob:font-regular mob:text-base mob:text-white mob:leading-[140%]">{{ nfts.price }} ETH</p>
+              </div>
+              <div>
+                <p class="mob:font-mono mob:font-regular mob:text-caption mob:text-lightGray mob:leading-[110%]">Highest Bid</p>
+                <p class="mob:font-mono mob:font-regular mob:text-base mob:text-white mob:leading-[140%]">{{ nfts.bid }} wETH</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+    <div class="flex">
+      <a routerLink="/artist" routerLinkActive="active">
+        <button class="desk:hidden mob:block mob:flex mob:border-[2px] mob:border-purple mob:w-[315px] mob:h-[60px] mob:mt-[30px] mob:mb-10 mob:pl-[70px] mob:py-4 mob:rounded-[20px] mob:ml-[30px] mob:font-work mob:font-semibold mob:text-base mob:text-white mob:leading-[140%] mob:transition-transform mob:duration-500 group">
+          <img [src]="arrowR" alt="" class="mob:w-[20px] mob:h-[20px] mob:mt-[3px] mob:mr-3 mob:transition-transform mob:duration-500 mob:group-hover:translate-x-[10px]">
+          Go To Artist Page
+        </button>
+      </a>
+    </div>
+  </div>
+<app-footer />

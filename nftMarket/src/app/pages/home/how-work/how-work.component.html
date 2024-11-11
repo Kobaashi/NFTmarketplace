@@ -1,15 +1,27 @@
-<div class="pt-[210px] bg-lightBlack ">
-  <div class="ml-[390px]" id="title">
-    <h3 class="font-work font-semibold text-h3 text-white leading-[120%]">How it works</h3>
-    <h5 class="font-work font-semibold text-h5 text-white leading-[160%]">Find out how to get started</h5>
+<div class="bg-lightBlack desk:mt-[40px]
+             mob:absolute mob:-mt-60">
+  <div class="desk:ml-[390px]
+               mob:ml-[30px]" id="title">
+    <h3 class="desk:font-work desk:font-semibold desk:text-h3 desk:text-white desk:leading-[120%]
+                mob:font-work mob:font-semibold mob:text-h4 mob:text-white mob:leading-[140%]">How it works</h3>
+    <h5 class="desk:font-work desk:font-regular desk:text-h5 desk:text-white desk:leading-[160%]
+                mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[160%] mob:mt-[10px]">Find out how to get started</h5>
   </div>
-  <div class="mt-[48px] flex ml-[390px]" id="guid">
+  <div class="desk:mt-[48px] desk:flex desk:ml-[390px]
+               mob:mt-10 mob:block mob:ml-[30px] mob:z-10" id="guid">
     @for(guide of guides; track guide) {
-      <div class="bg-lightBlack fle mr-[60px]">
-        <div class="w-[330px] h-[439px] bg-darkGray rounded-[20px]">
-          <img [src]="guide.image" alt="" class="w-[250px] h-[250px] pt-[10px] ml-10">
-          <h5 class="font-work font-semibold text-h5 text-white text-center leading-[140%] mt-5">{{ guide.title | firstUppercase }}</h5>
-          <p class="w-[270px] font-work font-regular text-base text-white text-center leading-[140%] mt-[10px] ml-[30px]">{{ guide.description }}</p>
+      <div class="bg-lightBlack desk:flex desk:mr-[60px]
+                   mob:block mob:mr-[30px] mob:mt-5">
+        <div class="desk:w-[330px] desk:h-[439px] bg-darkGray desk:rounded-[20px]
+                     mob:w-[315px] mob:h-[157px] mob:rounded-[20px] mob:flex">
+          <img [src]="guide.image" alt="" class="desk:w-[250px] desk:h-[250px] desk:mt-[10px] desk:ml-10
+                                                  mob:w-[100px] mob:h-[100px] mob:mt-[30px] mob:ml-5">
+          <div>
+            <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-white desk:text-center desk:leading-[140%] desk:mt-[280px] desk:-ml-[250px]
+                        mob:font-work mob:font-semibold mob:text-base mob:text-white mob:leading-[140%] mob:mt-5 mob:mr-5 mob:ml-5">{{ guide.title | firstUppercase }}</h5>
+            <p class="desk:w-[270px] desk:font-work desk:font-regular desk:text-base desk:text-white desk:text-center leading-[140%] desk:mt-[10px] desk:-ml-[250px]
+                       mob:w-[155px] mob:font-work mob:font-regular mob:text-caption mob:text-white mob:text-left leading-[140%] mob:mt-[10px] mob:ml-[20px]">{{ guide.description }}</p>
+          </div>
         </div>
       </div>
     }

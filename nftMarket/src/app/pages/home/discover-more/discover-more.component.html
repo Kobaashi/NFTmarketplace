@@ -1,39 +1,69 @@
-<div class="pt-[160px] bg-lightBlack">
-  <div class="flex ml-[390px]" id="title">
+<div class="bg-lightBlack desk:pt-[160px]
+             mob:pt-20">
+  <div class="flex desk:ml-[390px]
+               mob:ml-[30px]" id="title">
     <div id="title-text">
-      <h3 class="font-work font-semibold text-h3 text-white leading-[120%]">Discover More NFTs</h3>
-      <h5 class="font-work font-regular text-h5 text-white leading-[160%] mt-[10px]">Explore new trending NFTs</h5>
+      <h3 class="desk:font-work desk:font-semibold desk:text-h3 desk:text-white desk:leading-[120%]
+                  mob:font-work mob:font-semibold mob:text-h4 mob:text-white mob:leading-[140%] mob:ml-[20px] mob:w-[315px]">Discover More NFTs</h3>
+      <h5 class="desk:font-work desk:font-regular desk:text-h5 desk:text-white desk:leading-[160%] desk:mt-[10px]
+                  mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[140%] mob:ml-[22px] mob:mt-[10px]">Explore new trending NFTs</h5>
     </div>
-    <div class="inline-flex mt-[30px] ml-[540px] cursor-pointer border-2 border-purple rounded-[20px] cursor-pointer transition-transform duration-500 hover:scale-90">
-      <button class="flex font-work font-semibold text-base text-white leading-[140%] items-center justify-center w-[187px] h-[60px] rounded-[20px] ">
-        <img [src]="eye" alt="" class="w-[19px] h-[19px] mr-[12px]">See all</button>
-    </div>
+    <a routerLink="/marketplace" routerLinkActive="active">
+      <div class="mob:hidden desk:block desk:inline-flex desk:mt-[30px] desk:ml-[540px] desk:cursor-pointer desk:border-2 desk:border-purple desk:rounded-[20px] desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90">
+        <button class="desk:flex desk:font-work desk:font-semibold desk:text-base desk:text-white desk:leading-[140%] desk:items-center desk:justify-center desk:w-[187px] desk:h-[60px] desk:rounded-[20px] ">
+          <img [src]="eye" alt="" class="desk:w-[19px] desk:h-[19px] desk:mr-[12px]">See all</button>
+      </div>
+    </a>
+
   </div>
-  <div class="mt-[60px] flex ml-[390px]" id="nft-card">
+  <div class="desk:mt-[60px] desk:flex desk:ml-[390px]
+               mob:mt-[40px] mob:ml-[30px]" id="nft-card">
     @for(nft of nfts; track nft) {
-      <div class="mr-[55px] transition-transform duration-500 hover:scale-90">
-        <div class="w-[330px]">
-          <img [src]="nft.image" alt="" class="w-full h-[296px] rounded-t-[20px]">
-          <div class="h-[173px] bg-darkGray rounded-b-[20px]">
-            <h5 class="font-work font-semibold text-h5 text-white leading-[140%] pt-5 ml-[30px]">{{ nft.name | firstUppercase }}</h5>
-            <div class="flex mt-[5px] ml-[30px]">
-              <img [src]="nft.authorAva" alt="" class="w-[24px] h-[24px]">
-              <p class="font-mono font-regular text-base text-white leading-[140%] ml-3">{{ nft.authorName }}</p>
-            </div>
-            <div class="flex pt-[25px] ml-[30px]">
-              <div class="w-[135px] h-[43px]">
-                <p class="font-mono font-regular text-caption text-lightGray leading-[110%]">{{ 'price' | firstUppercase }}</p>
-                <p class="font-mono font-regular text-base text-white leading-[140%]">{{ nft.price }} ETH</p>
+      <div class="desk:mr-[55px] desk:transition-transform desk:duration-500 desk:hover:scale-90
+                   mob:mr-[30px] mob:mb-5 mob:transition-transform mob:duration-500 mob:hover:scale-90">
+        <a routerLink="/nft-page" routerLinkActive="active">
+          <div class="desk:w-[330px]
+                       mob:w-[315px]">
+            <img [src]="nft.image" alt="" class="desk:w-full desk:h-[296px] desk:rounded-t-[20px]
+                                                  mob:w-[315px] mob:h-[238px] mob:rounded-t-[20px]">
+            <div class="desk:h-[173px] bg-darkGray desk:rounded-b-[20px]
+                         mob:h-[164px] mob:rounded-b-[20px]">
+              <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-white desk:leading-[140%] desk:pt-5 desk:ml-[30px]
+                          mob:font-work mob:font-semibold mob:text-h5 mob:text-white mob:leading-[140%] mob:pt-5 mob:ml-5">{{ nft.name | firstUppercase }}</h5>
+              <div class="flex desk:mt-[5px] desk:ml-[30px]
+                           mob:mt-[5px] mob:ml-[20px]">
+                <img [src]="nft.authorAva" alt="" class="desk:w-[24px] desk:h-[24px]
+                                                          mob:w-[24px] mob:h-[24px]">
+                <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%] desk:ml-3
+                           mob:font-mono mob:font-regular mob:text-base mob:text-white mob:leading-[140%] mob:ml-3">{{ nft.authorName }}</p>
               </div>
-              <div class="w-[135px] h-[43px] ml-[50px]">
-                <p class="font-mono font-regular text-caption text-lightGray leading-[110%]">{{ 'highest bid' | firstUppercase }}</p>
-                <p class="font-mono font-regular text-base text-white leading-[140%]">{{ nft.highestBid }} wETH</p>
+              <div class="flex desk:pt-[25px] desk:ml-[30px]
+                           mob:pt-[25px] mob:ml-5">
+                <div class="desk:w-[135px] desk:h-[43px]
+                             mob:w-[138px] mob:h-[34px]">
+                  <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-lightGray desk:leading-[110%]
+                             mob:font-mono mob:font-regular mob:text-caption mob:text-lightGray mob:leading-[110%]">{{ 'price' | firstUppercase }}</p>
+                  <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%]
+                             mob:font-mono mob:font-regular mob:text-caption mob:text-white mob:leading-[110%] mob:mt-2">{{ nft.price }} ETH</p>
+                </div>
+                <div class="desk:w-[135px] desk:h-[43px] desk:ml-[50px]
+                             mob:w-[138px] mob:h-[34px] mob:ml-[90px]">
+                  <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-lightGray desk:leading-[110%]
+                             mob:font-mono mob:font-regular mob:text-caption mob:text-lightGray mob:leading-[110%]">{{ 'highest bid' | firstUppercase }}</p>
+                  <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%]
+                             mob:font-mono mob:font-regular mob:text-caption mob:text-white mob:leading-[110%] mob:mt-2">{{ nft.highestBid }} wETH</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </a>
       </div>
-
     }
   </div>
+  <a routerLink="/marketplace" routerLinkActive="active">
+    <div class="mob:block desk:hidden mob:inline-flex mob:mt-5 mob:ml-[30px] mob:cursor-pointer mob:border-2 mob:border-purple mob:rounded-[20px] mob:cursor-pointer mob:transition-transform mob:duration-500 mob:hover:scale-90">
+      <button class="mob:flex mob:font-work mob:font-semibold mob:text-base mob:text-white mob:leading-[140%] mob:items-center mob:justify-center mob:w-[315px] mob:h-[60px] mob:rounded-[20px] ">
+        <img [src]="eye" alt="" class="mob:w-[20px] mob:h-[20px] mob:mr-[12px]">See all</button>
+    </div>
+  </a>
 </div>

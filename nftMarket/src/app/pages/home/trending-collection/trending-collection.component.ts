@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import {FirstUppercasePipe} from '../../../shared/pipe/first-uppercase.pipe';
+import {RouterLink, RouterLinkActive} from '@angular/router';
 
 @Component({
   selector: 'app-trending-collection',
   standalone: true,
   imports: [
-    FirstUppercasePipe
+    FirstUppercasePipe,
+    RouterLink,
+    RouterLinkActive
   ],
   templateUrl: './trending-collection.component.html',
   styleUrl: './trending-collection.component.scss'

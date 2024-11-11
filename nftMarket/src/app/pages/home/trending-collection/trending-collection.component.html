@@ -1,34 +1,48 @@
-<div class="bg-lightBlack pt-[160px]">
-  <div class="ml-[390px]" id="title-section">
-    <h3 class="font-work font-semibold text-white text-h3 leading-[120%]">Trending Collection</h3>
-    <p class="font-work font-regular text-white text-base leading-[160%] mt-[10px]">Checkout our weekly updated trending collection.</p>
+<div class="bg-lightBlack
+              desk:pt-[160px]
+              mob:pt-20">
+  <div class="desk:ml-[390px]
+              mob:ml-[30px]" id="title-section">
+    <h3 class="desk:font-work desk:font-semibold desk:text-white desk:text-h3 desk:leading-[120%]
+                mob:font-work mob:font-semibold mob:text-white mob:text-h4 mob:leading-[140%]">Trending Collection</h3>
+    <p class="desk:font-work desk:font-regular desk:text-white desk:text-base desk:leading-[160%] desk:mt-[10px]
+                mob:font-work mob:font-regular mob:text-white mob:text-base mob:leading-[140%] mob:mt-[10px]">Checkout our weekly updated trending collection.</p>
   </div>
-  <div class="flex mt-[60px]" id="image-section">
-    <div class="ml-[390px]">
+  <div class="flex desk:mt-[60px]
+                mob:-10" id="image-section">
+    <div class="desk:ml-[390px]
+                 mob:ml-[30px]">
       <div class="">
-        <img [src]="dog" alt="" class="rounded-[20px] mt-[15px] cursor-pointer transition-transform duration-500 hover:scale-90">
+        <a routerLink="/nft-page" routerLinkActive="active"><img [src]="dog" alt="" class="desk:rounded-[20px] desk:mt-[15px] desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90
+                                                                                            mob:rounded-[20px] mob:mt-10 mob:cursor-pointer mob:transition-transform mob:duration-500 mob:hover:scale-90"></a>
         <div class="flex">
-          <img [src]="cat" alt="" class="rounded-[20px] mt-[15px] cursor-pointer transition-transform duration-500 hover:scale-90">
-          <img [src]="bear" alt="" class="rounded-[20px] ml-[15px] mt-[15px] cursor-pointer transition-transform duration-500 hover:scale-90">
-          <div class="font-mono font-bold text-h5 text-white leading-[160%] w-[100px] h-[100px] bg-purple rounded-[20px] px-4 py-8 ml-[15px] mt-[15px] cursor-pointer transition-transform duration-500 hover:scale-90">1025+</div>
+          <a routerLink="/nft-page" routerLinkActive="active"><img [src]="cat" alt="" class="desk:rounded-[20px] desk:mt-[15px] desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90
+                                                                                              mob:rounded-[20px] mob:mt-[15px] mob:cursor-pointer mob:transition-transform mob:duration-500 mob:hover:scale-90"></a>
+          <a routerLink="/nft-page" routerLinkActive="active"><img [src]="bear" alt="" class="desk:rounded-[20px] desk:ml-[15px] desk:mt-[15px] desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90
+                                                                                               mob:rounded-[20px] mob:ml-[15px] mob:mt-[15px] mob:cursor-pointer mob:transition-transform mob:duration-500 mob:hover:scale-90"></a>
+          <a routerLink="/nft-page" routerLinkActive="active"><div class="desk:font-mono desk:font-bold desk:text-h5 desk:text-white desk:leading-[160%] desk:w-[100px] desk:h-[100px] desk:bg-purple desk:rounded-[20px] desk:px-4 desk:py-8 desk:ml-[15px] desk:mt-[15px] desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90
+                                                                           mob:font-mono mob:font-bold mob:text-h5 mob:text-white mob:leading-[160%] mob:w-[95px] mob:h-[95px] mob:bg-purple mob:rounded-[20px] mob:px-4 mob:py-8 mob:ml-[15px] mob:mt-[15px] mob:cursor-pointer mob:transition-transform mob:duration-500 mob:hover:scale-90">1025+</div></a>
         </div>
       </div>
       <div>
-        <h5 class="mt-[15px] mb-[10px] font-work font-semibold text-white text-h5 leading-[140%]"><span class="uppercase">dsgn</span> Animal</h5>
-        <div class="flex">
-          <img [src]="fox" alt="" class="w-6 h-6 rounded-full cursor-pointer">
-          <p class="ml-3 font-work font-regular text-white text-base leading-[140%]">MrFox</p>
+        <h5 class="desk:mt-[15px] desk:mb-[10px] desk:font-work desk:font-semibold desk:text-white desk:text-h5 desk:leading-[140%]
+                    mob:mt-[15px] mob:font-work mob:font-semibold mob:text-white mob:text-h5 mob:leading-[140%]"><span class="uppercase">dsgn</span> Animal</h5>
+        <div class="flex mob:mt-[10px]">
+          <img [src]="fox" alt="" class="desk:w-6 desk:h-6 desk:rounded-full desk:cursor-pointer
+                                          mob:w-6 mob:h-6 mob:rounded-full mob:cursor-pointer">
+          <p class="desk:ml-3 desk:font-work desk:font-regular desk:text-white desk:text-base desk:leading-[140%]
+                     mob:ml-3 mob:font-work mob:font-regular mob:text-white mob:text-base mob:leading-[140%]">MrFox</p>
         </div>
       </div>
     </div>
     <div>
-      <div class="ml-[30px]">
+      <div class="ml-[30px] desk:block mob:hidden">
         <div class="">
-          <img [src]="mushrum" alt="" class="rounded-[20px] mt-[15px] cursor-pointer transition-transform duration-500 hover:scale-90">
+          <a routerLink="/nft-page" routerLinkActive="active"><img [src]="mushrum" alt="" class="rounded-[20px] mt-[15px] cursor-pointer transition-transform duration-500 hover:scale-90"></a>
           <div class="flex">
-            <img [src]="FirstMushrum" alt="" class="rounded-[20px] mt-[15px] cursor-pointer transition-transform duration-500 hover:scale-90">
-            <img [src]="SecondMushrum" alt="" class="rounded-[20px] ml-[15px] mt-[15px] cursor-pointer transition-transform duration-500 hover:scale-90">
-            <div class="font-mono font-bold text-h5 text-white leading-[160%] w-[100px] h-[100px] bg-purple rounded-[20px] px-4 py-8 ml-[15px] mt-[15px] cursor-pointer transition-transform duration-500 hover:scale-90">1025+</div>
+            <a routerLink="/nft-page" routerLinkActive="active"><img [src]="FirstMushrum" alt="" class="rounded-[20px] mt-[15px] cursor-pointer transition-transform duration-500 hover:scale-90"></a>
+            <a routerLink="/nft-page" routerLinkActive="active"><img [src]="SecondMushrum" alt="" class="rounded-[20px] ml-[15px] mt-[15px] cursor-pointer transition-transform duration-500 hover:scale-90"></a>
+            <a routerLink="/nft-page" routerLinkActive="active"><div class="font-mono font-bold text-h5 text-white leading-[160%] w-[100px] h-[100px] bg-purple rounded-[20px] px-4 py-8 ml-[15px] mt-[15px] cursor-pointer transition-transform duration-500 hover:scale-90">1025+</div></a>
           </div>
         </div>
         <div>
@@ -41,13 +55,13 @@
       </div>
     </div>
     <div>
-      <div class="ml-[30px]">
+      <div class="ml-[30px] desk:block mob:hidden">
         <div class="">
-          <img [src]="robot0512" alt="" class="rounded-[20px] mt-[15px] w-[330px] h-[330px] cursor-pointer transition-transform duration-500 hover:scale-90">
+          <a routerLink="/nft-page" routerLinkActive="active"><img [src]="robot0512" alt="" class="rounded-[20px] mt-[15px] w-[330px] h-[330px] cursor-pointer transition-transform duration-500 hover:scale-90"></a>
           <div class="flex">
-            <img [src]="robot0312" alt="" class="rounded-[20px] mt-[15px] w-[100px] h-[100px] cursor-pointer transition-transform duration-500 hover:scale-90">
-            <img [src]="robot0987" alt="" class="rounded-[20px] ml-[15px] mt-[15px] w-[100px] h-[100px] cursor-pointer transition-transform duration-500 hover:scale-90">
-            <div class="font-mono font-bold text-h5 text-white leading-[160%] w-[100px] h-[100px] bg-purple rounded-[20px] px-4 py-8 ml-[15px] mt-[15px] transition-transform duration-500 hover:scale-90">1025+</div>
+            <a routerLink="/nft-page" routerLinkActive="active"><img [src]="robot0312" alt="" class="rounded-[20px] mt-[15px] w-[100px] h-[100px] cursor-pointer transition-transform duration-500 hover:scale-90"></a>
+            <a routerLink="/nft-page" routerLinkActive="active"><img [src]="robot0987" alt="" class="rounded-[20px] ml-[15px] mt-[15px] w-[100px] h-[100px] cursor-pointer transition-transform duration-500 hover:scale-90"></a>
+            <a routerLink="/nft-page" routerLinkActive="active"><div class="font-mono font-bold text-h5 text-white leading-[160%] w-[100px] h-[100px] bg-purple rounded-[20px] px-4 py-8 ml-[15px] mt-[15px] transition-transform duration-500 hover:scale-90">1025+</div></a>
           </div>
         </div>
         <div>

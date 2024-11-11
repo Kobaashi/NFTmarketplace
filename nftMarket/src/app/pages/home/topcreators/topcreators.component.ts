@@ -1,18 +1,36 @@
-import { Component } from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 import {NgForOf} from '@angular/common';
+import {RouterLink, RouterLinkActive} from "@angular/router";
 
 @Component({
   selector: 'app-topcreators',
   standalone: true,
-  imports: [
-    NgForOf
-  ],
+    imports: [
+        NgForOf,
+        RouterLink,
+        RouterLinkActive
+    ],
   templateUrl: './topcreators.component.html',
   styleUrl: './topcreators.component.scss'
 })
 export class TopcreatorsComponent {
 
   rocket: string = "/icons/RocketPurple.svg";
+
+  isMobile: boolean = true;
+
+  ngOnInit() {
+    this.checkScreenSize();
+  }
+
+  @HostListener('window:resize', [])
+  onResize() {
+    this.checkScreenSize();
+  }
+
+  private checkScreenSize() {
+    this.isMobile = window.innerWidth <= 768; // Условие для мобильных устройств
+  }
 
   creators = [
     {
@@ -88,4 +106,5 @@ export class TopcreatorsComponent {
       total: 34.53
     },
   ]
+
 }

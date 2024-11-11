@@ -19,6 +19,7 @@ export class FooterComponent {
   youtube: string = "/icons/YoutubeLogo.svg";
   twitter: string = "/icons/TwitterLogo.svg";
   instagram: string = "/icons/InstagramLogo.svg";
+  message: string = "/icons/message.svg";
   successMessage: string = '';
 
   form:FormGroup =new FormGroup({

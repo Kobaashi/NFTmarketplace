@@ -1,27 +1,71 @@
-<div class="pt-[160px] bg-lightBlack pl-[390px]">
+<div class="bg-lightBlack desk:pt-[160px] desk:pl-[390px]
+            mob:pt-[80px] mob:pl-[30px]">
   <div class="flex">
     <div>
-      <h3 class="font-work font-semibold text-h3 text-white leading-[120%]">Top creators</h3>
-      <p class="font-work font-regular text-base text-white leading-[160%]">Checkout Top Rated Creators on the NFT Marketplace</p>
+      <h3 class="desk:font-work desk:font-semibold desk:text-h3 desk:text-white desk:leading-[120%]
+                  mob:font-work mob:font-semibold mob:text-h4 mob:text-white mob:leading-[140%] mob:w-[315px]">Top creators</h3>
+      <p class="desk:font-work desk:font-regular desk:text-base desk:text-white desk:leading-[160%]
+                 mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[140%] mob:mt-[10px]">Checkout Top Rated Creators on the NFT Marketplace</p>
     </div>
-    <div>
+    <div class="mob:hidden desk:block">
       <div class="inline-flex mt-[10px] ml-[375px] cursor-pointer border-2 border-purple rounded-[20px] cursor-pointer transition-transform duration-500 hover:scale-90">
         <button class="flex font-work font-semibold text-base text-white leading-[140%] items-center justify-center w-[247px] h-[60px] rounded-[20px] ">
           <img [src]="rocket" alt="" class="w-[19px] h-[19px] mr-[12px]">View Rankings</button>
       </div>
     </div>
   </div>
-  <div class="mt-[60px] w-[80%] flex flex-wrap -ml-[25px]">
-    @for(creator of creators; track creator) {
-      <div class="creator-card w-[240px] h-[238px] bg-darkGray rounded-[20px] ml-[30px] mt-[30px] transition-transform duration-500 hover:scale-90">
-        <div class="pt-[18px] ml-5">
-          <h1 class="bg-lightBlack w-[30px] h-[30px] rounded-full text-center py-1 text-lightGray">{{ creator.id }}</h1>
-        </div>
-        <img [src]="creator.ava" alt="" class="w-[120px] h-[120px] rounded-full -mt-5 mx-auto">
-        <h1 class="text-center text-white mt-5">{{ creator.name }}</h1>
-        <h1 class="text-center mt-[5px] text-lightGray">Total Sales:<span class="text-white pl-[10px]">{{ creator.total }} ETH</span></h1>
-      </div>
+  <div class="desk:mt-[60px] desk:w-[80%] desk:flex desk:flex-wrap desk:-ml-[25px]
+               mob:mt-5 mob:w-[100%] mob:flex mob:flex-wrap mob:-ml-[25px]">
+    @if(!isMobile) {
+      @for(creator of creators; track creator) {
+        <a routerLink="/artist" routerLinkActive="active">
+          <div class="desk:block desk:w-[240px] desk:h-[238px] bg-darkGray desk:rounded-[20px] desk:ml-[30px] desk:mt-[30px] desk:transition-transform desk:duration-500 desk:hover:scale-90
+                     mob:flex mob:w-[315px] mob:h-[100px] mob:rounded-[20px] mob:ml-[30px] mob:mt-5 mob:transition-transform mob:duration-500 mob:hover:scale-90" id="creator-cards">
+            <div class="desk:pt-[18px] desk:ml-5
+                       mob:pt-[13px] mob:ml-3">
+              <h1 class="bg-lightBlack desk:w-[30px] desk:h-[30px] desk:rounded-full desk:text-center desk:py-1 desk:text-lightGray
+                       mob:w-[30px] mob:h-[30px] mob:rounded-full mob:text-center mob:py-1 mob:text-lightGray mob:relative mob:z-10">{{ creator.id }}</h1>
+            </div>
+            <div class="block">
+              <img [src]="creator.ava" alt="" class="desk:w-[120px] desk:h-[120px] desk:rounded-full desk:-mt-5 desk:mx-auto
+                                                    mob:w-[60px] mob:h-[60px] mob:rounded-full mob:mt-5 mob:-ml-5">
+              <h1 class="desk:text-center desk:mr-[60px] desk:text-white desk:mt-1 desk:font-work desk:semibold desk:text-h5 desk:leading-[140%]
+                       mob:text-white mob:-mt-[60px] mob:ml-[60px] mob:font-work mob:font-semibold mob:text-h5 mob:leading-[140%]">{{ creator.name }}</h1>
+              <h1 class="desk:ml-5 desk:mt-[5px] desk:text-lightGray
+                        mob:mt-[5px] mob:text-lightGray mob:ml-[60px]">Total Sales:<span class="desk:text-white desk:pl-[10px]
+                                                                                   mob:text-white mob:ml-[5px]">{{ creator.total }} ETH</span></h1>
+            </div>
+          </div>
+        </a>
+      }
+    } @else if(isMobile) {
+      @for(creator of creators.slice(0,5); track creator) {
+        <a routerLink="/artist" routerLinkActive="active">
+          <div class="desk:hidden desk:block desk:w-[240px] desk:h-[238px] bg-darkGray desk:rounded-[20px] desk:ml-[30px] desk:mt-[30px] desk:transition-transform desk:duration-500 desk:hover:scale-90
+                      mob:flex mob:w-[315px] mob:h-[100px] mob:rounded-[20px] mob:ml-[30px] mob:mt-5 mob:transition-transform mob:duration-500 mob:hover:scale-90" id="creator-card ">
+            <div class="desk:pt-[18px] desk:ml-5
+                       mob:pt-[13px] mob:ml-3">
+              <h1 class="bg-lightBlack desk:w-[30px] desk:h-[30px] desk:rounded-full desk:text-center desk:py-1 desk:text-lightGray
+                       mob:w-[30px] mob:h-[30px] mob:rounded-full mob:text-center mob:py-1 mob:text-lightGray mob:relative mob:z-10">{{ creator.id }}</h1>
+            </div>
+            <div class="block">
+              <img [src]="creator.ava" alt="" class="desk:w-[120px] desk:h-[120px] desk:rounded-full desk:-mt-5 desk:mx-auto
+                                                    mob:w-[60px] mob:h-[60px] mob:rounded-full mob:mt-5 mob:-ml-5">
+              <h1 class="desk:text-center desk:text-white desk:mt-1 desk:font-work desk:semibold desk:text-h5 desk:leading-[140%]
+                       mob:text-white mob:-mt-[60px] mob:ml-[60px] mob:font-work mob:font-semibold mob:text-h5 mob:leading-[140%]">{{ creator.name }}</h1>
+              <h1 class="desk:text-center desk:mt-[5px] desk:text-lightGray
+                        mob:mt-[5px] mob:text-lightGray mob:ml-[60px]">Total Sales:<span class="desk:text-white desk:pl-[10px]
+                                                                                   mob:text-white mob:ml-[5px]">{{ creator.total }} ETH</span></h1>
+            </div>
+          </div>
+        </a>
+      }
     }
   </div>
-
+  <div class="mob:block desk:hidden">
+    <div class="mob:inline-flex mob:mt-10 ml-[5px] mob:border-2 mob:border-purple mob:rounded-[20px] mob:cursor-pointer mob:transition-transform mob:duration-500 mob:hover:scale-90">
+      <button class="mob:flex mob:font-work mob:font-semibold mob:text-base mob:text-white mob:leading-[140%] mob:items-center mob:justify-center mob:w-[315px] mob:h-[60px] mob:rounded-[20px] ">
+        <img [src]="rocket" alt="" class="mob:w-[20px] mob:h-[20px] mob:mr-[12px]">View Rankings</button>
+    </div>
+  </div>
 </div>

@@ -15,7 +15,7 @@ import {FirstUppercasePipe} from '../../shared/pipe/first-uppercase.pipe';
   styleUrl: './connect.component.scss'
 })
 export class ConnectComponent {
-  bg: string = "/img/authImage.png";
+  bg: string = "/img/connectImage.png";
 
   wallets = [
     {
