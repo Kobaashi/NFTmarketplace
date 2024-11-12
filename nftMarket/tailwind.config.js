@@ -30,6 +30,7 @@ module.exports = {
         'mob': '375px',
         'tab': '838px',
         'desk': '1220px',
+        'pc': '1920px',
       },
     },
   },
