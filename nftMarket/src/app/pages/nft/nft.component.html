@@ -6,7 +6,8 @@
   </div>
   <div class="desk: desk:pt-[250px]
                mob:block mob:pt-[40px]">
-    <div class="desk:ml-[390px]
+    <div class="pc:ml-[390px]
+    desk:ml-[200px]
                  mob:ml-[30px]">
       <div class="desk:-mt-40">
         <h2 class="desk:font-work desk:font-semibold desk:text-h2 desk:text-white desk:leading-[110%]
@@ -15,7 +16,7 @@
                     mob:font-work mob:font-regular mob:text-base mob:text-lightGray mob:leading-[140%]">Minted on Sep 30, 2022</h5>
       </div>
       <div class="desk:hidden
-                   mob:-ml-[30px] mob: mr-[30px] mob:block">
+                   mob:-ml-[30px] mob:mr-[30px] mob:block">
         <div class="mob:w-[315px] mob:h-[237px] mob:bg-darkGray mob:bg-opacity-50 mob:mt-5 mob:ml-[30px] mob:rounded-[20px]">
           <p class="mob:font-mono mob:font-regular mob:text-caption mob:text-white mob:leading-[110%] mob:pt-[30px] mob:ml-[30px]">Auction ends in:</p>
           @if(countdownTime >= 1000) {
@@ -66,16 +67,19 @@
     </div>
       <div class="desk:mt-[30px]
                    mob:mt-5">
-        <h5 class="desk:font-mono desk:font-bold desk:text-h5 desk:text-lightGray desk:leading-[160%] desk:ml-[390px]
+        <h5 class="desk:font-mono desk:font-bold desk:text-h5 desk:text-lightGray desk:leading-[160%] pc:ml-[390px]
+    desk:ml-[200px]
                     mob:font-mono mob:font-regular mob:text-base mob:text-lightGray mob:leading-[140%] mob:ml-[30px]">Created By</h5>
-        <div class="flex mt-[10px] desk:ml-[390px]
+        <div class="flex mt-[10px] pc:ml-[390px]
+    desk:ml-[200px]
                      mob:ml-[30px] ">
           <img [src]="ava" alt="" class="w-6 h-6">
           <h5 class="desk:ml-3 desk:font-work desk:font-semibold desk:text-h5 desk:text-white desk:leading-[140%]
                       mob:ml-3 mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[140%]">Orbitian</h5>
         </div>
       </div>
-      <div class="desk:mt-[30px] desk:ml-[390px]
+      <div class="desk:mt-[30px] pc:ml-[390px]
+    desk:ml-[200px]
                    mob:ml-[30px] mob:mt-5">
         <h5 class="desk:font-mono desk:font-bold desk:text-h5 desk:text-lightGray desk:leading-[160%]
                     mob:font-mono mob:font-regular mob:text-base mob:text-lightGray mob:leading-[140%]">Description</h5>
@@ -94,7 +98,8 @@
           Upside-Downs believe that they will be able to win this war if they could only get an eye into Orbitian territory, so they've taken to make human beings their target.
         </h5>
       </div>
-      <div class="desk:-mt-[10px] desk:ml-[390px]
+      <div class="desk:-mt-[10px] pc:ml-[390px]
+    desk:ml-[200px]
                    mob:mt-5 mob:ml-[30px]">
         <h5 class="desk:font-work desk:font-bold desk:text-h5 desk:text-white desk:leading-[160%]
                     mob:font-work mob:font-regular mob:text-base mob:text-lightGray mob:leading-[140%]">Details</h5>
@@ -109,7 +114,8 @@
                       mob:ml-[10px] mob:font-work mob:font-regular mob:text-h5 mob:text-white mob:leading-[160%]"> View Original </h5>
         </div>
       </div>
-      <div class="desk:mt-[30px] desk:ml-[390px]
+      <div class="desk:mt-[30px] pc:ml-[390px]
+    desk:ml-[200px]
                    mob:mt-[30px] mob:ml-[30px]">
         <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-lightGray desk:leading-[160%]
                     mob:font-work mob:font-semibold mob:text-h5 mob:text-lightGray mob:leading-[140%]">Tags</h5>
@@ -124,7 +130,7 @@
     </div>
     <div class="desk:block desk:ml-[300px]
                  mob:hidden">
-      <div class="desk:w-[295px] desk:h-[237px] desk:bg-darkGray desk:bg-opacity-50 desk:-mt-[210px] desk:ml-[1144px] desk:rounded-[20px] mob:absolute desk:-mt-[1130px]">
+      <div class="desk:w-[295px] desk:h-[237px] desk:bg-darkGray desk:bg-opacity-50 pc:-mt-[1100px] desk:-mt-[1150px] desk:ml-[804px] desk:rounded-[20px] mob:absolute desk:-mt-[1130px]">
         <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-white desk:leading-[110%] desk:pt-[60px] desk:ml-[30px] desk:-mt-5">Auction ends in:</p>
         @if(countdownTime >= 1000) {
           <div class="desk:flex">
@@ -172,13 +178,14 @@
       </div>
     </div>
   </div>
-  <div class="desk:pt-20 desk:pl-[390px] bg-lightBlack
+  <div class="desk:pt-20 pc:pl-[390px]
+    desk:pl-[200px] bg-lightBlack
                mob:pt-20 mob:pl-[40px]">
     <div class="flex">
       <h3 class="desk:font-work desk:font-semibold desk:text-h3 desk:text-white desk:leading-[120%] desk:w-[638px]
                   mob:font-work mob:font-semibold mob:text-h4 mob:text-white mob:leading-[140%] mob:w-[315px]">More from this artist</h3>
       <a routerLink="/artist" routerLinkActive="active">
-        <button class="mob:hidden desk:block desk:flex desk:border-[2px] desk:border-purple desk:w-[267px] desk:h-[60px] desk:pl-[50px] desk:py-4 desk:rounded-[20px] desk:ml-[100px] desk:font-work desk:font-semibold desk:text-base desk:text-white desk:leading-[140%] desk:transition-transform desk:duration-500 group">
+        <button class="mob:hidden desk:block desk:flex desk:border-[2px] desk:border-purple desk:w-[267px] desk:h-[60px] desk:pl-[50px] desk:py-4 desk:rounded-[20px] desk:ml-[150px] desk:font-work desk:font-semibold desk:text-base desk:text-white desk:leading-[140%] desk:transition-transform desk:duration-500 group">
           <img [src]="arrowR" alt="" class="desk:w-[20px] desk:h-[20px] desk:mt-[3px] desk:mr-3 desk:transition-transform desk:duration-500 desk:group-hover:translate-x-[10px]">
           Go To Artist Page
         </button>
@@ -187,7 +194,8 @@
   </div>
   <div class="desk:block bg-lightBlack desk:pb-5
                mob:hidden">
-    <div class="desk:flex desk:flex-wrap desk:pt-[50px] desk:w-[60%] desk:ml-[360px]">
+    <div class="desk:flex desk:flex-wrap desk:pt-[50px] pc:w-[60%] desk:w-[80%] pc:ml-[360px]
+    desk:ml-[170px]">
       @for(nfts of NFTs; track nfts) {
         <div class="desk:ml-[30px] desk:mt-[30px] desk:transition-transform desk:duration-500 desk:hover:scale-90">
           <div >
