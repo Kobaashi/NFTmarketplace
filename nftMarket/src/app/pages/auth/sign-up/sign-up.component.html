@@ -6,14 +6,16 @@
                                    mob:w-[375px] mob:h-[232px] mob:object-cover">
   </div>
   <div id="form">
-    <div class="desk:mt-[100px] desk:ml-[420px]
+    <div class="desk:mt-[100px] pc:ml-[420px]
+                 desk:ml-[200px]
                  mob:mt-[30px] mob:ml-[30px]" id="form-title">
       <h2 class="desk:font-work desk:font-semibold desk:text-h2 desk:text-white desk:leading-[110%]
                   mob:font-work mob:font-semibold mob:text-h3 mob:text-white mob:leading-[120%]">Create account</h2>
       <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-white desk:leading-[160%] desk:w-[460px] desk:mt-5
                   mob:font-work mob:font-semibold mob:text-base mob:text-white mob:leading-[140%] mob:w-[315px] mob:mt-5">{{ 'Welcome! enter your details and start creating, collecting and selling NFTs.' | firstUppercase}}</h5>
     </div>
-    <div class="desk:mt-[40px] desk:ml-[450px]
+    <div class="desk:mt-[40px] pc:ml-[450px]
+    desk:ml-[250px]
                  mob:mt-[30px] mob:ml-[30px]" id="form-create-account" [formGroup]="registerForm" (ngSubmit)="registerForm.valid && registerFn()">
       <div class="flex items-center relative">
         <img [src]="user" alt="" class="ml-[40px] w-[20px] h-[20px] absolute -left-[20px] z-10 color-gray">

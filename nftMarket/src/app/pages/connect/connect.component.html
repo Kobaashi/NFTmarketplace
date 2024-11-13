@@ -6,14 +6,16 @@
                                    mob:w-[375px] mob:h-[232px] mob:object-cover">
   </div>
   <div id="connect">
-    <div class="desk:mt-[100px] desk:ml-[450px]
+    <div class="desk:mt-[100px] pc:ml-[390px]
+                 desk:ml-[200px]
                  mob:mt-[30px] mob:ml-[30px]" id="connect-title">
       <h2 class="desk:font-work desk:font-semibold desk:text-h2 desk:text-white desk:leading-[110%]
                   mob:font-work mob:font-semibold mob:text-h3 mob:text-white mob:leading-[120%]">Connect Wallet</h2>
       <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-white desk:leading-[160%] desk:w-[460px] desk:mt-5
                   mob:font-work mob:font-semibold mob:text-base mob:text-white mob:leading-[140%] mob:w-[315px] mob:mt-5">Choose a wallet you want to connect. There are several wallet providers.</h5>
     </div>
-    <div id="connect-wallet" class="pt-10 space-y-5 desk:ml-[30px]
+    <div id="connect-wallet" class="pt-10 space-y-5 pc:-ml-[20px]
+                 desk:-ml-[200px]
                                      mob:-ml-[430px] mob:pb-5">
       @for(wallet of wallets; track wallet) {
         <div class="ml-[450px] cursor-pointer transition-transform duration-500 hover:scale-90">

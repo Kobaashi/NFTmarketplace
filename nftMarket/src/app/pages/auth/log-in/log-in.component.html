@@ -6,14 +6,16 @@
                                    mob:w-[375px] mob:h-[232px] mob:object-cover">
   </div>
   <div id="form">
-    <div class="desk:mt-[100px] desk:ml-[450px]
+    <div class="desk:mt-[100px] pc:ml-[390px]
+                 desk:ml-[200px]
                  mob:mt-[30px] mob:ml-[30px]" id="form-title">
       <h2 class="desk:font-work desk:font-semibold desk:text-h2 desk:text-white desk:leading-[110%]
                   mob:font-work mob:font-semibold mob:text-h3 mob:text-white mob:leading-[120%]">Create account</h2>
       <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-white desk:leading-[160%] desk:w-[460px] desk:mt-5
                   mob:font-work mob:font-semibold mob:text-base mob:text-white mob:leading-[140%] mob:w-[315px] mob:mt-5">{{ 'Welcome! enter your details and start creating, collecting and selling NFTs.' | firstUppercase}}</h5>
     </div>
-    <div class="desk:ml-[500px]
+    <div class="pc:ml-[430px]
+                 desk:ml-[250px]
                  mob:ml-[30px]" [formGroup]="registerForm" (ngSubmit)="registerForm.valid && registerFn()">
       <div class="flex items-center relative desk:mt-[15px]
                    mob:mt-[30px]">
@@ -62,7 +64,8 @@
     </div>
     <div>
       <a routerLink="/sign-up" routerLinkActive="" >
-        <h2 class="font-work font-semibold text-base text-white leading-[140%] cursor-pointer transition-transform duration-500 hover:underline desk:ml-[570px] mt-[10px]
+        <h2 class="font-work font-semibold text-base text-white leading-[140%] cursor-pointer transition-transform duration-500 hover:underline pc:ml-[500px]
+                 desk:ml-[320px] mt-[10px]
                     mob:ml-[100px] mob:pb-[30px]">Don't have a account?</h2>
       </a>
     </div>
