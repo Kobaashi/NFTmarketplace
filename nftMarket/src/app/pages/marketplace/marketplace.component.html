@@ -2,17 +2,21 @@
 <div class="bg-lightBlack desk:pt-[100px]
              mob:pt-10">
   <div class="border-b-[2px] border-darkGray">
-    <h2 class="desk:font-work desk:font-semibold desk:text-h2 desk:text-white desk:leading-[110%] desk:ml-[390px]
+    <h2 class="desk:font-work desk:font-semibold desk:text-h2 desk:text-white desk:leading-[110%] pc:ml-[390px]
+                 desk:ml-[200px]
                 mob:font-work mob:font-semibold mob:text-h4 mob:text-white mob:leading-[140%] mob:ml-[30px]">Browse Marketplace</h2>
-    <h5 class="desk:font-work desk:font-regular desk:text-h5 desk:text-white desk:leading-[160%] desk:pt-[10px] desk:ml-[390px] desk:w-auto
+    <h5 class="desk:font-work desk:font-regular desk:text-h5 desk:text-white desk:leading-[160%] desk:pt-[10px] pc:ml-[390px]
+                 desk:ml-[200px] desk:w-auto
                 mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[140%] mob:pt-[10px] mob:ml-[30px] mob:w-[315px]">Browse through more than 50k NFTs on the NFT Marketplace.</h5>
-    <div class="desk:flex desk:mt-[30px] desk:pb-20 desk:ml-[390px]
+    <div class="desk:flex desk:mt-[30px] desk:pb-20 pc:ml-[390px]
+                 desk:ml-[200px]
                  mob:flex mob:mt-[30px] mob:pb-10 mob:ml-[30px]">
       <input type="text" placeholder="Search your favourite NFTs" class="w-[1050px] h-[60px] border-[1px] border-darkGray bg-transparent rounded-[20px] pl-5 placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-lightGray placeholder:leading-[160%]"><img [src]="search" alt="" class="relative w-[24px] h-[24px] desk:mt-[15px] -left-10
                                                                                                                                                                                                                                                                                                                             mob:mt-5">
     </div>
   </div>
-  <div class="flex desk:ml-[390px] desk:mt-[10px]
+  <div class="flex pc:ml-[390px]
+                 desk:ml-[200px] desk:mt-[10px]
                mob:ml-[30px] mob:mt-[10px]" id="ranking-time">
     <div class="desk:w-[525px] desk:h-[60px] flex border-b-[2px] border-lightGray
                  mob:w-[157.5px] mob:h-[60px]">
@@ -38,7 +42,8 @@
 </div>
 <div class="bg-darkGray border-b-[2px] border-lightBlack desk:pb-20
              mob:pb-10">
-  <div class="desk:flex desk:flex-wrap desk:pt-[50px] desk:w-[60%] desk:ml-[360px]
+  <div class="pc:flex pc:flex-wrap pc:pt-[50px] pc:w-[60%] pc:ml-[360px]
+  desk:flex desk:flex-wrap desk:pt-[50px] desk:w-[80%] desk:ml-[200px]
                mob:flex mob:flex-wrap mob:pt-10 mob:w-[80%] mob:ml-[35px]">
     @for(nfts of NFTs; track nfts) {
       <div class="desk:ml-[30px] desk:mt-[30px] transition-transform duration-500 hover:scale-90">
@@ -58,7 +63,7 @@
               <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%] ml-3 mt-1
                          mob:font-mono mob:font-regular mob:text-base mob:text-white mob:leading-[140%] mob:mt-[5px]">{{ nfts.authorName | firstUppercase }}</p>
             </div>
-            <div class="desk:flex desk:pt-[25px]
+            <div class="desk:flex desk:mt-[15px]
                          mob:flex mob:mt-[25px] mob:w-[137.5px]">
               <div class="desk:w-[135px] desk:h-[43px] desk:text-left desk:ml-[30px]
                            mob:w-[275px] mob:h-[34px] mob:text-left mob:ml-[22px]">
