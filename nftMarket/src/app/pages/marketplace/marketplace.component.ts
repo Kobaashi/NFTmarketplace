@@ -5,6 +5,7 @@ import {FooterComponent} from '../../components/footer/footer.component';
 import {RouterLink, RouterLinkActive} from '@angular/router';
 import {VariableService} from '../../shared/service/variable.service';
 import {ArrayObjectService} from '../../shared/service/array-object.service';
+import {NgClass} from '@angular/common';
 
 @Component({
   selector: 'app-marketplace',
@@ -14,7 +15,8 @@ import {ArrayObjectService} from '../../shared/service/array-object.service';
     FirstUppercasePipe,
     FooterComponent,
     RouterLink,
-    RouterLinkActive
+    RouterLinkActive,
+    NgClass
   ],
   templateUrl: './marketplace.component.html',
   styleUrl: './marketplace.component.scss'
@@ -22,7 +24,8 @@ import {ArrayObjectService} from '../../shared/service/array-object.service';
 export class MarketplaceComponent {
 
       NFTs: any[] = [];
-     constructor(private arrayObjectService: ArrayObjectService , protected varialeService: VariableService) {
+      tabs: any[]= [];
+     constructor(private arrayObjectService: ArrayObjectService , protected variableService: VariableService) {
      }
 
      ngOnInit():void {
@@ -30,9 +33,12 @@ export class MarketplaceComponent {
      }
 
      getArray():void {
-       this.NFTs = this.arrayObjectService.NFTs
+       this.NFTs = this.arrayObjectService.NFTs;
+       this.tabs = this.arrayObjectService.tabs;
      }
 
-
+  toogleActive(index: number): void {
+    this.variableService.currentSlideIndex = index;
+  }
 
 }
