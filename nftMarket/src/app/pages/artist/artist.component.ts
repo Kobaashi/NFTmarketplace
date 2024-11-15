@@ -5,6 +5,7 @@ import {FirstUppercasePipe} from '../../shared/pipe/first-uppercase.pipe';
 import {RouterLink, RouterLinkActive} from '@angular/router';
 import {ArrayObjectService} from '../../shared/service/array-object.service';
 import {VariableService} from '../../shared/service/variable.service';
+import {NgClass} from '@angular/common';
 
 @Component({
   selector: 'app-artist',
@@ -14,7 +15,8 @@ import {VariableService} from '../../shared/service/variable.service';
     FooterComponent,
     FirstUppercasePipe,
     RouterLink,
-    RouterLinkActive
+    RouterLinkActive,
+    NgClass
   ],
   templateUrl: './artist.component.html',
   styleUrl: './artist.component.scss'
@@ -22,17 +24,22 @@ import {VariableService} from '../../shared/service/variable.service';
 export class ArtistComponent {
 
   NFTS: any[] = [];
+  Tabs: any[] = [];
 
   constructor(  private arrayObjectService: ArrayObjectService, public variableService: VariableService) {
   }
 
   ngOnInit(): void {
-    this.getArray(); // Викликаємо метод для отримання даних при ініціалізації
+    this.getArray();
   }
 
   getArray(): void {
-    this.NFTS = this.arrayObjectService.NFTS; // Отримуємо масив із сервісу
+    this.NFTS = this.arrayObjectService.NFTS;
+    this.Tabs = this.arrayObjectService.Tabs;
   }
 
+  toogleActive(index: number): void {
+    this.variableService.currentSlideIndex = index;
+  }
 
 }

@@ -85,37 +85,25 @@
     <div>
       <div class="desk:w-full desk:h-[70px] desk:border-t-[1px] desk:border-lightGray desk:mt-10
                    mob:w-full mob:h-[70px] mob:border-t-[1px] mob:border-lightGray mob:mt-10">
-        <div class="flex pc:ml-[400px]
-    desk:ml-[210px] mt-[10px]
+        <div class="flex pc:ml-[430px]
+              desk:ml-[210px] mt-[10px]
                      mob:ml-[30px]">
-          <div class="desk:w-[350px] desk:h-[60px] desk:flex desk:border-b-[2px] desk:border-lightGray
-                       mob:w-[105px] mob:h-[60px] mob:border-b-[2px] mob:border-lightGray">
-            <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-white desk:leading-[140%] desk:py-[14.5px] desk:pl-[99px]
-                        mob:font-work mob:font-semibold mob:text-base mob:text-white mob:leading-[140%] mob:py-[14.5px] mob:pl-[25px] mob:pr-[21px]">Created</h5>
-            <div class="desk:block desk:w-auto desk:h-8 desk:bg-lightGray desk:rounded-[20px] desk:ml-4 desk:mt-3
-                         mob:hidden mob:w-auto mob:h-8 mob:bg-lightGray mob:rounded-[20px] mob:ml-4 mob:mt-3">
-              <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%] desk:py-[5px] desk:px-[10px]
-                         mob:font-mono mob:font-regular mob:text-base mob:text-white mob:leading-[140%] mob:py-[5px] mob:px-[10px]">{{ NFTS.length }}</p>
+          @for(tab of Tabs; track tab; let i = $index) {
+            <div
+              (click)="toogleActive(i)"
+              [ngClass]="{
+          'desk:w-[350px] desk:h-[60px] flex mob:w-[350px] mob:h-[60px]': true,
+          'border-b-[2px] border-lightGray': variableService.currentSlideIndex === i
+          }" id="todays">
+              <h5 [ngClass]="{
+          'desk:font-work desk:font-semibold desk:text-h5 desk:leading-[140%] desk:py-[14.5px] desk:pl-[99px] mob:font-work mob:font-semibold mob:text-base mob:leading-[140%] mob:py-[14.5px] mob:pl-[35px]': true,
+          'text-white mob:text-white': variableService.currentSlideIndex === i,
+          'text-lightGray mob:lightGray': variableService.currentSlideIndex !== i
+          }">
+                {{tab.name}}
+              </h5>
             </div>
-          </div>
-          <div class="desk:w-[350px] desk:h-[60px] flex
-                       mob:w-[105px] mob:h-[60px]">
-            <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-lightGray desk:leading-[140%] desk:py-[14.5px] desk:pl-[99px]
-                        mob:font-work mob:font-semibold mob:text-base mob:text-lightGray mob:leading-[140%] mob:py-[14.5px] mob:pl-[30px]">Owned</h5>
-            <div class="desk:block desk:w-auto desk:h-8 desk:bg-darkGray desk:rounded-[20px] desk:ml-4 desk:mt-3
-                         mob:hidden">
-              <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%] desk:py-[5px] desk:px-[10px]">0</p>
-            </div>
-          </div>
-          <div class="desk:w-[350px] desk:h-[60px] flex
-                       mob:w-[350px] mob:h-[60px]">
-            <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-lightGray desk:leading-[140%] desk:py-[14.5px] desk:pl-[99px]
-                        mob:font-work mob:font-semibold mob:text-base mob:text-lightGray mob:leading-[140%] mob:py-[14.5px] mob:pl-[35px]">Collection</h5>
-            <div class="desk:block desk:w-[auto] desk:h-8 bg-darkGray desk:rounded-[20px] desk:ml-4 desk:mt-3
-                         mob:hidden">
-              <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%] desk:py-[5px] desk:px-[10px]">0</p>
-            </div>
-          </div>
+          }
         </div>
       </div>
     </div>
