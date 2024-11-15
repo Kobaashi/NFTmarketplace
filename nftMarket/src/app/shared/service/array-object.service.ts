@@ -8,6 +8,19 @@ export class ArrayObjectService {
   constructor() { }
 
   // for artist page
+
+  Tabs = [
+    {
+      name: 'Created',
+    },
+    {
+      name: 'Owned',
+    },
+    {
+      name: 'Collection',
+    },
+  ]
+
   NFTS = [
     {
       img: "/img/DistantGalaxy.png",
@@ -372,6 +385,15 @@ export class ArrayObjectService {
     },
   ]
 
+  tabs = [
+    {
+      name: "NFTs"
+    },
+    {
+      name: "Collection"
+    },
+  ]
+
   /*
   for ranking page
   */
@@ -553,6 +575,20 @@ export class ArrayObjectService {
     },
   ]
 
+  Mobtitle = [
+    {
+      title: "1d"
+    },
+    {
+      title: "7d"
+    },
+    {
+      title: "30d"
+    },
+    {
+      title: "All Time"
+    },
+  ]
 
   // for nft page
   NFTsN = [

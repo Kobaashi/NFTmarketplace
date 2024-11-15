@@ -26,6 +26,7 @@ export class RankingComponent {
 
   artists: any[] = [];
   days: any[] = [];
+  mobDays: any[] = [];
 
   constructor(private arrayObjectService: ArrayObjectService,protected variableService: VariableService ) {
   }
@@ -37,6 +38,7 @@ export class RankingComponent {
   getArray():void {
     this.artists = this.arrayObjectService.artists;
     this.days = this.arrayObjectService.titles;
+    this.mobDays = this.arrayObjectService.Mobtitle;
   }
 
 
