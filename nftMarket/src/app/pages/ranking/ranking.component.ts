@@ -40,9 +40,12 @@ export class RankingComponent {
   }
 
 
-  toogleActive() {
-    this.variableService.active = !this.variableService.active;
-    this.variableService.currentSlideIndex = this.variableService.index;
+  toogleActive(index: number): void {
+    if (this.variableService.currentSlideIndex === index) {
+      this.variableService.currentSlideIndex = null;
+    } else {
+      this.variableService.currentSlideIndex = index;
+    }
   }
 
 }

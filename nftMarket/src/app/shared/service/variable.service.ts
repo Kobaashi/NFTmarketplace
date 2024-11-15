@@ -80,7 +80,7 @@ export class VariableService {
 
   // for ranking page
   active: boolean = true;
-  currentSlideIndex: number = 0;
+  currentSlideIndex: number | null = null;
   index : number = 0;
 
   // for nft page
