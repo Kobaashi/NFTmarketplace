@@ -4,15 +4,15 @@
   desk:ml-[320px] desk:flex
                mob:ml-[30px] mob:block">
     <div class="pt-[40px] mb-[30px] w-[244px]" id="info">
-      <img [src]="logo" alt="" class="mob:-ml-[5px]">
+      <img [src]="varibleService.logof" alt="" class="mob:-ml-[5px]">
       <h3 class="ml-3 font-mono font-bold text-white text-base -mt-[30px] cursor-pointer ml-[42px]"><span class="uppercase">nft</span> Marketplace</h3>
       <p class="font-work font-regular text-base text-[#ccc] mt-[30px] leading-[140%]">NFT marketplace UI created with Anima for Figma.</p>
       <p class="font-work font-regular text-base text-[#ccc] mt-[20px] leading-[140%]">Join our community</p>
       <div class="flex mt-[15px]">
-        <img [src]="diskord" alt="" class="mr-[10px]">
-        <img [src]="youtube" alt="" class="mr-[10px]">
-        <img [src]="twitter" alt="" class="mr-[10px]">
-        <img [src]="instagram" alt="" class="">
+        <img [src]="varibleService.diskord" alt="" class="mr-[10px]">
+        <img [src]="varibleService.youtube" alt="" class="mr-[10px]">
+        <img [src]="varibleService.twitter" alt="" class="mr-[10px]">
+        <img [src]="varibleService.instagram" alt="" class="">
       </div>
     </div>
     <div class="desk:ml-[87px] pt-[40px]
@@ -33,7 +33,7 @@
           <input type="text" placeholder="Enter your email here" class="font-work font-regular text-base text-black leading-[140%] desk:w-[420px] desk:h-[60px] rounded-[20px] px-[19px] py-[20px] border-none placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]
                                                                          mob:w-[315px] mob:h-[46px]"  formControlName="email">
           <button type="submit" class="desk:w-[179px] desk:h-[60px] rounded-[20px] bg-purple desk:-ml-[175px] desk:-mt-[0px] transition-transform duration-500 hover:scale-90
-                                        mob:w-[315px] mob:h-[46px] mob:mt-[16px]" (click)="submitForm()"><img [src]="message" alt="" class="desk:hidden
+                                        mob:w-[315px] mob:h-[46px] mob:mt-[16px]" (click)="submitForm()"><img [src]="varibleService.message" alt="" class="desk:hidden
                                                                                                                                              mob:block mob:relative mob:ml-[102px] mob:mt-[5px]"><h5 class="font-work font-semibold text-base text-white leading-[140%] pt-[19px] ml-[15px] desk:-mt-[15px]
                                                                                                                                                                                                          mob:-mt-[41px]">Subscribe</h5></button>
           <div class="text-red-500 text-center mt-[70px] -ml-[300px]">
@@ -42,8 +42,8 @@
             }
           </div>
           <div class="text-green-500 text-center mt-[80px] -ml-[100px]">
-            @if(successMessage) {
-              <label id="text-safe">{{successMessage}}</label>
+            @if(varibleService.successMessage) {
+              <label id="text-safe">{{varibleService.successMessage}}</label>
             }
           </div>
         </div>

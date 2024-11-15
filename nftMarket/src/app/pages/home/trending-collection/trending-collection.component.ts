@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {FirstUppercasePipe} from '../../../shared/pipe/first-uppercase.pipe';
 import {RouterLink, RouterLinkActive} from '@angular/router';
+import {VariableService} from '../../../shared/service/variable.service';
 
 @Component({
   selector: 'app-trending-collection',
@@ -14,18 +15,11 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
   styleUrl: './trending-collection.component.scss'
 })
 export class TrendingCollectionComponent {
-    dog: string = "/img/Dog.png";
-    cat: string = "/img/Cat.png";
-    bear: string = "/img/Bear.png";
-    fox: string = "/img/fox.png";
 
-    mushrum: string = "/img/mushrum.png";
-    FirstMushrum: string = "/img/first-mushrum.png";
-    SecondMushrum: string = "/img/three-mushrum.png";
-    avatar: string = "/img/avatarka.png";
+  constructor(protected variableService: VariableService) {
+  }
 
-    robot0312: string = "/img/Robot0312.png";
-    robot0512: string = "/img/Robot0512.png";
-    robot0987: string = "/img/Robot0987.png";
-    robot: string = "/icons/justRobot.svg";
+  ngOnInit():void {
+  }
+
 }

@@ -10,38 +10,70 @@
   </div>
   <div class="desk:flex desk:block
                mob:hidden" id="ranking-time">
-    <div class="desk:w-[262.5px] desk:h-[60px] desk:border-b-[1px] desk:border-lightGray desk:px-[99.75px] desk:py-[14.5px] desk:mt-20 desk:cursor-pointer" id="today" (click)="toogleActive()">
-      <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-white desk:leading-[140%]">Today</h5>
-    </div>
+      @for(day of days; track day; let i = $index) {
+<!--        <div-->
+<!--          (click)="toogleActive()"-->
+<!--          [ngClass]="-->
+<!--          {'desk:w-[262.5px] pc:w-[262.5px] desk:h-[60px] desk:text-center desk:py-[14.5px] desk:mt-20 desk:cursor-pointer desk:ml-[0px]' : true,-->
+<!--           'desk:border-b-[2px] desk:border-lightGray' : i === this.variableService.currentSlideIndex,-->
+<!--           '' : i !== this.variableService.currentSlideIndex}" id="today">-->
+<!--&lt;!&ndash;          <h5 [ngClass]="{'desk:font-work desk:font-semibold desk:text-h5 desk:leading-[140%] desk:w-auto'&ndash;&gt;-->
+<!--&lt;!&ndash;              'text-white' : this.variableService.index === this.variableService.currentSlideIndex,&ndash;&gt;-->
+<!--&lt;!&ndash;              'text-lightGray' : this.variableService.index !== this.variableService.currentSlideIndex&ndash;&gt;-->
+<!--&lt;!&ndash;              }">{{ day.title }}</h5>&ndash;&gt;-->
+<!--          @if(i === this.variableService.currentSlideIndex) {-->
+<!--            <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-white desk:leading-[140%] desk:w-auto">{{ day.title }}</h5>-->
+<!--          } @else {-->
+<!--            <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-lightGray desk:leading-[140%] desk:w-auto">{{ day.title }}</h5>-->
+<!--          }-->
+<!--        </div>-->
+        <div
+          (click)="toogleActive()"
+          [ngClass]="{
+          'desk:w-[262.5px] pc:w-[262.5px] desk:h-[60px] desk:text-center desk:py-[14.5px] desk:mt-20 desk:cursor-pointer desk:ml-[0px]': true,
+          'desk:border-b-[2px] desk:border-lightGray': variableService.currentSlideIndex === i
+          }" id="today">
+        <h5 [ngClass]="{
+          'desk:font-work desk:font-semibold desk:text-h5 desk:leading-[140%] desk:w-auto': true,
+          'text-white': variableService.currentSlideIndex === i,
+          'text-lightGray': variableService.currentSlideIndex !== i
+          }">
+          {{day.title}}
+        </h5>
+        </div>
+      }
+<!--    <div class="desk:w-[262.5px] desk:h-[60px] desk:border-b-[1px] desk:border-lightGray desk:px-[99.75px] desk:py-[14.5px] desk:mt-20 desk:cursor-pointer" id="today" (click)="toogleActive()">-->
+<!--      <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-white desk:leading-[140%]">Today</h5>-->
+<!--    </div>-->
 
-    <div class="desk:w-[262.5px] desk:h-[60px] desk:px-[50.75px] desk:py-[14.5px] desk:mt-20 desk:cursor-pointer" id="week" (click)="toogleActive()">
-      <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-lightGray desk:leading-[140%]">This Week</h5>
-    </div>
+<!--    <div class="desk:w-[262.5px] desk:h-[60px] desk:px-[50.75px] desk:py-[14.5px] desk:mt-20 desk:cursor-pointer" id="week" (click)="toogleActive()">-->
+<!--      <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-lightGray desk:leading-[140%]">This Week</h5>-->
+<!--    </div>-->
 
-    <div class="desk:w-[262.5px] desk:h-[60px] desk:px-[50.75px] desk:py-[14.5px] desk:mt-20 desk:cursor-pointer" id="month" (click)="toogleActive()">
-      <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-lightGray desk:leading-[140%]">This Month</h5>
-    </div>
+<!--    <div class="desk:w-[262.5px] desk:h-[60px] desk:px-[50.75px] desk:py-[14.5px] desk:mt-20 desk:cursor-pointer" id="month" (click)="toogleActive()">-->
+<!--      <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-lightGray desk:leading-[140%]">This Month</h5>-->
+<!--    </div>-->
 
-    <div class="desk:w-[262.5px] desk:h-[60px] desk:px-[50.75px] desk:py-[14.5px] desk:mt-20 desk:cursor-pointer" id="allTime" (click)="toogleActive()">
-      <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-lightGray desk:leading-[140%]">All Time</h5>
-    </div>
+<!--    <div class="desk:w-[262.5px] desk:h-[60px] desk:px-[50.75px] desk:py-[14.5px] desk:mt-20 desk:cursor-pointer" id="allTime" (click)="toogleActive()">-->
+<!--      <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-lightGray desk:leading-[140%]">All Time</h5>-->
+<!--    </div>-->
   </div>
 
   <div class="mob:flex mob:block
                 desk:hidden" id="ranking-times">
-    <div class="mob:w-[78.75px] mob:h-[60px] mob:border-b-[1px] mob:border-lightGray mob:px-[30.87px] mob:py-[19px] mob:mt-[30px] mob:cursor-pointer" id="1" (click)="toogleActive()">
+    <div class="mob:w-[78.75px] mob:h-[60px] mob:border-b-[1px] mob:border-lightGray mob:px-[30.87px] mob:py-[19px] mob:mt-[30px] mob:cursor-pointer" id="1">
       <h5 class="mob:font-work mob:font-semibold mob:text-base mob:text-white mob:leading-[140%]">1d</h5>
     </div>
 
-    <div class="mob:w-[78.75px] mob:h-[60px] mob:px-[19px] mob:py-[29.87px] mob:mt-[19px] mob:cursor-pointer" id="7" (click)="toogleActive()">
+    <div class="mob:w-[78.75px] mob:h-[60px] mob:px-[19px] mob:py-[29.87px] mob:mt-[19px] mob:cursor-pointer" id="7" >
       <h5 class="mob:font-work mob:font-semibold mob:text-base mob:text-lightGray mob:leading-[140%]">7d</h5>
     </div>
 
-    <div class="mob:w-[78.75px] mob:h-[60px] mob:px-[19px] mob:py-[24.38px] mob:mt-[24px] mob:cursor-pointer" id="30" (click)="toogleActive()">
+    <div class="mob:w-[78.75px] mob:h-[60px] mob:px-[19px] mob:py-[24.38px] mob:mt-[24px] mob:cursor-pointer" id="30" >
       <h5 class="mob:font-work mob:font-semibold mob:text-base mob:text-lightGray mob:leading-[140%]">30d</h5>
     </div>
 
-    <div class="mob:w-[78.75px] mob:h-[60px] mob:px-[19px] mob:py-[6.88px] mob:mt-[42px] mob:cursor-pointer" id="all" (click)="toogleActive()">
+    <div class="mob:w-[78.75px] mob:h-[60px] mob:px-[19px] mob:py-[6.88px] mob:mt-[42px] mob:cursor-pointer" id="all" >
       <h5 class="mob:font-work mob:font-semibold mob:text-base mob:text-lightGray mob:leading-[140%] mob:w-[65px]">All Time</h5>
     </div>
   </div>

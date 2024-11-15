@@ -4,7 +4,7 @@
             pc:mt-[34px] pc:mb-[34px] pc:ml-[50px] pc:w-auto
             desk:mt-[34px] desk:mb-[34px] desk:ml-[50px] desk:w-auto
             mob:mt-[15px] mob:mb-[15px] mob:ml-[30px] mob:w-auto">
-    <img [src]="logo" alt="" class="pc:w-8 pc:h-8 pc:mt-[6px] pc:block
+    <img [src]="variableService.logo" alt="" class="pc:w-8 pc:h-8 pc:mt-[6px] pc:block
                 desk:w-8 desk:h-8 desk:-mt-[3px]
                 mob:w-6 mob:h-6">
     <h3
@@ -25,7 +25,7 @@
 
   <div class="pc:mt-[30px] pc:ml-[523px] pc:w-[607px]
                desk:mt-[30px] desk:ml-[500px] desk:w-[607px]">
-    @if(isActive !== true) {
+    @if(variableService.isActive !== true) {
       <div class="pc:bg-lightBlack pc:bg-opacity-1 pc:ml-[200px] pc:block desk:block mob:hidden">
         <ul class="pc:flex pc:mt-[5px] pc:mb-[20px] pc:font-work pc:font-semibold pc:text-white pc:text-base
                     desk:flex desk:mt-[5px] desk:mb-[20px] desk:font-work desk:font-semibold desk:text-white desk:text-base
@@ -57,7 +57,7 @@
                         mob:cursor-pointer mob:mt-[30px]">
             <button class="mob:hidden desk:flex pc:flex pc:font-mono pc:font-semibold pc:text-base pc:leading-[140%] pc:items-center pc:justify-center pc:bg-purple pc:px-[20px] pc:w-[152px] pc:h-[60px] pc:rounded-[20px]
                             desk:work desk:font-semibold desk:text-base desk:leading-[140%] desk:items-center desk:justify-center desk:bg-purple desk:px-[20px] desk:py-[19px] desk:w-[152px] desk:h-[60px] desk:rounded-[20px]">
-              <img [src]="user" alt="" class="pc:w-[24px] pc:h-[24px] pc:mr-[12px] mob:w-[12px] mob:h-[12px] mob:mr-[12px]">
+              <img [src]="variableService.userm" alt="" class="pc:w-[24px] pc:h-[24px] pc:mr-[12px] mob:w-[12px] mob:h-[12px] mob:mr-[12px]">
               <a routerLink="/log-in" routerLinkActive="active">Log In</a>
             </button>
           </div>
@@ -80,7 +80,7 @@
               mob:-mt-[7px]">
             <button class="mob:hidden pc:flex pc:font-mono pc:font-semibold pc:text-base pc:leading-[140%] pc:items-center pc:justify-center pc:bg-purple pc:px-[20px] pc:w-[170px] pc:h-[60px] pc:rounded-[20px] pc:ml-[50px]
                     mob:font-mono mob:font-semibold mob:caption mob:leading-[140%] mob:items-center mob:justify-center mob:bg-purple mob:w-[90px] mob:h-[30px] mob:rounded-[20px] mob:mt-[20px] mob:ml-[220px]">
-              <img [src]="user" alt="" class="pc:w-[24px] pc:h-[24px] pc:mr-[12px]
+              <img [src]="variableService.userm" alt="" class="pc:w-[24px] pc:h-[24px] pc:mr-[12px]
                                                mob:w-[12px] mob:h-[12px] mob:mr-[12px]">
               <a routerLink="/log-in" routerLinkActive="active">Log In</a>
             </button>
@@ -89,7 +89,7 @@
             <button class="flex pc:hidden pc:font-mono pc:font-semibold pc:text-base pc:leading-[140%] pc:items-center pc:justify-center pc:bg-purple pc:px-[20px] pc:w-[170px] pc:h-[60px] pc:rounded-[20px]
                     desk:w-[152px] desk:h-[60px]
                     mob:font-mono mob:font-semibold mob:caption mob:leading-[140%] mob:items-center mob:justify-center mob:bg-purple mob:w-[90px] mob:h-[30px] mob:rounded-[20px] mob:mt-[20px] mob:ml-[220px] mob:relative mob:z-10">
-              <img [src]="user" alt="" class="pc:w-[24px] pc:h-[24px] pc:mr-[12px]
+              <img [src]="variableService.userm" alt="" class="pc:w-[24px] pc:h-[24px] pc:mr-[12px]
                                                desk:w-[20px] pc:h-[20px] pc:mr-[12px]
                                                mob:w-[12px] mob:h-[12px] mob:mr-[12px]">
               <a routerLink="/log-in" routerLinkActive="active">Log In</a>

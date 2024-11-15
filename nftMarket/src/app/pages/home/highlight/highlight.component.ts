@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import {isPlatformBrowser, NgClass, NgIf} from '@angular/common';
 import {RouterLink, RouterLinkActive} from '@angular/router';
+import {VariableService} from '../../../shared/service/variable.service';
 
 @Component({
   selector: 'app-highlight',
@@ -15,12 +16,7 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
   styleUrl: './highlight.component.scss'
 })
 export class HighlightComponent {
-  bg: string = "/img/NFTHighlight.png";
-  bgMobile: string = "/img/bgMobile.png";
-  eye: string = "/icons/Eye.svg";
-  ava: string = "/icons/Phillip.svg";
-  bg2: string = "/img/Orbitations.png";
-  ava2: string = "/icons/Avatar.svg";
+
 
   @Input() countdownTime: number = 1;
   remainingTime: number = 0;
@@ -30,7 +26,7 @@ export class HighlightComponent {
   private intervalId: ReturnType<typeof setInterval> | null = null;
   showFirstBlock: boolean = true;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: object, protected variableService: VariableService) {}
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {

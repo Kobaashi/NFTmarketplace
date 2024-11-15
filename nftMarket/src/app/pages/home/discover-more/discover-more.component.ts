@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {FirstUppercasePipe} from '../../../shared/pipe/first-uppercase.pipe';
 import {RouterLink, RouterLinkActive} from "@angular/router";
+import {ArrayObjectService} from '../../../shared/service/array-object.service';
+import {VariableService} from '../../../shared/service/variable.service';
 
 @Component({
   selector: 'app-discover-more',
@@ -15,32 +17,17 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
 })
 export class DiscoverMoreComponent {
 
-  eye: string = "/icons/Eye.svg";
+  nfts: any[] = [];
 
-    nfts = [
-      {
-        image: "/img/DistantGalaxy.png",
-        name: "distant galaxy",
-        authorAva: "/icons/Rayna.svg",
-        authorName: "MoonDancer",
-        price: 1.63,
-        highestBid: 0.33,
-      },
-      {
-        image: "/img/LifeOnEdena.png",
-        name: "life on edena",
-        authorAva: "/icons/Angel.svg",
-        authorName: "NebulaKid",
-        price: 1.63,
-        highestBid: 0.33,
-      },
-      {
-        image: "/img/AstroFiction.png",
-        name: "astroFiction",
-        authorAva: "/icons/Lydia.svg",
-        authorName: "Spaceone",
-        price: 1.63,
-        highestBid: 0.33,
-      },
-    ]
+  constructor( private arrayObjectService: ArrayObjectService, protected variableService: VariableService ) {
+  }
+
+  ngOnInit(): void {
+    this.getArray();
+  }
+
+  getArray(): void {
+    this.nfts = this.arrayObjectService.nfts;
+  }
+
 }

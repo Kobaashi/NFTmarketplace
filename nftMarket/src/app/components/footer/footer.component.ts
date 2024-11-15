@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {FirstUppercasePipe} from '../../shared/pipe/first-uppercase.pipe';
 import {AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
+import {VariableService} from '../../shared/service/variable.service';
 
 @Component({
   selector: 'app-footer',
@@ -14,13 +15,7 @@ import {AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModul
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-  logo: string = "/icons/LogoPurple.svg";
-  diskord: string = "/icons/DiscordLogo.svg";
-  youtube: string = "/icons/YoutubeLogo.svg";
-  twitter: string = "/icons/TwitterLogo.svg";
-  instagram: string = "/icons/InstagramLogo.svg";
-  message: string = "/icons/message.svg";
-  successMessage: string = '';
+
 
   form:FormGroup =new FormGroup({
     email:new FormControl("",[Validators.required,this.customeEmailValidator])
@@ -48,14 +43,18 @@ export class FooterComponent {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
     } else {
-      this.successMessage = 'Ви підписалися, очікуйте повідомлень!';
+      this.varibleService.successMessage = 'Ви підписалися, очікуйте повідомлень!';
 
       setTimeout(() => {
         this.form.reset();
-        this.successMessage = '';
+        this.varibleService.successMessage = '';
       }, 3000);
     }
   }
 
-  constructor() { }
+  constructor(protected varibleService: VariableService) {
+  }
+  ngOnInit():void {
+  }
+
 }

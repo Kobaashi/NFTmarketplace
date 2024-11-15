@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {FooterComponent} from "../../components/footer/footer.component";
 import {NavMenuComponent} from "../../components/nav-menu/nav-menu.component";
 import {FirstUppercasePipe} from '../../shared/pipe/first-uppercase.pipe';
+import {ArrayObjectService} from '../../shared/service/array-object.service';
+import {VariableService} from '../../shared/service/variable.service';
 
 @Component({
   selector: 'app-connect',
@@ -15,21 +17,18 @@ import {FirstUppercasePipe} from '../../shared/pipe/first-uppercase.pipe';
   styleUrl: './connect.component.scss'
 })
 export class ConnectComponent {
-  bg: string = "/img/connectImage.png";
 
-  wallets = [
-    {
-      name: "metamask",
-      image: "/icons/Metamask.svg"
-    },
-    {
-      name: "wallet connect",
-      image: "/icons/WalletConnect.svg"
-    },
-    {
-      name: "coinbase",
-      image: "/icons/Coinbase.svg"
-    },
-  ]
+  wallets: any[] = [];
+
+  constructor(private arrayObjectService: ArrayObjectService, protected variableService: VariableService) {
+  }
+
+  ngOnInit(): void {
+    this.getArray();
+  }
+
+  getArray(): void {
+    this.wallets = this.arrayObjectService.wallets;
+  }
 
 }

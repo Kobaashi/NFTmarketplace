@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {RouterLink, RouterLinkActive} from '@angular/router';
+import {VariableService} from '../../shared/service/variable.service';
 @Component({
   selector: 'app-nav-menu',
   standalone: true,
@@ -11,12 +12,11 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
   styleUrl: './nav-menu.component.scss'
 })
 export class NavMenuComponent {
-  logo: string = "/icons/LogoPurple.svg";
-  user: string = "/icons/User.svg";
 
-  isActive: boolean = false;
+  constructor(protected variableService: VariableService) {
+  }
 
   toggleActive() {
-    this.isActive = !this.isActive
+    this.variableService.isActive = !this.variableService.isActive
   }
 }

@@ -1,7 +1,7 @@
 <app-nav-menu />
 <div class="bg-lightBlack">
   <div>
-    <img [src]="orbitaions" alt="" class="desk:w-full desk:h-[565px] desk:object-cover
+    <img [src]="variableService.orbitaions" alt="" class="desk:w-full desk:h-[565px] desk:object-cover
                                            mob:w-[375px] mob:h-[320px] mob:object-cover">
   </div>
   <div class="desk: desk:pt-[250px]
@@ -73,7 +73,7 @@
         <div class="flex mt-[10px] pc:ml-[390px]
     desk:ml-[200px]
                      mob:ml-[30px] ">
-          <img [src]="ava" alt="" class="w-6 h-6">
+          <img [src]="variableService.avan" alt="" class="w-6 h-6">
           <h5 class="desk:ml-3 desk:font-work desk:font-semibold desk:text-h5 desk:text-white desk:leading-[140%]
                       mob:ml-3 mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[140%]">Orbitian</h5>
         </div>
@@ -104,12 +104,12 @@
         <h5 class="desk:font-work desk:font-bold desk:text-h5 desk:text-white desk:leading-[160%]
                     mob:font-work mob:font-regular mob:text-base mob:text-lightGray mob:leading-[140%]">Details</h5>
         <div class="flex mt-[10px]">
-          <img [src]="globe" alt="">
+          <img [src]="variableService.globen" alt="">
           <h5 class="desk:ml-[10px] desk:font-work desk:font-regular desk:text-h5 desk:text-white desk:leading-[160%]
                       mob:ml-[10px] mob:font-work mob:font-regular mob:text-h5 mob:text-white mob:leading-[160%]">View on Etherscan</h5>
         </div>
         <div class="flex mt-[10px]">
-          <img [src]="globe" alt="">
+          <img [src]="variableService.globen" alt="">
           <h5 class="desk:ml-[10px] desk:font-work desk:font-regular desk:text-h5 desk:text-white desk:leading-[160%]
                       mob:ml-[10px] mob:font-work mob:font-regular mob:text-h5 mob:text-white mob:leading-[160%]"> View Original </h5>
         </div>
@@ -186,7 +186,7 @@
                   mob:font-work mob:font-semibold mob:text-h4 mob:text-white mob:leading-[140%] mob:w-[315px]">More from this artist</h3>
       <a routerLink="/artist" routerLinkActive="active">
         <button class="mob:hidden desk:block desk:flex desk:border-[2px] desk:border-purple desk:w-[267px] desk:h-[60px] desk:pl-[50px] desk:py-4 desk:rounded-[20px] desk:ml-[150px] desk:font-work desk:font-semibold desk:text-base desk:text-white desk:leading-[140%] desk:transition-transform desk:duration-500 group">
-          <img [src]="arrowR" alt="" class="desk:w-[20px] desk:h-[20px] desk:mt-[3px] desk:mr-3 desk:transition-transform desk:duration-500 desk:group-hover:translate-x-[10px]">
+          <img [src]="variableService.arrowR" alt="" class="desk:w-[20px] desk:h-[20px] desk:mt-[3px] desk:mr-3 desk:transition-transform desk:duration-500 desk:group-hover:translate-x-[10px]">
           Go To Artist Page
         </button>
       </a>
@@ -253,7 +253,7 @@
     <div class="flex">
       <a routerLink="/artist" routerLinkActive="active">
         <button class="desk:hidden mob:block mob:flex mob:border-[2px] mob:border-purple mob:w-[315px] mob:h-[60px] mob:mt-[30px] mob:mb-10 mob:pl-[70px] mob:py-4 mob:rounded-[20px] mob:ml-[30px] mob:font-work mob:font-semibold mob:text-base mob:text-white mob:leading-[140%] mob:transition-transform mob:duration-500 group">
-          <img [src]="arrowR" alt="" class="mob:w-[20px] mob:h-[20px] mob:mt-[3px] mob:mr-3 mob:transition-transform mob:duration-500 mob:group-hover:translate-x-[10px]">
+          <img [src]="variableService.arrowR" alt="" class="mob:w-[20px] mob:h-[20px] mob:mt-[3px] mob:mr-3 mob:transition-transform mob:duration-500 mob:group-hover:translate-x-[10px]">
           Go To Artist Page
         </button>
       </a>

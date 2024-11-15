@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {FirstUppercasePipe} from '../../../shared/pipe/first-uppercase.pipe';
 import {RouterLink, RouterLinkActive} from '@angular/router';
+import {VariableService} from '../../../shared/service/variable.service';
 
 @Component({
   selector: 'app-hero',
@@ -14,7 +15,12 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
   styleUrl: './hero.component.scss'
 })
 export class HeroComponent {
-  spaceWalking: string = "/img/spaceWalking.png";
-  avatar: string = "/icons/Avatar.svg";
-  rocket: string = "/icons/RocketWhite.svg";
+
+  constructor(protected variableService: VariableService) {
+  }
+
+  ngOnInit():void {
+  }
+
+
 }

@@ -13,6 +13,7 @@ import {NgClass} from '@angular/common';
 import {FirstUppercasePipe} from '../../../shared/pipe/first-uppercase.pipe';
 import {FooterComponent} from '../../../components/footer/footer.component';
 import {NavMenuComponent} from '../../../components/nav-menu/nav-menu.component';
+import {VariableService} from '../../../shared/service/variable.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -30,10 +31,7 @@ import {NavMenuComponent} from '../../../components/nav-menu/nav-menu.component'
   styleUrl: './sign-up.component.scss'
 })
 export class SignUpComponent {
-  user: string = "/icons/UserGray.svg";
-  Email: string = "/icons/messageGray.svg";
-  Password: string = "/icons/LockKeyGray.svg";
-  bg: string = "/img/authImage.png";
+
 
   password: string = '';
   confirmPassword: string = '';
@@ -43,7 +41,7 @@ export class SignUpComponent {
 
   registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, protected variableService: VariableService ) {
     this.registerForm = this.fb.group({
       email: new FormControl("", [Validators.required, Validators.maxLength(32), Validators.minLength(8), Validators.pattern(this.emailRegex)]),
       username: new FormControl("", [Validators.required, Validators.maxLength(32)]),

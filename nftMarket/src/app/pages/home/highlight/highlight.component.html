@@ -2,9 +2,9 @@
     <div class="" id="one" >
       <div class="desk:relative desk:w-full desk:min-h-screen desk:overflow-hidden desk:pt-20 desk:bg-lightBlack
                  mob:relative mob:w-full mob:min-h-screen mob:overflow-hidden mob:pt-[60px] mob:bg-lightBlack mob:overflow-hidden">
-        <img [src]="bg" alt="Background Image" class="desk:block desk:w-full desk:h-full desk:cover desk:-z-10
+        <img [src]="variableService.bgh" alt="Background Image" class="desk:block desk:w-full desk:h-full desk:cover desk:-z-10
                                                        mob:hidden">
-        <img [src]="bgMobile" alt="Background Image" class="desk:hidden
+        <img [src]="variableService.bgMobile" alt="Background Image" class="desk:hidden
                                                              mob:block mob:w-[375px] mob:h-[593px] mob:object-cover mob:-z-10">
         <div class="desk:absolute desk:inset-0 desk:bg-purple desk:bg-opacity-50 desk:blur-3xl desk:h-1/2 desk:-z-1 desk:pt-[900px]
                    mob:absolute mob:inset-0 mob:bg-purple mob:bg-opacity-50 mob:blur-3xl mob:h-1/2 mob:-z-1 mob:mt-[100px]"></div>
@@ -17,7 +17,7 @@
             <div class="pc:ml-[390px] pc:w-[151px] pc:h-[44px] pc:flex pc:bg-lightBlack pc:rounded-[20px]
             desk:ml-[290px] desk:w-[151px] desk:h-[44px] desk:flex desk:bg-lightBlack desk:rounded-[20px]
                        mob:ml-[30px] mob:w-[151px] mob:h-[44px] mob:flex mob:bg-lightBlack mob:rounded-[20px] ">
-              <img [src]="ava" alt="" class="desk:w-6 desk:h-6 desk:mt-[10px] desk:ml-5
+              <img [src]="variableService.avah" alt="" class="desk:w-6 desk:h-6 desk:mt-[10px] desk:ml-5
                                             mob:w-6 mob:h-6 mob:mt-[10px] mob:ml-5">
               <p class="desk:font-work desk:font-regular desk:text-base desk:text-white desk:leading-[140%] desk:mt-[11px] desk:ml-3
                        mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[140%] mob:mt-[11px] mob:mb-[30px] mob:ml-3">Shroomie</p>
@@ -26,9 +26,9 @@
             desk:ml-[290px]
                       mob:ml-[30px] mob:mt-[30px] mob: mob:font-work mob:font-semibold mob:text-h3 mob:text-white mob:leading-[120%] mob:w-[315px]">Magic Mashrooms</h2>
             <a routerLink="/nft-page" routerLinkActive="active">
-              <div class="mob:hidden desk:block desk:inline-flex desk:mt-[30px] desk:ml-[290px] pc:[390px] desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90">
+              <div class="mob:hidden desk:block desk:inline-flex desk:mt-[30px] desk:ml-[290px] pc:ml-[390px] desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90">
                 <button class="flex desk:font-work desk:font-semibold desk:text-base desk:text-black desk:leading-[140%] desk:items-center desk:justify-center desk:w-[198px] desk:h-[60px] desk:rounded-[20px] desk:bg-white">
-                  <img [src]="eye" alt="" class="desk:w-[19px] desk:h-[19px] desk:mr-[12px]">See NFT
+                  <img [src]="variableService.eyeh" alt="" class="desk:w-[19px] desk:h-[19px] desk:mr-[12px]">See NFT
                 </button>
               </div>
             </a>
@@ -99,7 +99,7 @@
           <a routerLink="/nft-page" routerLinkActive="active">
             <div class="mob:block desk:hidden mob:inline-flex mob:mt-[30px] mob:ml-[30px] mob:cursor-pointer mob:transition-transform mob:duration-500 mob:hover:scale-90">
               <button class="flex mob:font-work mob:font-semibold mob:text-base mob:text-black mob:leading-[140%] mob:items-center mob:justify-center mob:w-[315px] mob:h-[60px] mob:rounded-[20px] mob:bg-white">
-                <img [src]="eye" alt="" class="mob:w-[20px] mob:h-[20px] mob:mr-[12px]">See NFT
+                <img [src]="variableService.eyeh" alt="" class="mob:w-[20px] mob:h-[20px] mob:mr-[12px]">See NFT
               </button>
             </div>
           </a>
@@ -114,9 +114,9 @@
     <div class="mob:overflow-hidden" id="two" >
       <div class="desk:relative desk:w-full desk:min-h-screen desk:overflow-hidden desk:pt-20 desk:bg-lightBlack
                  mob:relative mob:w-full mob:min-h-screen mob:overflow-hidden mob:pt-[60px] mob:bg-lightBlack">
-        <img [src]="bg2" alt="Background Image" class="desk:block desk:w-full desk:h-full desk:object-cover desk:-z-10
+        <img [src]="variableService.bg2" alt="Background Image" class="desk:block desk:w-full desk:h-full desk:object-cover desk:-z-10
                                                       mob:hidden">
-        <img [src]="bg2" alt="Background Image" class="desk:hidden
+        <img [src]="variableService.bg2" alt="Background Image" class="desk:hidden
                                                       mob:block mob:w-[375px] mob:h-[590px] mob:object-cover mob:-z-10">
         <div class="desk:absolute desk:inset-0 desk:bg-purple desk:bg-opacity-50 desk:blur-3xl desk:h-1/2 desk:-z-1 desk:mt-[380px] desk:overflow-hidden
                    mob:absolute mob:inset-0 mob:bg-purple mob:bg-opacity-50 mob:blur-3xl mob:h-1/2 mob:-z-1 mob:mt-[100px]"></div>
@@ -129,7 +129,7 @@
             <div class="pc:ml-[390px] pc:w-[151px] pc:h-[44px] pc:flex pc:bg-lightBlack pc:rounded-[20px]
             desk:ml-[290px]
                        mob:ml-[30px] mob:w-[151px] mob:h-[44px] mob:flex mob:bg-lightBlack mob:rounded-[20px] ">
-              <img [src]="ava" alt="" class="desk:w-6 desk:h-6 desk:mt-[10px] desk:ml-5
+              <img [src]="variableService.avah" alt="" class="desk:w-6 desk:h-6 desk:mt-[10px] desk:ml-5
                                             mob:w-6 mob:h-6 mob:mt-[10px] mob:ml-5">
               <p class="desk:font-work desk:font-regular desk:text-base desk:text-white desk:leading-[140%] desk:mt-[11px] desk:ml-3
                        mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[140%] mob:mt-[11px] mob:mb-[30px] mob:ml-3">Shroomie</p>
@@ -138,9 +138,9 @@
             desk:ml-[290px]
                       mob:ml-[30px] mob:mt-[30px] mob:font-work mob:font-semibold mob:text-h3 mob:text-white mob:leading-[120%] mob:w-[315px]">Magic Mashrooms</h2>
             <a routerLink="/nft-page" routerLinkActive="active">
-              <div class="mob:hidden desk:block desk:inline-flex desk:mt-[30px] desk:ml-[290px] pc:[390px] desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90">
+              <div class="mob:hidden desk:block desk:inline-flex desk:mt-[30px] desk:ml-[290px] pc:ml-[390px] desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90">
                 <button class="flex desk:font-work desk:font-semibold desk:text-base desk:text-black desk:leading-[140%] desk:items-center desk:justify-center desk:w-[198px] desk:h-[60px] desk:rounded-[20px] desk:bg-white">
-                  <img [src]="eye" alt="" class="desk:w-[19px] desk:h-[19px] desk:mr-[12px]">See NFT
+                  <img [src]="variableService.eyeh" alt="" class="desk:w-[19px] desk:h-[19px] desk:mr-[12px]">See NFT
                 </button>
               </div>
             </a>
@@ -211,7 +211,7 @@
           <a routerLink="/nft-page" routerLinkActive="active">
             <div class="mob:block desk:hidden mob:inline-flex mob:mt-[30px] mob:ml-[30px] mob:cursor-pointer mob:transition-transform mob:duration-500 mob:hover:scale-90">
               <button class="flex mob:font-work mob:font-semibold mob:text-base mob:text-black mob:leading-[140%] mob:items-center mob:justify-center mob:w-[315px] mob:h-[60px] mob:rounded-[20px] mob:bg-white">
-                <img [src]="eye" alt="" class="mob:w-[20px] mob:h-[20px] mob:mr-[12px]">See NFT
+                <img [src]="variableService.eyeh" alt="" class="mob:w-[20px] mob:h-[20px] mob:mr-[12px]">See NFT
               </button>
             </div>
           </a>

@@ -13,6 +13,7 @@ import {
 import {NavMenuComponent} from "../../../components/nav-menu/nav-menu.component";
 import {NgClass, NgIf} from '@angular/common';
 import {RouterLink, RouterLinkActive} from '@angular/router';
+import {VariableService} from '../../../shared/service/variable.service';
 
 @Component({
   selector: 'app-log-in',
@@ -32,10 +33,6 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
   styleUrl: './log-in.component.scss'
 })
 export class LogInComponent {
-  user: string = "/icons/UserGray.svg";
-  email: string = "/icons/messageGray.svg";
-  pasword: string = "/icons/LockKeyGray.svg";
-  bg: string = "/img/authImage.png";
 
   password: string = '';
   confirmPassword: string = '';
@@ -45,7 +42,7 @@ export class LogInComponent {
 
   registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, protected variableService: VariableService) {
     this.registerForm = this.fb.group({
       email: new FormControl("", [Validators.required, Validators.maxLength(32), Validators.minLength(8), Validators.pattern(this.emailRegex)]),
       password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(32)]],
@@ -64,6 +61,10 @@ export class LogInComponent {
 
   registerFn() {
     console.log(this.registerForm.value)
+  }
+
+  ngOnInit():void  {
+
   }
 
 }

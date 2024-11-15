@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {FirstUppercasePipe} from '../../../shared/pipe/first-uppercase.pipe';
 import {AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {VariableService} from '../../../shared/service/variable.service';
 
 @Component({
   selector: 'app-join',
@@ -13,9 +14,8 @@ import {AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators
   styleUrl: './join.component.scss'
 })
 export class JoinComponent {
-    actronavt: string = "/img/astronavt.png";
-    message: string = "/icons/message.svg";
-    successMessage: string = '';
+
+
 
   form:FormGroup =new FormGroup({
     email:new FormControl("",[Validators.required,this.customeEmailValidator])
@@ -43,16 +43,19 @@ export class JoinComponent {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
     } else {
-      this.successMessage = 'Ви підписалися, очікуйте повідомлень!';
+      this.variableService.successMessage = 'Ви підписалися, очікуйте повідомлень!';
 
       setTimeout(() => {
         this.form.reset();
-        this.successMessage = '';
+        this.variableService.successMessage = '';
       }, 3000);
     }
   }
 
-  constructor() { }
+  constructor(protected variableService: VariableService) { }
 
+  ngOninit():void {
+
+  }
 
 }
