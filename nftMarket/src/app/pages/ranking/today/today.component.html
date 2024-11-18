@@ -1,0 +1,50 @@
+@for(artist of artists; track artist) {
+  <div class="desk:w-[1050px] desk:h-[84px] rounded-[20px] bg-darkGray desk:mt-5 transition-transform duration-500 hover:scale-90
+                     mob:w-[315px] mob:h-[50px] mob:mt-5">
+    <div class="desk:flex desk:py-3 desk:ml-5
+                       mob:flex mob:py-3 mob:ml-5">
+      <div class="desk:py-[15px]
+                         mob:mt-[1px]">
+        <div class="desk:w-[30px] desk:h-[30px] desk:bg-lightBlack rounded-full
+                           mob:w-[30px] mob:h-[30px] mob:-mt-[3px]" id="id">
+          <p class="text-center text-lightGray">{{ artist.id }}</p>
+        </div>
+      </div>
+
+      <div class="desk:ml-5 desk:w-[380px] desk:h-[22px] desk:cursor-pointer
+                         mob:ml-[10px] mob:w-[167px] mob:h-[24px] mob:cursor-pointer" id="imageAndName">
+        <div class="mob:flex">
+          <img [src]="artist.ava" alt="" class="desk:w-[60px] desk:h-[60px]
+                                                       mob:w-[24px] mob:h-[24px] py:-[13px]">
+          <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-white desk:leading-[140%] desk:ml-5 desk:py-[14.5px] w-auto
+                            mob:font-work mob:font-regular mob:text-caption mob:text-white mob:leading-[140%] mob:ml-3 mob:mt-[1px] mob:py-[14px]"><a routerLink="/artist" routerLinkActive="active">{{ artist.fullname | firstUppercase }}</a></h5>
+        </div>
+      </div>
+
+      <div class="desk:block desk:w-[160px] desk:h-[22px] desk:ml-[60px]
+                         mob:hidden" id="change">
+        <div class="desk:py-[19px]">
+          <p class="desk:font-mono desk:font-regular desk:text-base desk:text-[#00AC4F] desk:leading-[140%]">{{ artist.change }}</p>
+        </div>
+      </div>
+
+      <div class="desk:block desk:w-[160px] desk:h-[22px] desk:ml-7
+                         mob:hidden" id="sold">
+        <div class="desk:py-[19px]">
+          <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%]">{{ artist.sold }}</p>
+        </div>
+      </div>
+
+      <div class="desk:w-[160px] desk:h-[22px] desk:ml-5
+                         mob:w-[80px] mob:h-[13px] mob:ml-[5px]" id="volume">
+        <div class="desk:py-[19px] flex desk:items-center
+                           mob:-mt-[1px] mob:items-center">
+          <p class="desk:font-mono desk:font-regular desk:text-base text-white desk:leading-[140%]
+                           mob:font-mono mob:font-regular mob:text-base text-white mob:leading-[140%] mob:-ml-[20px]">{{ artist.volume }}</p>
+          <span class="text-white desk:-mt-[1px] desk:ml-[5px]
+                              mob:-mt-[1px] mob:ml-[5px]">ETH</span>
+        </div>
+      </div>
+    </div>
+  </div>
+}

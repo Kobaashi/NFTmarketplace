@@ -6,6 +6,7 @@ import {CurrencyPipe, formatCurrency, NgClass} from '@angular/common';
 import {RouterLink, RouterLinkActive} from '@angular/router';
 import {VariableService} from '../../shared/service/variable.service';
 import {ArrayObjectService} from '../../shared/service/array-object.service';
+import {TodayComponent} from './today/today.component';
 
 @Component({
   selector: 'app-ranking',
@@ -17,7 +18,8 @@ import {ArrayObjectService} from '../../shared/service/array-object.service';
     CurrencyPipe,
     RouterLink,
     RouterLinkActive,
-    NgClass
+    NgClass,
+    TodayComponent
   ],
   templateUrl: './ranking.component.html',
   styleUrl: './ranking.component.scss'
@@ -48,6 +50,7 @@ export class RankingComponent {
     } else {
       this.variableService.currentSlideIndex = index;
     }
+    this.variableService.active === !this.variableService.active;
   }
 
 }
