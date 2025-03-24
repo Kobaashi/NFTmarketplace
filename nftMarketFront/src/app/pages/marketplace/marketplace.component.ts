@@ -4,8 +4,10 @@ import {FirstUppercasePipe} from '../../shared/pipe/first-uppercase.pipe';
 import {FooterComponent} from '../../components/footer/footer.component';
 import {RouterLink, RouterLinkActive} from '@angular/router';
 import {VariableService} from '../../shared/service/variable.service';
+import {NFTService} from '../../shared/service/nft.service';
 import {ArrayObjectService} from '../../shared/service/array-object.service';
 import {NgClass} from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-marketplace',
@@ -16,7 +18,7 @@ import {NgClass} from '@angular/common';
     FooterComponent,
     RouterLink,
     RouterLinkActive,
-    NgClass
+    NgClass,
   ],
   templateUrl: './marketplace.component.html',
   styleUrl: './marketplace.component.scss'
@@ -25,15 +27,27 @@ export class MarketplaceComponent {
 
       NFTs: any[] = [];
       tabs: any[]= [];
-     constructor(private arrayObjectService: ArrayObjectService , protected variableService: VariableService) {
+     constructor(
+      private arrayObjectService: ArrayObjectService,
+      private NFTService: NFTService ,
+      protected variableService: VariableService,
+      private http: HttpClient
+    ) {
      }
 
      ngOnInit():void {
-        this.getArray()
+        this.getArray();
+        this.getNFts();
+     }
+
+     getNFts(): void {
+      this.NFTService.fetchNFts().subscribe(data => {
+        this.NFTs = data;
+        console.log('NFTs завантажено:', this.NFTs);
+      });
      }
 
      getArray():void {
-       this.NFTs = this.arrayObjectService.NFTs;
        this.tabs = this.arrayObjectService.tabs;
      }
 
