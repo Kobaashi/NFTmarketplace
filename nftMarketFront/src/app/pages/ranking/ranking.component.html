@@ -88,30 +88,27 @@
       </div>
     </div>
   </div>
-  <div id="ranking-list ">
+  <div id="ranking-list">
     <div class="desk:pt-5 desk:pb-10
                  mob:pt-5 mob:pb-5">
-      <!-- @if(this.variableService.active === true) {
-
-      } @else {
-        <p> 404 </p>
-      } -->
-      @for( user of artists; track user; let i = $index){
-        <div class="desk:ml-[115px]">
-          <div class="bg-[#3B3B3B] desk:w-[1050px] desk:h-[84px] flex">
-            <div class="bg-[#2B2B2B] desk:w-[30px] desk:h-[30px] desk:rounded-full">
-              <span>{{i}}</span>
-            </div>
-            <div>
-              <img src="user.Ava" />
-              <h1>{{user.Name}}</h1>
-              <h2>{{user.change}}</h2>
-              <h2>{{user.sold_today}}</h2>
-              <h2>{{user.volume}}</h2>
-            </div>
-          </div>
-        </div>
-      }
+                 @for(artist of artists; track artist; let i = $index){
+                  <div class="desk:mb-[20px]">
+                    <div class="bg-[#3B3B3B] desk:w-[1050px] desk:h-[84px] flex rounded-[20px]">
+                      <div class="bg-[#2B2B2B] desk:w-[30px] desk:h-[30px] desk:rounded-full desk:mt-[27px] desk:ml-[20px] flex items-center justify-center">
+                        <span class="desk:mx-[8px] desk:my-[4px]">{{i + 1}}</span>
+                      </div>
+                      <div class="flex desk:w-[360px] desk:h-[60px]">
+                        <img src="{{artist.Ava}}"  class="desk:w-[60px] desk:h-[60px] rounded-full desk:ml-[20px] desk:mt-[12px]"/>
+                        <h1 class="font-work font-semibold text-h5 text-white desk:ml-[20px] desk:mt-[25px]">{{artist.Name}}</h1>
+                      </div>
+                      <div class="flex desk:ml-[115px]">
+                        <h2 class="font-mono font-regular text-base  text-[#00AC4F] desk:mt-[31px] desk:-ml-[15px] desk:w-[160px]">{{artist.change}}</h2>
+                        <h2 class="font-mono font-regular text-base  text-white desk:mt-[31px] desk:ml-[30px] desk:w-[160px]">{{artist.sold_today}}</h2>
+                        <h2 class="font-mono font-regular text-base  text-white desk:mt-[31px] desk:-ml-[20px] desk:w-[160px]">{{artist.volume}} ETH</h2>
+                      </div>
+                    </div>
+                  </div>
+                }
     </div>
   </div>
 </div>

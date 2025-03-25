@@ -37,6 +37,7 @@ export class RankingComponent {
 
   ngOnInit():void {
     this.getArray()
+    this.getUsers()
   }
 
   getArray():void {
@@ -45,7 +46,7 @@ export class RankingComponent {
   }
 
   getUsers(): void {
-    this.usersService.fetchNFts().subscribe(data => {
+    this.usersService.getUsers().subscribe(data => {
       this.artists = data;
       console.log('Користувачів завантажено:', this.artists);
     });
