@@ -19,6 +19,7 @@ import { UsersService } from '../../shared/service/users.service';
     RouterLink,
     RouterLinkActive,
     NgClass,
+    FirstUppercasePipe
   ],
   templateUrl: './ranking.component.html',
   styleUrl: './ranking.component.scss'
