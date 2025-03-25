@@ -31,7 +31,7 @@ desk:pl-[180px]
               <img [src]="creator.Ava" alt="" class="desk:w-[120px] desk:h-[120px] desk:rounded-full desk:-mt-5 desk:mx-auto
                                                     mob:w-[60px] mob:h-[60px] mob:rounded-full mob:mt-5 mob:-ml-5">
               <h1 class="desk:text-center desk:ml-[80px] desk:text-white desk:mt-1 desk:font-work desk:semibold desk:text-h5 desk:leading-[140%]
-                       mob:text-white mob:-mt-[60px] mob:ml-[60px] mob:font-work mob:font-semibold mob:text-h5 mob:leading-[140%] inline">{{ creator.Name.slice(0, 7) }}</h1>
+                       mob:text-white mob:-mt-[60px] mob:ml-[60px] mob:font-work mob:font-semibold mob:text-h5 mob:leading-[140%] inline">{{ creator.Name.slice(0, 7) | firstUppercase  }}</h1>
               <h1 class="desk:ml-5 desk:mt-[5px] desk:text-lightGray
                         mob:mt-[5px] mob:text-lightGray mob:ml-[60px]">Total Sales:<span class="desk:text-white desk:pl-[10px]
                                                                                    mob:text-white mob:ml-[5px]">{{ creator.sold_allTime }} ETH</span></h1>

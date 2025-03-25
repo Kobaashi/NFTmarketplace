@@ -4,6 +4,7 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
 import {VariableService} from '../../../shared/service/variable.service';
 import {ArrayObjectService} from '../../../shared/service/array-object.service';
 import {UsersService} from '../../../shared/service/users.service';
+import {FirstUppercasePipe} from '../../../shared/pipe/first-uppercase.pipe';
 
 @Component({
   selector: 'app-topcreators',
@@ -11,7 +12,8 @@ import {UsersService} from '../../../shared/service/users.service';
     imports: [
         NgForOf,
         RouterLink,
-        RouterLinkActive
+        RouterLinkActive,
+        FirstUppercasePipe
     ],
   templateUrl: './topcreators.component.html',
   styleUrl: './topcreators.component.scss'
