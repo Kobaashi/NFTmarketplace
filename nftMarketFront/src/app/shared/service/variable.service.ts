@@ -92,7 +92,6 @@ export class VariableService {
   // for navmenu
   logo: string = "/icons/LogoPurple.svg";
   userm: string = "/icons/User.svg";
-
   isActive: boolean = false;
 
   // for footer

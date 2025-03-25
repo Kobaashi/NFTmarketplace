@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import Nft from './model/nftModel.js';
 import fetch from './controller/nftController.js';
+import User from './model/usersModel.js';
 
 const app = express();
 const PORT = 5000;
@@ -29,7 +30,23 @@ app.get('/nft', async (req, res) => {
 
     res.json(nft);
   } catch (err) {
-    console.error('Error fetching items:', err);
+    console.error('Помилка зчитування NFT:', err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.get('/users', async (req, res) => {
+  try {
+    const users  = await User.find();
+    console.log('Зчитанні користувачі:', users.length > 0 ? users : 'Користувачів немає');
+
+    if (users.length  === 0) {
+      return  res.status(404).send('Користувачів немає');
+    }
+
+    res.json(users);
+  } catch (err) {
+    console.error('Помилка зчитування Користувачів:', err);
     res.status(500).json({ error: err.message });
   }
 });

@@ -91,10 +91,26 @@
   <div id="ranking-list ">
     <div class="desk:pt-5 desk:pb-10
                  mob:pt-5 mob:pb-5">
-      @if(this.variableService.active === true) {
-        <app-today/>
+      <!-- @if(this.variableService.active === true) {
+
       } @else {
         <p> 404 </p>
+      } -->
+      @for( user of artists; track user; let i = $index){
+        <div class="desk:ml-[115px]">
+          <div class="bg-[#3B3B3B] desk:w-[1050px] desk:h-[84px] flex">
+            <div class="bg-[#2B2B2B] desk:w-[30px] desk:h-[30px] desk:rounded-full">
+              <span>{{i}}</span>
+            </div>
+            <div>
+              <img src="user.Ava" />
+              <h1>{{user.Name}}</h1>
+              <h2>{{user.change}}</h2>
+              <h2>{{user.sold_today}}</h2>
+              <h2>{{user.volume}}</h2>
+            </div>
+          </div>
+        </div>
       }
     </div>
   </div>

@@ -6,7 +6,7 @@ import {CurrencyPipe, formatCurrency, NgClass} from '@angular/common';
 import {RouterLink, RouterLinkActive} from '@angular/router';
 import {VariableService} from '../../shared/service/variable.service';
 import {ArrayObjectService} from '../../shared/service/array-object.service';
-import {TodayComponent} from './today/today.component';
+import { UsersService } from '../../shared/service/users.service';
 
 @Component({
   selector: 'app-ranking',
@@ -19,7 +19,6 @@ import {TodayComponent} from './today/today.component';
     RouterLink,
     RouterLinkActive,
     NgClass,
-    TodayComponent
   ],
   templateUrl: './ranking.component.html',
   styleUrl: './ranking.component.scss'
@@ -30,7 +29,10 @@ export class RankingComponent {
   days: any[] = [];
   mobDays: any[] = [];
 
-  constructor(private arrayObjectService: ArrayObjectService,protected variableService: VariableService ) {
+  constructor(
+    private usersService: UsersService,
+    private arrayObjectService: ArrayObjectService,
+    protected variableService: VariableService ) {
   }
 
   ngOnInit():void {
@@ -38,11 +40,16 @@ export class RankingComponent {
   }
 
   getArray():void {
-    this.artists = this.arrayObjectService.artists;
     this.days = this.arrayObjectService.titles;
     this.mobDays = this.arrayObjectService.Mobtitle;
   }
 
+  getUsers(): void {
+    this.usersService.fetchNFts().subscribe(data => {
+      this.artists = data;
+      console.log('Користувачів завантажено:', this.artists);
+    });
+  }
 
   toogleActive(index: number): void {
     if (this.variableService.currentSlideIndex === index) {
@@ -53,4 +60,11 @@ export class RankingComponent {
     this.variableService.active === !this.variableService.active;
   }
 
+  getFilteredArtists(): any[] {
+    if (this.variableService.currentSlideIndex === null) {
+      return this.artists;
+    }
+
+    return this.artists.filter(artist => artist.dayIndex  === this.variableService.currentSlideIndex);
+  }
 }
