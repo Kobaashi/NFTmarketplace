@@ -7,10 +7,10 @@ import { Observable } from 'rxjs';
 
 })
 export class UsersService {
-  private nftURL: string = "http://localhost:5000/users"
+  private usersURL: string = "http://localhost:5000/users"
 
   constructor(private http: HttpClient) { }
     getUsers():  Observable<any[]> {
-      return this.http.get<any[]>(this.nftURL)
+      return this.http.get<any[]>(this.usersURL)
     }
   }
