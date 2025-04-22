@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 
 })
 export class NFTService {
-  private nftURL: string = "http://localhost:5000/nft"
+  private nftURL: string = "http://localhost:3000/nft"
 
 
   constructor(private http: HttpClient) { }
