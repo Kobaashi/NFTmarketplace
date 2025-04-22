@@ -35,7 +35,7 @@ export class TopcreatorsComponent {
   getUsers(): void {
     this.usersService.getUsers().subscribe(data => {
       this.creators = data.slice(0, 12);
-      console.log('Користувачів завантажено:', this.creators);
+      console.log('Дані з API:', data);
     });
   }
 
