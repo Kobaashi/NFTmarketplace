@@ -28,10 +28,10 @@ desk:pl-[180px]
                        mob:w-[30px] mob:h-[30px] mob:rounded-full mob:text-center mob:py-1 mob:text-lightGray mob:relative mob:z-10">{{ i + 1 }}</h1>
             </div>
             <div class="block">
-              <img [src]="creator.Ava" alt="" class="desk:w-[120px] desk:h-[120px] desk:rounded-full desk:-mt-5 desk:mx-auto
+              <img [src]="creator.ava" alt="" class="desk:w-[120px] desk:h-[120px] desk:rounded-full desk:-mt-5 desk:mx-auto
                                                     mob:w-[60px] mob:h-[60px] mob:rounded-full mob:mt-5 mob:-ml-5">
               <h1 class="desk:text-center desk:ml-[80px] desk:text-white desk:mt-1 desk:font-work desk:semibold desk:text-h5 desk:leading-[140%]
-                       mob:text-white mob:-mt-[60px] mob:ml-[60px] mob:font-work mob:font-semibold mob:text-h5 mob:leading-[140%] inline">{{ creator.Name.slice(0, 7) | firstUppercase  }}</h1>
+                       mob:text-white mob:-mt-[60px] mob:ml-[60px] mob:font-work mob:font-semibold mob:text-h5 mob:leading-[140%] inline">{{ creator.name.slice(0, 7) | firstUppercase  }}</h1>
               <h1 class="desk:ml-5 desk:mt-[5px] desk:text-lightGray
                         mob:mt-[5px] mob:text-lightGray mob:ml-[60px]">Total Sales:<span class="desk:text-white desk:pl-[10px]
                                                                                    mob:text-white mob:ml-[5px]">{{ creator.sold_allTime }} ETH</span></h1>
@@ -40,7 +40,7 @@ desk:pl-[180px]
         </a>
       }
     } @else if(variableService.isMobile) {
-      @for(creator of creators.slice(0,5); track creator) {
+      @for(creator of creators; track creator) {
         <a routerLink="/artist" routerLinkActive="active">
           <div class="desk:hidden desk:block desk:w-[240px] desk:h-[238px] bg-darkGray desk:rounded-[20px] desk:ml-[30px] desk:mt-[30px] desk:transition-transform desk:duration-500 desk:hover:scale-90
                       mob:flex mob:w-[315px] mob:h-[100px] mob:rounded-[20px] mob:ml-[30px] mob:mt-5 mob:transition-transform mob:duration-500 mob:hover:scale-90" id="creator-card ">
