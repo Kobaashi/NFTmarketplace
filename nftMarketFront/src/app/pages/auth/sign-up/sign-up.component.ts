@@ -44,7 +44,7 @@ export class SignUpComponent {
   constructor(private fb: FormBuilder, protected variableService: VariableService ) {
     this.registerForm = this.fb.group({
       email: new FormControl("", [Validators.required, Validators.maxLength(32), Validators.minLength(8), Validators.pattern(this.emailRegex)]),
-      username: new FormControl("", [Validators.required, Validators.maxLength(32)]),
+      name: new FormControl("", [Validators.required, Validators.maxLength(32)]),
       password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(32)]],
       confirmPassword: ['', [Validators.required]]
     });

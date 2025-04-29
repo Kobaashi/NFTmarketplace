@@ -20,15 +20,15 @@
       <div class="flex items-center relative">
         <img [src]="variableService.userS" alt="" class="ml-[40px] w-[20px] h-[20px] absolute -left-[20px] z-10 color-gray">
         <input type="text" placeholder="Username" class="pl-[52px] w-[315px] h-[46px] border-[1px] border-lightGray rounded-[20px] placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-black placeholder:leading-[140%]"
-               formControlName="username"
-               [ngClass]="{error : getControl('username')?.errors && getControl('username')?.touched }">
-        @if(getControl('username')?.errors && getControl('username')?.touched) {
-          @if(getControl('username')?.errors?.['required']) {
+               formControlName="name"
+               [ngClass]="{error : getControl('name')?.errors && getControl('name')?.touched }">
+        @if(getControl('name')?.errors && getControl('name')?.touched) {
+          @if(getControl('name')?.errors?.['required']) {
             <label class="text-red-500 ml-[10px]">
               Username is required!
             </label>
           }
-          @if(getControl('username')?.errors?.['maxlength']) {
+          @if(getControl('name')?.errors?.['maxlength']) {
             <label class="text-red-500 ml-[10px]">
               Must be in between minimum 8 characters and maximum 32 characters
             </label>
