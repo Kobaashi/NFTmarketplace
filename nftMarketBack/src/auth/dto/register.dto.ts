@@ -25,7 +25,11 @@ export class RegisterDto {
   bio?: string;
 
   @IsOptional()
+  @IsString()
+  change?: string;
+
+  @IsOptional()
   @ValidateNested({ each: true })
   @Type(() => ChangeItem)
-  change?: ChangeItem[];
+  created?: ChangeItem[];
 }

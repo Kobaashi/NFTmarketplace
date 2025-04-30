@@ -53,6 +53,8 @@ export class RankingComponent {
     });
   }
 
+
+
   toogleActive(index: number): void {
     if (this.variableService.currentSlideIndex === index) {
       this.variableService.currentSlideIndex = null;

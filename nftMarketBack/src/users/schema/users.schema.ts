@@ -53,8 +53,8 @@ export class Users {
   @Prop({ default: 'Join in nft community' })
   bio: string;
 
-  @Prop({ type: [ChangeItem], default: [] })
-  change: ChangeItem[];
+  @Prop({ default: '+0.00%' })
+  change: string;
 
   @Prop({ type: Types.ObjectId, ref: 'nft', required: false, default: null }) 
   created: Types.ObjectId | null;

@@ -54,7 +54,7 @@
                         mob:font-work mob:font-semibold mob:text-h5 mob:text-white mob:leading-[140%] mob:pt-5 mob:ml-5">{{ nfts.nft_name | firstUppercase }}</h5>
             <div class="desk:flex
                          mob:flex">
-              <img [src]="nfts.artist_ava" alt="" class="desk:w-[24px] desk:h-[24px] rounded-full desk:mt-[5px] desk:ml-[30px]
+              <img src="{{nfts.artist_ava}}" alt="" class="desk:w-[24px] desk:h-[24px] rounded-full desk:mt-[5px] desk:ml-[30px]
                                                          mob:w-[24px] mob:h-[24px] mob:mt-[5px] mob:ml-[22px]">
               <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%] ml-3 mt-1
                          mob:font-mono mob:font-regular mob:text-base mob:text-white mob:leading-[140%] mob:mt-[5px]">{{ nfts.artist | firstUppercase }}</p>

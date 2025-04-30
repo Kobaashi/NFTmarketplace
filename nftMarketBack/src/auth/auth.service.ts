@@ -37,8 +37,8 @@ export class AuthService {
       sold_week: 0,
       sold_today: 0,
       followers: 0,
-      change: registerDto.change || [],              // ✅ Now allowed
-      created: null,           // ✅ Now allowed
+      change: "+0.0%",             
+      created: registerDto.created || [],          
     });
 
     try {

@@ -16,7 +16,7 @@ export class NFT extends Document {
   artist: number;
 
   @Prop({ required: true })
-  artist_ava: number;
+  artist_ava: string;
 
   @Prop({ required: true })
   colections: number;
