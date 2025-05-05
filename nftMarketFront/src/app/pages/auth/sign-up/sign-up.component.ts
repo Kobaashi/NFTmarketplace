@@ -14,6 +14,7 @@ import {FirstUppercasePipe} from '../../../shared/pipe/first-uppercase.pipe';
 import {FooterComponent} from '../../../components/footer/footer.component';
 import {NavMenuComponent} from '../../../components/nav-menu/nav-menu.component';
 import {VariableService} from '../../../shared/service/variable.service';
+import { AuthService } from '../../../shared/service/auth.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -41,7 +42,10 @@ export class SignUpComponent {
 
   registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder, protected variableService: VariableService ) {
+  constructor(
+    private authService: AuthService, 
+    private fb: FormBuilder, 
+    protected variableService: VariableService ) {
     this.registerForm = this.fb.group({
       email: new FormControl("", [Validators.required, Validators.maxLength(32), Validators.minLength(8), Validators.pattern(this.emailRegex)]),
       name: new FormControl("", [Validators.required, Validators.maxLength(32)]),
@@ -61,7 +65,22 @@ export class SignUpComponent {
   }
 
   registerFn() {
-    console.log(this.registerForm.value)
+    if (this.registerForm.invalid || !this.passwordsMatch()) {
+      console.log('Form is invalid or passwords do not match');
+      return;
+    }
+  
+    const formData = this.registerForm.value;
+  
+    this.authService.register(formData).subscribe({
+      next: (response) => {
+        console.log('Registration successful:', response);
+      },
+      error: (error) => {
+        console.error('Registration error:', error);
+      }
+    });
   }
+  
 
 }

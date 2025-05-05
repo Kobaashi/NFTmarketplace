@@ -13,6 +13,7 @@ import { UsersModule } from '../users/users.module';
       secret: process.env.JWT_SECRET || 'seckret', 
       signOptions: { expiresIn: '1h' }, 
     }),
+    UsersModule,
   ],
   providers: [AuthService],
   exports: [AuthService], 

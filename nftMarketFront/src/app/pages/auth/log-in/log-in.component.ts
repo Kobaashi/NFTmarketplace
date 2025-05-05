@@ -1,19 +1,20 @@
 import { Component } from '@angular/core';
-import {FirstUppercasePipe} from "../../../shared/pipe/first-uppercase.pipe";
-import {FooterComponent} from "../../../components/footer/footer.component";
+import { FirstUppercasePipe } from "../../../shared/pipe/first-uppercase.pipe";
+import { FooterComponent } from "../../../components/footer/footer.component";
 import {
   AbstractControl,
   FormBuilder,
   FormControl,
   FormGroup,
-  FormsModule,
-  ReactiveFormsModule,
   Validators
 } from "@angular/forms";
-import {NavMenuComponent} from "../../../components/nav-menu/nav-menu.component";
-import {NgClass, NgIf} from '@angular/common';
-import {RouterLink, RouterLinkActive} from '@angular/router';
-import {VariableService} from '../../../shared/service/variable.service';
+import { NavMenuComponent } from "../../../components/nav-menu/nav-menu.component";
+import { NgClass, NgIf } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { VariableService } from '../../../shared/service/variable.service';
+import { AuthService } from '../../../shared/service/auth.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BadRequestException } from "@nestjs/common";
 
 @Component({
   selector: 'app-log-in',
@@ -21,7 +22,6 @@ import {VariableService} from '../../../shared/service/variable.service';
   imports: [
     FirstUppercasePipe,
     FooterComponent,
-    FormsModule,
     NavMenuComponent,
     NgClass,
     ReactiveFormsModule,
@@ -30,41 +30,62 @@ import {VariableService} from '../../../shared/service/variable.service';
     RouterLinkActive
   ],
   templateUrl: './log-in.component.html',
-  styleUrl: './log-in.component.scss'
+  styleUrls: ['./log-in.component.scss']
 })
 export class LogInComponent {
 
-  password: string = '';
-  confirmPassword: string = '';
+  loginForm: FormGroup;
 
   emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
+  constructor(
+    private authService: AuthService,
+    private fb: FormBuilder,
+    protected variableService: VariableService
+  ) {
+      this.loginForm = this.fb.group({
+        email: new FormControl('', [
+          Validators.required,
+          Validators.maxLength(32),
+          Validators.minLength(8),
+          Validators.pattern(this.emailRegex)
+        ]),
+        password: new FormControl('', [
+          Validators.required,
+          Validators.minLength(8),
+          Validators.maxLength(32)
+        ])
+      })      
+    };
 
-  registerForm: FormGroup;
-
-  constructor(private fb: FormBuilder, protected variableService: VariableService) {
-    this.registerForm = this.fb.group({
-      email: new FormControl("", [Validators.required, Validators.maxLength(32), Validators.minLength(8), Validators.pattern(this.emailRegex)]),
-      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(32)]],
-    });
+  getControl(name: string): AbstractControl | null {
+    return this.loginForm.get(name);
   }
 
-  getControl(name: any) : AbstractControl | null {
-    return this.registerForm.get(name)
+  passwordsMatch(): void {
+    const password = this.loginForm.get('password')?.value;
   }
 
-  passwordsMatch(): boolean {
-    const password = this.registerForm.get('password')?.value;
-    const confirmPassword = this.registerForm.get('confirmPassword')?.value;
-    return password === confirmPassword;
+  async loginFn() {
+    const email = this.loginForm.get('email')?.value;
+    const password = this.loginForm.get('password')?.value;
+  
+    try {
+      const response = await this.authService.login({ email, password }).toPromise();
+      console.log('Login response:', response);
+  
+      if (response?.message === 'Login successful') {
+        console.log('Login successful!');
+      } else {
+        console.warn('Unexpected response:', response);
+      }
+    } catch (error: any) {
+      console.error('Login failed:', error?.error?.message || error);
+    }
   }
-
-  registerFn() {
-    console.log(this.registerForm.value)
+  
+  
+  
+  ngOnInit(): void {
   }
-
-  ngOnInit():void  {
-
-  }
-
 }
