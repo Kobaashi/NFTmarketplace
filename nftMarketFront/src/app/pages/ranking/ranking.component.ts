@@ -46,28 +46,17 @@ export class RankingComponent {
     this.getArray();
     this.getUsers();
     this.filteredArtists$ = this.usersService.getUsers().pipe(
-      map(data => {
-        const filtered = data.filter(artist => {
-          switch (this.variableService.currentSlideIndex) {
-            case 0: return artist.sold_today > 0;
-            case 1: return artist.sold_week > 0;
-            case 2: return artist.sold_month > 0;
-            case 3: return artist.sold_allTime > 0;
-            default: return false;
-          }
-        });
-    
-        return filtered.sort((a, b) => {
-          switch (this.variableService.currentSlideIndex) {
-            case 0: return b.sold_today - a.sold_today;
-            case 1: return b.sold_week - a.sold_week;
-            case 2: return b.sold_month - a.sold_month;
-            case 3: return b.sold_allTime - a.sold_allTime;
-            default: return 0;
-          }
-        });
-      })
-    );
+      map(data => 
+        data
+        .filter(artist => artist.sold_today > 0)
+        .sort((a, b) => b.sold_today - a.sold_today)
+        .filter(artist => artist.sold_week > 0)
+        .sort((a, b) => b.sold_week - a.sold_week)
+        .filter(artist => artist.sold_month > 0)
+        .sort((a, b) => b.sold_month - a.sold_month)
+        .filter(artist => artist.sold_allTime > 0)
+        .sort((a, b) => b.sold_allTime - a.sold_allTime)
+      ));
   }
 
   getArray(): void {
