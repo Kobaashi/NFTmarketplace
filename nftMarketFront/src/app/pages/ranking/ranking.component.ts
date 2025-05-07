@@ -9,7 +9,7 @@ import { VariableService } from '../../shared/service/variable.service';
 import { ArrayObjectService } from '../../shared/service/array-object.service';
 import { UsersService } from '../../shared/service/users.service';
 import { Observable } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-ranking',
@@ -45,19 +45,30 @@ export class RankingComponent {
   ngOnInit(): void {
     this.getArray();
     this.getUsers();
-    this.filteredArtists$ = this.usersService.getUsers().pipe(
-      map(data => 
-        data
-        .filter(artist => artist.sold_today > 0)
-        .sort((a, b) => b.sold_today - a.sold_today)
-        .filter(artist => artist.sold_week > 0)
-        .sort((a, b) => b.sold_week - a.sold_week)
-        .filter(artist => artist.sold_month > 0)
-        .sort((a, b) => b.sold_month - a.sold_month)
-        .filter(artist => artist.sold_allTime > 0)
-        .sort((a, b) => b.sold_allTime - a.sold_allTime)
-      ));
+    this.updateFilteredArtists();
   }
+
+  updateFilteredArtists(): void {
+    const index = this.variableService.currentSlideIndex;
+  
+    let metric: 'sold_today' | 'sold_week' | 'sold_month' | 'sold_allTime' = 'sold_today';
+  
+    switch (index) {
+      case 0: metric = 'sold_today'; break;
+      case 1: metric = 'sold_week'; break;
+      case 2: metric = 'sold_month'; break;
+      case 3: metric = 'sold_allTime'; break;
+    }
+  
+    this.filteredArtists$ = this.usersService.getUsers().pipe(
+      map(data =>
+        data
+          .filter(artist => +artist[metric] > 0)
+          .sort((a, b) => +b[metric] - +a[metric])
+      )
+    );
+  }
+
 
   getArray(): void {
     this.days = this.arrayObjectService.titles;
@@ -67,13 +78,8 @@ export class RankingComponent {
   getUsers(): void {
     this.usersService.getUsers().subscribe(data => {
       this.artists = data;
-      // this.filterArtists();
     });
   }
-
-  // filterArtists(): void {
-  //   this.filteredArtists = this.artists.filter(artist => artist.sold_today > artist.sold_today);
-  // }
 
   toogleActive(index: number): void {
     if (this.variableService.currentSlideIndex === index) {
@@ -82,5 +88,6 @@ export class RankingComponent {
       this.variableService.currentSlideIndex = index;
     }
     this.variableService.active = !this.variableService.active;
+    this.updateFilteredArtists();
   }
 }
