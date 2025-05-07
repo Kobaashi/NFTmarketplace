@@ -6,10 +6,12 @@ import { RegisterDto } from './dto/register.dto';
 import * as bcrypt from 'bcryptjs';
 import { JwtService } from '@nestjs/jwt';
 import { UsersService } from '../users/users.service';
+import { Token } from './schema/token.schema';
 
 @Injectable()
 export class AuthService {
   constructor(
+    private readonly tokenModel: Model<Token>,
     private readonly usersService: UsersService,
     private readonly jwtService: JwtService,
     @InjectModel(Users.name) private userModel: Model<Users>,
@@ -74,12 +76,23 @@ export class AuthService {
   async login(email: string, password: string): Promise<string> {
     const user = await this.usersService.findUserByEmail(email);
     if (!user) {
-        throw new BadRequestException('User not found');
+      throw new BadRequestException('User not found');
     }
+  
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
-        throw new BadRequestException('Invalid credentials');
+      throw new BadRequestException('Invalid credentials');
     }
-    return this.jwtService.sign({ id: user.user_id });
+  
+    const token = this.jwtService.sign({ id: user.user_id });
+  
+    await this.tokenModel.create({
+      token,
+      userId: user.user_id,
+      expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+    });
+  
+    return token;
   }
+  
 }

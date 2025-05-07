@@ -1,17 +1,21 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common'; 
 import { NavMenuComponent } from '../../components/nav-menu/nav-menu.component';
-import {FooterComponent} from '../../components/footer/footer.component';
-import {FirstUppercasePipe} from '../../shared/pipe/first-uppercase.pipe';
-import {CurrencyPipe, formatCurrency, NgClass} from '@angular/common';
-import {RouterLink, RouterLinkActive} from '@angular/router';
-import {VariableService} from '../../shared/service/variable.service';
-import {ArrayObjectService} from '../../shared/service/array-object.service';
+import { FooterComponent } from '../../components/footer/footer.component';
+import { FirstUppercasePipe } from '../../shared/pipe/first-uppercase.pipe';
+import { CurrencyPipe, formatCurrency, NgClass } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { VariableService } from '../../shared/service/variable.service';
+import { ArrayObjectService } from '../../shared/service/array-object.service';
 import { UsersService } from '../../shared/service/users.service';
+import { Observable } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-ranking',
   standalone: true,
   imports: [
+    CommonModule,
     NavMenuComponent,
     FooterComponent,
     FirstUppercasePipe,
@@ -29,19 +33,44 @@ export class RankingComponent {
   artists: any[] = [];
   days: any[] = [];
   mobDays: any[] = [];
+  filteredArtists$!: Observable<any[]>;
+
 
   constructor(
     private usersService: UsersService,
     private arrayObjectService: ArrayObjectService,
-    protected variableService: VariableService ) {
+    protected variableService: VariableService 
+  ) {}
+
+  ngOnInit(): void {
+    this.getArray();
+    this.getUsers();
+    this.filteredArtists$ = this.usersService.getUsers().pipe(
+      map(data => {
+        const filtered = data.filter(artist => {
+          switch (this.variableService.currentSlideIndex) {
+            case 0: return artist.sold_today > 0;
+            case 1: return artist.sold_week > 0;
+            case 2: return artist.sold_month > 0;
+            case 3: return artist.sold_allTime > 0;
+            default: return false;
+          }
+        });
+    
+        return filtered.sort((a, b) => {
+          switch (this.variableService.currentSlideIndex) {
+            case 0: return b.sold_today - a.sold_today;
+            case 1: return b.sold_week - a.sold_week;
+            case 2: return b.sold_month - a.sold_month;
+            case 3: return b.sold_allTime - a.sold_allTime;
+            default: return 0;
+          }
+        });
+      })
+    );
   }
 
-  ngOnInit():void {
-    this.getArray()
-    this.getUsers()
-  }
-
-  getArray():void {
+  getArray(): void {
     this.days = this.arrayObjectService.titles;
     this.mobDays = this.arrayObjectService.Mobtitle;
   }
@@ -49,11 +78,13 @@ export class RankingComponent {
   getUsers(): void {
     this.usersService.getUsers().subscribe(data => {
       this.artists = data;
-      console.log('Користувачів завантажено:', this.artists);
+      // this.filterArtists();
     });
   }
 
-
+  // filterArtists(): void {
+  //   this.filteredArtists = this.artists.filter(artist => artist.sold_today > artist.sold_today);
+  // }
 
   toogleActive(index: number): void {
     if (this.variableService.currentSlideIndex === index) {
@@ -61,14 +92,6 @@ export class RankingComponent {
     } else {
       this.variableService.currentSlideIndex = index;
     }
-    this.variableService.active === !this.variableService.active;
-  }
-
-  getFilteredArtists(): any[] {
-    if (this.variableService.currentSlideIndex === null) {
-      return this.artists;
-    }
-
-    return this.artists.filter(artist => artist.dayIndex  === this.variableService.currentSlideIndex);
+    this.variableService.active = !this.variableService.active;
   }
 }
