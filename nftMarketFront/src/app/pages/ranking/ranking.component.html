@@ -92,6 +92,7 @@
     <div class="desk:pt-5 desk:pb-10
                  mob:pt-5 mob:pb-5">
                  @for(artist of filteredArtists$ | async; track artist; let i = $index) {
+                 <a routerLink="/artist" routerLinkActive="active">
                   <div class="desk:mb-[20px] cursor-pointer">
                     <div class="bg-[#3B3B3B] desk:w-[1050px] desk:h-[84px] flex rounded-[20px]">
                       <div class="bg-[#2B2B2B] desk:w-[30px] desk:h-[30px] desk:rounded-full desk:mt-[27px] desk:ml-[20px] flex items-center justify-center">
@@ -116,6 +117,7 @@
                       </div>
                     </div>
                   </div>
+                  </a>
                 }
       </div>
     </div>
