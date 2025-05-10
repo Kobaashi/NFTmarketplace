@@ -4,9 +4,9 @@
     <div id="bg">
       <img [src]="variableService.bg" alt="" class="object-cover desk:w-full desk:h-[320px]
                                      mob:w-[375px] mob:h-[300px]">
-      <img [src]="variableService.ava" alt="" class="w-[120px] h-[120px] rounded-[20px] desk:absolute desk:-mt-[70px] pc:ml-[390px]
+    <img [src]="user?.ava" alt="" class="w-[120px] h-[120px] rounded-full desk:absolute desk:-mt-[70px] pc:ml-[390px]
     desk:ml-[200px] border-[2px] border-black z-10
-                                      mob:absolute mob:-mt-[70px] mob:ml-[127.5px]">
+                                      mob:absolute mob:-mt-[70px] mob:ml-[127.5px]">      
     </div>
     <div class="bg-lightBlack">
       <div>
@@ -14,11 +14,11 @@
     desk:ml-[200px]
                      mob:mt-20 mob:ml-[30px]" id="general">
           <h2 class="desk:font-work desk:font-semibold desk:text-h2 desk:text-white desk:leading-[110%]
-                      mob:font-work mob:font-semibold mob:text-h4 mob:text-white mob:leading-[140%]">Animakid</h2>
+                      mob:font-work mob:font-semibold mob:text-h4 mob:text-white mob:leading-[140%]">{{ user?.name || '' | firstUppercase }} </h2>
           <div class="desk:hidden ml-[30px]
                      mob:block" id="btn">
             <div class="mob:pb-10 mob:mt-[30px]">
-              <button class="mob:w-[315px] mob:h-[60px] mob:bg-purple mob:rounded-[20px] mob:-ml-[30px] mob:mr-5 mob:transition-transform mob:duration-500 mob:hover:scale-90 "><img [src]="variableService.copy" alt="" class="mob:ml-[88px] mob:pb-6"><p class="mob:-mt-[45px] mob:ml-6 mob:font-work mob:font-semibold mob:text-base mob:text-white mob:leading-[140%]">0xc0E3...B79C</p></button>
+              <button class="mob:w-[315px] mob:h-[60px] mob:bg-purple mob:rounded-[20px] mob:-ml-[30px] mob:mr-5 mob:transition-transform mob:duration-500 mob:hover:scale-90 "><img [src]="variableService.copy" alt="" class="mob:ml-[88px] mob:pb-6"><p class="mob:-mt-[45px] mob:ml-6 mob:font-work mob:font-semibold mob:text-base mob:text-white mob:leading-[140%]">{{ user?.followers }}</p></button>
               <button class="mob:w-[315px] mob:h-[60px] mob:border-[2px] mob:border-purple mob:rounded-[20px] mob:-ml-[30px] mob:mt-5 mob:transition-transform mob:duration-500 mob:hover:scale-90"><img [src]="variableService.plus" alt="" class="mob:ml-[108px] mob:pb-1"><p class="mob:-mt-[23px] mob:ml-3 mob:font-work mob:font-semibold mob:text-base mob:text-white mob:leading-[140%]">Follow</p></button>
             </div>
           </div>
@@ -26,21 +26,21 @@
             <div class="desk:w-[156.67px] desk:h-[74px]
                          mob:w-[91.67px] mob:h-[57px]">
               <h4 class="desk:font-mono desk:font-bold desk:text-h4 desk:text-white desk:leading-[140%]
-                          mob:font-mono mob:font-bold mob:text-h5 mob:text-white mob:leading-[160%]">250k+</h4>
+                          mob:font-mono mob:font-bold mob:text-h5 mob:text-white mob:leading-[160%]">{{ user?.volume }}</h4>
               <h5 class="desk:font-work desk:font-regular desk:text-base desk:text-white desk:leading-[160%]
                           mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[160%]">Volume</h5>
             </div>
             <div class="desk:w-[156.67px] desk:h-[74px] desk:ml-5
                          mob:w-[91.67px] mob:h-[57px] mob:ml-5">
               <h4 class="desk:font-mono desk:font-bold desk:text-h4 desk:text-white desk:leading-[140%]
-                          mob:font-mono mob:font-bold mob:text-h5 mob:text-white mob:leading-[160%]">50+</h4>
+                          mob:font-mono mob:font-bold mob:text-h5 mob:text-white mob:leading-[160%]">{{ user?.sold_allTime }}</h4>
               <p class="desk:font-work desk:font-regular desk:text-base desk:text-white desk:leading-[160%]
                          mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[160%]">NFTs Sold</p>
             </div>
             <div class="desk:w-[156.67px] desk:h-[74px] desk:ml-5
                          mob:w-[91.67px] mob:h-[57px] mob:ml-5">
               <h4 class="desk:font-mono desk:font-bold desk:text-h4 desk:text-white desk:leading-[140%]
-                          mob:font-mono mob:font-bold mob:text-h5 mob:text-white mob:leading-[160%]">3000+</h4>
+                          mob:font-mono mob:font-bold mob:text-h5 mob:text-white mob:leading-[160%]">{{ user?.followers }}</h4>
               <p class="desk:font-work desk:font-regular desk:text-base desk:text-white desk:leading-[160%]
                          mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[160%]">Followers</p>
             </div>
@@ -50,7 +50,7 @@
         desk:ml-[915px]
                      mob:hidden" id="btns">
           <div class="desk:pb-10 desk:-mt-[165px]">
-            <button class="desk:w-[186px] desk:h-[60px] desk:bg-purple desk:rounded-[20px] desk:mr-5 desk:transition-transform desk:duration-500 desk:hover:scale-90"><img [src]="variableService.copy" alt="" class="desk:ml-[25px] desk:pb-6"><p class="desk:-mt-[45px] desk:ml-6 desk:font-work desk:font-semibold desk:text-base desk:text-white desk:leading-[140%]">0xc0E3...B79C</p></button>
+            <button class="desk:w-[220px] desk:h-[60px] desk:bg-purple desk:rounded-[20px] desk:mr-5 desk:transition-transform desk:duration-500 desk:hover:scale-90"><img [src]="variableService.copy" alt="" class="desk:ml-[25px] desk:pb-6"><p class="desk:-mt-[45px] desk:ml-6 desk:font-work desk:font-semibold desk:text-base desk:text-white desk:leading-[140%] desk:pl-[10px]">{{ user?.wallet }}</p></button>
             <button class="desk:w-[145px] desk:h-[60px] desk:border-[2px] desk:border-purple desk:rounded-[20px] desk:transition-transform desk:duration-500 desk:hover:scale-90"><img [src]="variableService.plus" alt="" class="desk:ml-[25px] desk:pb-1"><p class="desk:-mt-[23px] desk:ml-3 desk:font-work desk:font-semibold desk:text-base desk:text-white desk:leading-[140%]">Follow</p></button>
           </div>
         </div>
@@ -60,28 +60,8 @@
           <h5 class="desk:font-mono desk:font-bold desk:text-h5 desk:text-lightGray desk:leading-[160%]
                       mob:font-mono mob:font-regular mob:text-base mob:text-lightGray mob:leading-[140%]">Bio</h5>
           <h5 class="desk:font-work desk:font-regular desk:text-h5 desk:text-white desk:leading-[160%] desk:mt-[10px]
-                      mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[140%] mob:mt-[10px]">The internet's friendliest designer kid.</h5>
+                      mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[140%] mob:mt-[10px]">{{ user?.bio }}</h5>
         </div>
-        <div class="desk:mt-[30px] pc:ml-[400px]
-    desk:ml-[210px]
-                     mob:mt-[30px] mob:ml-[45px]" id="Links">
-          <h5 class="desk:font-mono desk:font-bold desk:text-h5 desk:text-lightGray desk:leading-[160%]
-                      mob:font-mono mob:font-regular mob:text-base mob:text-lightGray mob:leading-[140%]">Links</h5>
-          <div class="flex mt-[10px]" id="logo">
-            <img [src]="variableService.globe" alt="" class="desk:w-7 desk:h-7 mr-[10px]
-                                              mob:w-6 mob:h-6">
-            <img [src]="variableService.diskord" alt="" class="desk:w-7 desk:h-7 mr-[10px]
-                                                mob:w-6 mob:h-6">
-            <img [src]="variableService.youtube" alt="" class="desk:w-7 desk:h-7 mr-[10px]
-                                                mob:w-6 mob:h-6">
-            <img [src]="variableService.twitter" alt="" class="desk:w-7 desk:h-7 mr-[10px]
-                                                mob:w-6 mob:h-6">
-            <img [src]="variableService.instagram" alt="" class="desk:w-7 desk:h-7
-                                                  mob:w-6 mob:h-6">
-          </div>
-        </div>
-      </div>
-    </div>
     <div>
       <div class="desk:w-full desk:h-[70px] desk:border-t-[1px] desk:border-lightGray desk:mt-10
                    mob:w-full mob:h-[70px] mob:border-t-[1px] mob:border-lightGray mob:mt-10">
@@ -96,7 +76,7 @@
           'border-b-[2px] border-lightGray': variableService.currentSlideIndex === i
           }" id="todays">
               <h5 [ngClass]="{
-          'desk:font-work desk:font-semibold desk:text-h5 desk:leading-[140%] desk:py-[14.5px] desk:pl-[99px] mob:font-work mob:font-semibold mob:text-base mob:leading-[140%] mob:py-[14.5px] mob:pl-[35px]': true,
+          'desk:font-work desk:font-semibold desk:cursor-pointer desk:text-h5 desk:leading-[140%] desk:py-[14.5px] desk:pl-[99px] mob:font-work mob:font-semibold mob:text-base mob:leading-[140%] mob:py-[14.5px] mob:pl-[35px]': true,
           'text-white mob:text-white': variableService.currentSlideIndex === i,
           'text-lightGray mob:lightGray': variableService.currentSlideIndex !== i
           }">

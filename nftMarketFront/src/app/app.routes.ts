@@ -18,6 +18,7 @@ export const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent },
   { path: 'log-in', component: LogInComponent },
   { path: 'artist', component: ArtistComponent },
+  { path: 'user/:name/:id', component: ArtistComponent },
   { path: 'nft-page', component: NftComponent },
 ];
 

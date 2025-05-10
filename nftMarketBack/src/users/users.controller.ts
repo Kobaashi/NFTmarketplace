@@ -15,5 +15,13 @@ export class UsersController {
   async findUserByEmail(@Param('email') email: string) {
       return this.usersService.findUserByEmail(email);
   }
+
+  @Get("id/:user_id")
+  async findUserById(@Param('user_id') user_id: string) {
+    console.log("user_id:", user_id);
+    const user = await this.usersService.findUserById(user_id);
+    console.log("user found:", user);
+    return user;
+  }
   
 }

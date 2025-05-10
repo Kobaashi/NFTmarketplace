@@ -43,7 +43,7 @@ export class NftComponent {
   }
 
   getArray():void {
-    this.NFTs = this.arrayObjectService.NFTsN;
+    this.NFTs = this.arrayObjectService.NFTS;
     this.tags = this.arrayObjectService.tags;
   }
 

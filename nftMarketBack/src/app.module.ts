@@ -6,6 +6,7 @@ import { UsersModule } from './users/users.module';
 import { NftModule } from './nft/nft.module';
 import { AuthController } from './auth/auth.controller';
 import { AuthModule } from './auth/auth.module';
+import { NftController } from './nft/nft.controller';
 
 
 @Module({

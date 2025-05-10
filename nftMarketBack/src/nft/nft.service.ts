@@ -10,6 +10,14 @@ export class NftService {
 
   async findAllNFT(): Promise<NFT[]> {
       return this.nftModel.find();
-    }
+  }
+
+  async findNFTById(nft_id: string): Promise<NFT | null> {
+    console.log('Looking for NFT with ID:', nft_id);
+    const result = await this.nftModel.findOne({ nft_id });
+    console.log('Result:', result);
+    return result;
+  }
+
 
 }

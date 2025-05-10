@@ -10,9 +10,9 @@ export class FirstUppercasePipe implements PipeTransform {
     if (!value) return '';
 
     return value
-      .split(' ') // Розбиваємо рядок на масив слів
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // Перетворюємо першу літеру кожного слова в uppercase
-      .join(' '); // З'єднуємо слова назад в один рядок
+      .split(' ') 
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1)) 
+      .join(' '); 
   }
 
 }
