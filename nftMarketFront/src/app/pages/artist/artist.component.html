@@ -91,17 +91,17 @@
       <div class="desk:block desk:flex desk:flex-wrap desk:pt-[50px] pc:w-[60%] desk:w-[80%] pc:ml-[400px]
     desk:ml-[190px]
                    mob:hidden">
-        @for(nfts of NFTS; track nfts) {
+        @for(nfts of createdNfts; track nfts) {
           <div class="desk:ml-[30px] desk:mt-[30px] desk:transition-transform desk:duration-500 desk:hover:scale-90">
             <a routerLink="/nft-page" routerLinkActive="active">
               <div >
-                <img [src]="nfts.img" alt="" class="desk:w-[330px] desk:h-[295px] rounded-t-[20px]">
+                <img [src]="nfts.picture" alt="" class="desk:w-[330px] desk:h-[295px] rounded-t-[20px]">
               </div>
               <div class="desk:w-[330px] desk:h-[173px] bg-lightBlack rounded-b-[20px]">
-                <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-white desk:leading-[140%] desk:pt-5 desk:ml-[30px]">{{ nfts.name | firstUppercase }}</h5>
+                <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-white desk:leading-[140%] desk:pt-5 desk:ml-[30px]">{{ nfts.nft_name | firstUppercase }}</h5>
                 <div class="flex">
-                  <img [src]="nfts.authorAva" alt="" class="desk:w-[24px] desk:h-[24px] rounded-full desk:mt-[5px] desk:ml-[30px]">
-                  <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%] desk:ml-3 desk:mt-1">{{ nfts.authorName | firstUppercase }}</p>
+                  <img [src]="nfts.artist_ava" alt="" class="desk:w-[24px] desk:h-[24px] rounded-full desk:mt-[5px] desk:ml-[30px]">
+                  <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%] desk:ml-3 desk:mt-1">{{ nfts.artist | firstUppercase }}</p>
                 </div>
                 <div class="flex desk:pt-[25px]">
                   <div class="desk:w-[135px] desk:h-[43px] desk:text-left desk:ml-[30px]">
@@ -110,7 +110,7 @@
                   </div>
                   <div class="mob:ml-[30px]">
                     <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-lightGray desk:leading-[110%]">Highest Bid</p>
-                    <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%]">{{ nfts.bid }} wETH</p>
+                    <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%]">{{ nfts.highest_bid }} wETH</p>
                   </div>
                 </div>
               </div>
@@ -121,7 +121,7 @@
 
         <div class="desk:hidden desk:flex desk:flex-wrap desk:pt-[50px] desk:w-[60%] desk:ml-[360px]
                      mob:block">
-          @for(nfts of NFTS.slice(0,3); track nfts) {
+          @for(nfts of createdNfts.slice(0,3); track nfts) {
             <div class=" mob:ml-[30px] mob:pt-[30px]">
               <a routerLink="/nft-page" routerLinkActive="active">
                 <div >

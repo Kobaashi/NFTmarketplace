@@ -56,8 +56,8 @@ export class Users {
   @Prop({ default: '+0.00%' })
   change: string;
 
-  @Prop({ type: Types.ObjectId, ref: 'nft', required: false, default: null }) 
-  created: Types.ObjectId | null;
+  @Prop({ type: [Types.ObjectId], ref: 'nft', required: false, default: [] })
+  created: Types.ObjectId[];
 }
 
 export const UsersSchema = SchemaFactory.createForClass(Users);

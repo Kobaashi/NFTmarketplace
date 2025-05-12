@@ -8,6 +8,7 @@ import {VariableService} from '../../shared/service/variable.service';
 import {NgClass} from '@angular/common';
 import { UsersService } from '../../shared/service/users.service';
 import { User } from '../../shared/interface/user.inetrface';
+import { NFTService } from '../../shared/service/nft.service';
 
 @Component({
   selector: 'app-artist',
@@ -32,6 +33,7 @@ export class ArtistComponent {
 
   constructor(  
     private route: ActivatedRoute,
+    private readonly nftService: NFTService,
     private readonly usersService: UsersService,
     private arrayObjectService: ArrayObjectService, 
     public variableService: VariableService) {
@@ -45,13 +47,6 @@ export class ArtistComponent {
     if (userId) {
       this.getUserById(userId);
     }
-    if (this.user?.created) {
-      this.user.created.forEach(item => {
-        this.nftService.getNftById(item.nft_id).subscribe(nftData => {
-          this.createdNfts.push(nftData);
-        });
-      });
-    }
   }
 
   getArray(): void {
@@ -60,16 +55,31 @@ export class ArtistComponent {
   }
 
   getUserById(userId: string): void {
-    this.usersService.getUserById(userId).subscribe({
-      next: (data) => {
-        this.user = data;
-        console.log('User data:', this.user);
-      },
-      error: (err) => {
-        console.error('Error fetching user:', err);
+  this.usersService.getUserById(userId).subscribe({
+    next: (data) => {
+      this.user = data;
+      console.log('User data:', this.user);
+
+      if (this.user?.created?.length) {
+        for (const item of this.user.created) {
+          this.nftService.getNftById(item.nft_id).subscribe({
+            next: (nftData) => {
+              this.createdNfts.push(nftData); // ✅ Fix
+              console.log('NFT data:', this.createdNfts);
+            },
+            error: (err) => {
+              console.error(`Error fetching NFT ${item.nft_id}:`, err);
+            }
+          });
+        }
       }
-    });
-  }
+    },
+    error: (err) => {
+      console.error('Error fetching user:', err);
+    }
+  });
+}
+
 
   toogleActive(index: number): void {
     this.variableService.currentSlideIndex = index;

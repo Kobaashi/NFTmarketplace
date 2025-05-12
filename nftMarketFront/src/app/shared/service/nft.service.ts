@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Nft } from '../interface/nft.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -14,4 +15,9 @@ export class NFTService {
     fetchNFts():  Observable<any[]> {
       return this.http.get<any[]>(this.nftURL)
     }
+
+    getNftById(id: string): Observable<Nft> {
+      return this.http.get<Nft>(`${this.nftURL}/${id}`);
+    }
+
   }

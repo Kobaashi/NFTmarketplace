@@ -13,13 +13,13 @@ export class NFT extends Document {
   picture: string;
 
   @Prop({ required: true })
-  artist: number;
+  artist: string;
 
   @Prop({ required: true })
   artist_ava: string;
 
   @Prop({ required: true })
-  colections: number;
+  colections: string;
 
   @Prop({ required: true })
   categories: number;
