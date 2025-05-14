@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import {NavMenuComponent} from '../../components/nav-menu/nav-menu.component';
 import {FirstUppercasePipe} from '../../shared/pipe/first-uppercase.pipe';
 import {FooterComponent} from '../../components/footer/footer.component';
@@ -8,6 +8,7 @@ import {NFTService} from '../../shared/service/nft.service';
 import {ArrayObjectService} from '../../shared/service/array-object.service';
 import {NgClass} from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-marketplace',
@@ -23,10 +24,12 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './marketplace.component.html',
   styleUrl: './marketplace.component.scss'
 })
-export class MarketplaceComponent {
+export class MarketplaceComponent implements OnDestroy {
 
+      private marketSub?: Subscription
       NFTs: any[] = [];
       tabs: any[]= [];
+
      constructor(
       private arrayObjectService: ArrayObjectService,
       private NFTService: NFTService ,
@@ -41,7 +44,7 @@ export class MarketplaceComponent {
      }
 
      getNFts(): void {
-      this.NFTService.fetchNFts().subscribe(data => {
+      this.marketSub = this.NFTService.fetchNFts().subscribe(data => {
         this.NFTs = data;
         console.log('NFTs завантажено:', this.NFTs);
       });
@@ -53,6 +56,10 @@ export class MarketplaceComponent {
 
   toogleActive(index: number): void {
     this.variableService.currentSlideIndex = index;
+  }
+
+  ngOnDestroy(): void {
+    this.marketSub?.unsubscribe();
   }
 
 }

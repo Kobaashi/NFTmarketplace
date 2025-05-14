@@ -1,0 +1,158 @@
+<app-nav-menu />
+<div class="bg-lightBlack">
+  <div class="">
+    <div id="bg">
+      <img [src]="variableService.bg" alt="" class="object-cover desk:w-full desk:h-[320px]
+                                     mob:w-[375px] mob:h-[300px]">
+    <img [src]="user?.ava" alt="" class="w-[120px] h-[120px] rounded-full desk:absolute desk:-mt-[70px] pc:ml-[390px]
+    desk:ml-[200px] border-[2px] border-black z-10
+                                      mob:absolute mob:-mt-[70px] mob:ml-[127.5px]">      
+    </div>
+    <div class="bg-lightBlack">
+      <div>
+        <div class="desk:mt-20 pc:ml-[390px]
+    desk:ml-[200px]
+                     mob:mt-20 mob:ml-[30px]" id="general">
+          <h2 class="desk:font-work desk:font-semibold desk:text-h2 desk:text-white desk:leading-[110%]
+                      mob:font-work mob:font-semibold mob:text-h4 mob:text-white mob:leading-[140%]">{{ user?.name || '' | firstUppercase }} </h2>
+          <div class="desk:hidden ml-[30px]
+                     mob:block" id="btn">
+            <div class="mob:pb-10 mob:mt-[30px]">
+              <button class="mob:w-[315px] mob:h-[60px] mob:bg-purple mob:rounded-[20px] mob:-ml-[30px] mob:mr-5 mob:transition-transform mob:duration-500 mob:hover:scale-90 "><img [src]="variableService.copy" alt="" class="mob:ml-[88px] mob:pb-6"><p class="mob:-mt-[45px] mob:ml-6 mob:font-work mob:font-semibold mob:text-base mob:text-white mob:leading-[140%]">{{ user?.followers }}</p></button>
+              <button class="mob:w-[315px] mob:h-[60px] mob:border-[2px] mob:border-purple mob:rounded-[20px] mob:-ml-[30px] mob:mt-5 mob:transition-transform mob:duration-500 mob:hover:scale-90"><img [src]="variableService.plus" alt="" class="mob:ml-[108px] mob:pb-1"><p class="mob:-mt-[23px] mob:ml-3 mob:font-work mob:font-semibold mob:text-base mob:text-white mob:leading-[140%]">Follow</p></button>
+            </div>
+          </div>
+          <div class="flex mt-[30px] mob:ml-[10px]">
+            <div class="desk:w-[156.67px] desk:h-[74px]
+                         mob:w-[91.67px] mob:h-[57px]">
+              <h4 class="desk:font-mono desk:font-bold desk:text-h4 desk:text-white desk:leading-[140%]
+                          mob:font-mono mob:font-bold mob:text-h5 mob:text-white mob:leading-[160%]">{{ user?.volume }}</h4>
+              <h5 class="desk:font-work desk:font-regular desk:text-base desk:text-white desk:leading-[160%]
+                          mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[160%]">Volume</h5>
+            </div>
+            <div class="desk:w-[156.67px] desk:h-[74px] desk:ml-5
+                         mob:w-[91.67px] mob:h-[57px] mob:ml-5">
+              <h4 class="desk:font-mono desk:font-bold desk:text-h4 desk:text-white desk:leading-[140%]
+                          mob:font-mono mob:font-bold mob:text-h5 mob:text-white mob:leading-[160%]">{{ user?.sold_allTime }}</h4>
+              <p class="desk:font-work desk:font-regular desk:text-base desk:text-white desk:leading-[160%]
+                         mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[160%]">NFTs Sold</p>
+            </div>
+            <div class="desk:w-[156.67px] desk:h-[74px] desk:ml-5
+                         mob:w-[91.67px] mob:h-[57px] mob:ml-5">
+              <h4 class="desk:font-mono desk:font-bold desk:text-h4 desk:text-white desk:leading-[140%]
+                          mob:font-mono mob:font-bold mob:text-h5 mob:text-white mob:leading-[160%]">{{ user?.followers }}</h4>
+              <p class="desk:font-work desk:font-regular desk:text-base desk:text-white desk:leading-[160%]
+                         mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[160%]">Followers</p>
+            </div>
+          </div>
+        </div>
+        <div class="desk:block pc:ml-[1015px]
+        desk:ml-[915px]
+                     mob:hidden" id="btns">
+          <div class="desk:pb-10 desk:-mt-[165px]">
+            <button class="desk:w-[220px] desk:h-[60px] desk:bg-purple desk:rounded-[20px] desk:mr-5 desk:transition-transform desk:duration-500 desk:hover:scale-90"><img [src]="variableService.copy" alt="" class="desk:ml-[25px] desk:pb-6"><p class="desk:-mt-[45px] desk:ml-6 desk:font-work desk:font-semibold desk:text-base desk:text-white desk:leading-[140%] desk:pl-[10px]">{{ user?.wallet }}</p></button>
+            <button class="desk:w-[145px] desk:h-[60px] desk:border-[2px] desk:border-purple desk:rounded-[20px] desk:transition-transform desk:duration-500 desk:hover:scale-90"><img [src]="variableService.plus" alt="" class="desk:ml-[25px] desk:pb-1"><p class="desk:-mt-[23px] desk:ml-3 desk:font-work desk:font-semibold desk:text-base desk:text-white desk:leading-[140%]">Follow</p></button>
+          </div>
+        </div>
+        <div class="desk:mt-[75px] pc:ml-[400px]
+    desk:ml-[210px]
+                     mob:mt-[30px] mob:ml-[45px]" id="Bio">
+          <h5 class="desk:font-mono desk:font-bold desk:text-h5 desk:text-lightGray desk:leading-[160%]
+                      mob:font-mono mob:font-regular mob:text-base mob:text-lightGray mob:leading-[140%]">Bio</h5>
+          <h5 class="desk:font-work desk:font-regular desk:text-h5 desk:text-white desk:leading-[160%] desk:mt-[10px]
+                      mob:font-work mob:font-regular mob:text-base mob:text-white mob:leading-[140%] mob:mt-[10px]">{{ user?.bio }}</h5>
+        </div>
+    <div>
+      <div class="desk:w-full desk:h-[70px] desk:border-t-[1px] desk:border-lightGray desk:mt-10
+                   mob:w-full mob:h-[70px] mob:border-t-[1px] mob:border-lightGray mob:mt-10">
+        <div class="flex pc:ml-[430px]
+              desk:ml-[210px] mt-[10px]
+                     mob:ml-[30px]">
+          @for(tab of Tabs; track tab; let i = $index) {
+            <div
+              (click)="toogleActive(i)"
+              [ngClass]="{
+          'desk:w-[350px] desk:h-[60px] flex mob:w-[350px] mob:h-[60px]': true,
+          'border-b-[2px] border-lightGray': variableService.currentSlideIndex === i
+          }" id="todays">
+              <h5 [ngClass]="{
+          'desk:font-work desk:font-semibold desk:cursor-pointer desk:text-h5 desk:leading-[140%] desk:py-[14.5px] desk:pl-[99px] mob:font-work mob:font-semibold mob:text-base mob:leading-[140%] mob:py-[14.5px] mob:pl-[35px]': true,
+          'text-white mob:text-white': variableService.currentSlideIndex === i,
+          'text-lightGray mob:lightGray': variableService.currentSlideIndex !== i
+          }">
+                {{tab.name}}
+              </h5>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+    <div class="bg-darkGray border-b-[2px] border-lightBlack pb-20">
+      <div class="desk:block desk:flex desk:flex-wrap desk:pt-[50px] pc:w-[60%] desk:w-[80%] pc:ml-[400px]
+      desk:ml-[190px]
+                   mob:hidden"> 
+        @if(createdNfts.length > 0) {
+          @for(nfts of createdNfts; track nfts) {
+            <div class="desk:ml-[30px] desk:mt-[30px] desk:transition-transform desk:duration-500 desk:hover:scale-90">
+              <a routerLink="/marketplace" routerLinkActive="active">
+                <div >
+                  <img [src]="nfts.picture" alt="" class="desk:w-[330px] desk:h-[295px] rounded-t-[20px]">
+                </div>
+                <div class="desk:w-[330px] desk:h-[173px] bg-lightBlack rounded-b-[20px]">
+                  <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-white desk:leading-[140%] desk:pt-5 desk:ml-[30px]">{{ nfts.nft_name | firstUppercase }}</h5>
+                  <div class="flex">
+                    <img [src]="nfts.artist_ava" alt="" class="desk:w-[24px] desk:h-[24px] rounded-full desk:mt-[5px] desk:ml-[30px]">
+                    <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%] desk:ml-3 desk:mt-1">{{ nfts.artist | firstUppercase }}</p>
+                  </div>
+                  <div class="flex desk:pt-[25px]">
+                    <div class="desk:w-[135px] desk:h-[43px] desk:text-left desk:ml-[30px]">
+                      <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-lightGray desk:leading-[110%]">Price</p>
+                      <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%]">{{ nfts.price }} ETH</p>
+                    </div>
+                    <div class="mob:ml-[30px]">
+                      <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-lightGray desk:leading-[110%]">Highest Bid</p>
+                      <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%]">{{ nfts.highest_bid }} wETH</p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          }}
+        <!-- } @else if(createdNfts.length == 0) {
+          <div>{noNFt}</div>
+        } -->
+      </div>
+
+        <div class="desk:hidden desk:flex desk:flex-wrap desk:pt-[50px] desk:w-[60%] desk:ml-[360px]
+                     mob:block">
+          @for(nfts of createdNfts.slice(0,3); track nfts) {
+            <div class=" mob:ml-[30px] mob:pt-[30px]">
+              <a routerLink="/nft-page" routerLinkActive="active">
+                <div >
+                  <img [src]="nfts.img" alt="" class="rounded-t-[20px] mob:w-[315px] mob:h-[238px]">
+                </div>
+                <div class="bg-lightBlack rounded-b-[20px] mob:w-[315px] mob:h-[164px]">
+                  <h5 class="mob:font-work mob:font-semibold mob:text-h5 mob:text-white mob:leading-[140%] mob:pt-5 mob:ml-[30px]">{{ nfts.name | firstUppercase }}</h5>
+                  <div class="flex">
+                    <img [src]="nfts.authorAva" alt="" class="rounded-full mob:w-[24px] mob:h-[24px] mob:mt-[5px] mob:ml-[30px]">
+                    <p class="mob:font-mono mob:font-regular mob:text-base mob:text-white mob:leading-[140%] mob:ml-3 mob:mt-1">{{ nfts.authorName | firstUppercase }}</p>
+                  </div>
+                  <div class="flex mob:pt-[25px]">
+                    <div class="mob:w-[135px] mob:h-[43px] mob:text-left mob:ml-[30px]">
+                      <p class="mob:font-mono mob:font-regular mob:text-caption mob:text-lightGray mob:leading-[110%]">Price</p>
+                      <p class="mob:font-mono mob:font-regular mob:text-base mob:text-white mob:leading-[140%]">{{ nfts.price }} ETH</p>
+                    </div>
+                    <div class="mob:ml-[30px]">
+                      <p class="mob:font-mono mob:font-regular mob:text-caption mob:text-lightGray mob:leading-[110%]">Highest Bid</p>
+                      <p class="mob:font-mono mob:font-regular mob:text-base mob:text-white mob:leading-[140%]">{{ nfts.bid }} wETH</p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          }
+        </div>
+    </div>
+  </div>
+</div>
+<app-footer />

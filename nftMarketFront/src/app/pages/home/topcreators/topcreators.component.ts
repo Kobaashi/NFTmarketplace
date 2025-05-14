@@ -1,10 +1,11 @@
-import {Component, HostListener} from '@angular/core';
+import {Component, HostListener, OnDestroy} from '@angular/core';
 import {NgForOf} from '@angular/common';
 import {RouterLink, RouterLinkActive} from "@angular/router";
 import {VariableService} from '../../../shared/service/variable.service';
 import {ArrayObjectService} from '../../../shared/service/array-object.service';
 import {UsersService} from '../../../shared/service/users.service';
 import {FirstUppercasePipe} from '../../../shared/pipe/first-uppercase.pipe';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-topcreators',
@@ -18,8 +19,9 @@ import {FirstUppercasePipe} from '../../../shared/pipe/first-uppercase.pipe';
   templateUrl: './topcreators.component.html',
   styleUrl: './topcreators.component.scss'
 })
-export class TopcreatorsComponent {
+export class TopcreatorsComponent implements OnDestroy {
 
+  private userSub?: Subscription
   creators: any[] = [];
 
   constructor(
@@ -33,7 +35,7 @@ export class TopcreatorsComponent {
   }
 
   getUsers(): void {
-    this.usersService.getUsers().subscribe(data => {
+    this.userSub = this.usersService.getUsers().subscribe(data => {
       this.creators = data.slice(0, 12);
       console.log('Дані з API:', data);
     });
@@ -48,5 +50,8 @@ export class TopcreatorsComponent {
     this.variableService.isMobile = window.innerWidth <= 768;
   }
 
+  ngOnDestroy(): void {
+    this.userSub?.unsubscribe();
+  }
 
 }

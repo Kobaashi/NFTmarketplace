@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
@@ -15,6 +15,7 @@ import {FooterComponent} from '../../../components/footer/footer.component';
 import {NavMenuComponent} from '../../../components/nav-menu/nav-menu.component';
 import {VariableService} from '../../../shared/service/variable.service';
 import { AuthService } from '../../../shared/service/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-sign-up',
@@ -31,9 +32,10 @@ import { AuthService } from '../../../shared/service/auth.service';
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.scss'
 })
-export class SignUpComponent {
+export class SignUpComponent implements OnDestroy {
 
 
+  private authSub?: Subscription;
   password: string = '';
   confirmPassword: string = '';
 
@@ -72,7 +74,7 @@ export class SignUpComponent {
   
     const formData = this.registerForm.value;
   
-    this.authService.register(formData).subscribe({
+    this.authSub = this.authService.register(formData).subscribe({
       next: (response) => {
         console.log('Registration successful:', response);
       },
@@ -82,5 +84,8 @@ export class SignUpComponent {
     });
   }
   
+  ngOnDestroy(): void {
+    this.authSub?.unsubscribe();
+  }
 
 }

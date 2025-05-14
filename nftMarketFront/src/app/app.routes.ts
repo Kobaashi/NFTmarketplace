@@ -8,6 +8,7 @@ import {MarketplaceComponent} from './pages/marketplace/marketplace.component';
 import {NftComponent} from './pages/nft/nft.component';
 import {LogInComponent} from './pages/auth/log-in/log-in.component';
 import {SignUpComponent} from './pages/auth/sign-up/sign-up.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +20,6 @@ export const routes: Routes = [
   { path: 'log-in', component: LogInComponent },
   { path: 'artist', component: ArtistComponent },
   { path: 'user/:name/:id', component: ArtistComponent },
-  // { path: 'nft-page', component: NftComponent },
+  { path: 'jwtuser/:nameuser/:user_id', component: UserProfileComponent },
 ];
 

@@ -9,7 +9,7 @@ export class ArrayObjectService {
   constructor() { }
 
 
-  // for artist page
+
   Tabs = [
     {
       name: 'Created',

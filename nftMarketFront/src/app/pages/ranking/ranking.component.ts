@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 import { NavMenuComponent } from '../../components/nav-menu/nav-menu.component';
 import { FooterComponent } from '../../components/footer/footer.component';
@@ -8,7 +8,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { VariableService } from '../../shared/service/variable.service';
 import { ArrayObjectService } from '../../shared/service/array-object.service';
 import { UsersService } from '../../shared/service/users.service';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -28,13 +28,13 @@ import { map } from 'rxjs/operators';
   templateUrl: './ranking.component.html',
   styleUrl: './ranking.component.scss'
 })
-export class RankingComponent {
+export class RankingComponent implements OnDestroy {
 
+  private userSub?: Subscription
   artists: any[] = [];
   days: any[] = [];
   mobDays: any[] = [];
   filteredArtists$!: Observable<any[]>;
-
 
   constructor(
     private usersService: UsersService,
@@ -90,4 +90,9 @@ export class RankingComponent {
     this.variableService.active = !this.variableService.active;
     this.updateFilteredArtists();
   }
+
+  ngOnDestroy(): void {
+    this.userSub?.unsubscribe();
+  }
+
 }

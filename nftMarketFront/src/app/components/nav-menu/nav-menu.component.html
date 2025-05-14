@@ -24,7 +24,7 @@
   </div>
 
   <div class="pc:mt-[30px] pc:ml-[523px] pc:w-[607px]
-               desk:mt-[30px] desk:ml-[450px] desk:w-[607px]">
+               desk:mt-[30px] desk:ml-[250px] desk:w-[607px]">
     @if(variableService.isActive !== true) {
       <div class="pc:bg-lightBlack pc:bg-opacity-1 pc:ml-[200px] pc:block desk:block mob:hidden">
         <ul class="pc:flex pc:mt-[5px] pc:mb-[20px] pc:font-work pc:font-semibold pc:text-white pc:text-base
@@ -49,6 +49,12 @@
                         desk:px-10 desk:py-3 desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90 desk:mr-[30px] desk:w-[215px]
         mob:px-10 mob:py-3 mob:cursor-pointer mob:mb-[30px]">
               <a routerLink="/connect-a-wallet" routerLinkActive="active">Connect a wallet</a>
+            </li>
+
+            <li class="pc:px-5 pc:py-3 pc:cursor-pointer pc:transition-transform pc:duration-500 pc:hover:scale-90 pc:mr-[30px] pc:w-[174px]
+                        desk:px-10 desk:py-3 desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90 desk:-mr-[30px] desk:w-[215px]
+              mob:px-10 mob:py-3 mob:cursor-pointer mob:mb-[30px]">
+              <a routerLink="/jwtuser/:nameuser/:user_id" routerLinkActive="active">Profile</a>
             </li>
           </ul>
 
@@ -75,6 +81,8 @@
             mob:px-10 mob:py-3 mob:ml-[190px] mob:cursor-pointer mob:relative mob:z-10"><a routerLink="/ranking" routerLinkActive="active">Rankings</a></li>
           <li class="pc:px-10 pc:py-3 pc:ml-[10px] pc:cursor-pointer pc:transition-transform pc:duration-500 hover:scale-90 pc:w-[215px]
             mob:px-10 mob:py-3 mob:ml-[190px] mob:cursor-pointer mob:relative mob:z-10"><a routerLink="/connect-a-wallet" routerLinkActive="active">Connect a wallet</a></li>
+          <li class="pc:px-10 pc:py-3 pc:ml-[10px] pc:cursor-pointer pc:transition-transform pc:duration-500 hover:scale-90 pc:w-[215px]
+            mob:px-10 mob:py-3 mob:ml-[190px] mob:cursor-pointer mob:relative mob:z-10"><a routerLink="jwtuser/:nameuser/:user_id" routerLinkActive="active">Profile</a></li>
 
           <div class="flex pc:-mt-[25px] cursor-pointer transition-transform duration-500 hover:scale-90
               mob:-mt-[7px]">
