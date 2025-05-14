@@ -1,10 +1,13 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { BadRequestException, Controller, Get, Param, Request } from '@nestjs/common';
 import { UsersService } from './users.service';
+import { AuthService } from 'src/auth/auth.service';
 
 @Controller('users')
 export class UsersController {
   
-  constructor(private readonly usersService: UsersService) {}
+  constructor(
+    private readonly authService: AuthService,
+    private readonly usersService: UsersService) {}
 
   @Get()
   async findAllUsers(): Promise<any[]> {
@@ -23,5 +26,5 @@ export class UsersController {
     console.log("user found:", user);
     return user;
   }
-  
+
 }

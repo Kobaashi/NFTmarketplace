@@ -6,6 +6,7 @@ import { RegisterDto } from './dto/register.dto';
 import * as bcrypt from 'bcryptjs';
 import { JwtService } from '@nestjs/jwt';
 import { UsersService } from '../users/users.service';
+import { JsonWebTokenError } from 'jsonwebtoken';
 
 @Injectable()
 export class AuthService {
@@ -82,9 +83,48 @@ export class AuthService {
       throw new BadRequestException('Invalid credentials');
     }
   
-    const token = this.jwtService.sign({ id: user.user_id });
+    const token = this.jwtService.sign({ id: user.user_id, email: user.email  });
   
     return token;
   }
+
+  async decodeTokenAndFindUser(jwt: string) {
+  try {
+    console.log('Token:', jwt);
+
+    const decoded = this.jwtService.decode(jwt) as { id: string };
+    console.log('Decoded Token:', decoded);
+
+    if (!decoded || !decoded.id) {
+      throw new BadRequestException('ID не знайдено в токені');
+    }
+
+    const user = await this.usersService.findUserById(decoded.id);
+    console.log('Founed user:', user );
+    if (!user) {
+      throw new BadRequestException('Користувача не знайдено');
+    }
+
+    return user; 
+  } catch (error) {
+    if (error instanceof JsonWebTokenError) {
+      throw new BadRequestException('Невірний токен або інша помилка');
+    }
+    throw new BadRequestException(error.message || 'Помилка при обробці токена');
+  }
+}
+
+
+  validateToken(token: string): boolean {
+       try {
+         const decoded = this.jwtService.verify(token);
+         return !!decoded;
+       } catch (error) {
+         if (error instanceof JsonWebTokenError) {
+           return false; 
+         }
+         throw error; 
+       }
+     }
   
 }

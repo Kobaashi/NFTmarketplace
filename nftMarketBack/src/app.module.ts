@@ -7,6 +7,8 @@ import { NftModule } from './nft/nft.module';
 import { AuthController } from './auth/auth.controller';
 import { AuthModule } from './auth/auth.module';
 import { NftController } from './nft/nft.controller';
+import { HttpExceptionFilter } from './shared/httpexceptionfilter';
+import { APP_FILTER } from '@nestjs/core';
 
 
 @Module({
@@ -16,6 +18,11 @@ import { NftController } from './nft/nft.controller';
     AuthModule,
   ],
   controllers: [AppController, AuthController],
-  providers: [AppService],
+  providers: [AppService,
+    {
+       provide: APP_FILTER,
+      useClass: HttpExceptionFilter,
+    },
+  ],
 })
 export class AppModule {}
