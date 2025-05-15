@@ -20,4 +20,23 @@ export class UsersService {
     return this.userModel.findOne({ user_id });
   }
 
+  async addNftToUser(user_id: string, nft_id: string): Promise<Users | null> {
+    const user = await this.userModel.findOne({ user_id });
+
+    if (!user) {
+      console.log('User not found');
+      return null;
+    }
+
+    if (!user.owned.some(item => item.nft_id === nft_id)) {
+      user.owned.push({ date: new Date().toISOString(), nft_id });
+    }
+
+    await user.save();
+
+    return user;
+  }
+
+
+
 }

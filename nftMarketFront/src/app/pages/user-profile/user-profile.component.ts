@@ -11,6 +11,7 @@ import { ActivatedRoute, RouterLink, RouterLinkActive, Router } from '@angular/r
 import { ArrayObjectService } from '../../shared/service/array-object.service';
 import { NgClass } from '@angular/common';
 import { Subscription } from 'rxjs';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-user-profile',
@@ -24,6 +25,7 @@ import { Subscription } from 'rxjs';
     RouterLinkActive,
     NgClass
   ],
+  providers: [CookieService],
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit, OnDestroy {
@@ -42,6 +44,7 @@ export class UserProfileComponent implements OnInit, OnDestroy {
     private readonly nftService: NFTService,
     public readonly variableService: VariableService,
     private readonly arrayObjectService: ArrayObjectService,
+     private cookieService: CookieService,
     private route: ActivatedRoute
   ) {}
 
@@ -59,6 +62,10 @@ export class UserProfileComponent implements OnInit, OnDestroy {
       next: (user) => {
         this.user = user;
         console.log('Authenticated User:', this.user);
+
+        if (this.user?.user_id) {
+          this.setUserId(this.user.user_id);
+        }
 
         if (this.user?.created?.length) {
           for (const item of this.user.created) {
@@ -80,6 +87,12 @@ export class UserProfileComponent implements OnInit, OnDestroy {
         console.error('Error fetching authenticated user:', err);
       }
     });
+  }
+
+  setUserId(id: string): void {
+    this.usersService.userId = id;
+    this.cookieService.set('user_id', id, 7);
+    console.log('User ID set in UsersService:', id);
   }
 
   toogleActive(index: number): void {

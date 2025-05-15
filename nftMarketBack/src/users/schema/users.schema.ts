@@ -58,6 +58,9 @@ export class Users {
 
   @Prop({ type: [Types.ObjectId], ref: 'nft', required: false, default: [] })
   created: Types.ObjectId[];
+
+  @Prop({ type: [Types.ObjectId], ref: 'nft', required: false, default: [] })
+  owned: ChangeItem[];
 }
 
 export const UsersSchema = SchemaFactory.createForClass(Users);
