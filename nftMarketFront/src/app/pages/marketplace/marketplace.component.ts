@@ -11,12 +11,17 @@ import { HttpClient } from '@angular/common/http';
 import { Subscription } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
 import { UsersService } from '../../shared/service/users.service';
+import { FormsModule } from '@angular/forms';
+import { FormControl } from '@angular/forms';
+import { debounceTime } from 'rxjs/operators';
+import { Nft } from '../../shared/interface/nft.interface';
 
 @Component({
   selector: 'app-marketplace',
   standalone: true,
   imports: [
     NavMenuComponent,
+    FormsModule,
     FirstUppercasePipe,
     FooterComponent,
     RouterLink,
@@ -29,6 +34,13 @@ import { UsersService } from '../../shared/service/users.service';
 export class MarketplaceComponent implements OnDestroy {
 
       private marketSub?: Subscription
+      private nftByName?: Subscription
+      private nftByCollections?: Subscription
+      private nftToUser?: Subscription
+      searchTerm: string = '';
+      searchNft: Nft[] = [];
+      searchTermCollections: string = '';
+      searchNftCollections: Nft[] = [];
       NFTs: any[] = [];
       tabs: any[]= [];
       user_id: string = '';
@@ -52,6 +64,57 @@ export class MarketplaceComponent implements OnDestroy {
         this.user_id = userIdFromCookie;
      }
 
+     searchNFTsByName(): void {
+      const term = this.searchTerm.trim();
+      if (term.length === 0) {
+        this.searchNft = [];
+        return;
+      } else {
+        this.nftByName = this.NFTService.getNftByName(term).subscribe(results => {
+          console.log('Raw results from API:', results);
+          if (Array.isArray(results)) {
+            this.searchNft = results;
+          } else if (results && typeof results === 'object') {
+            this.searchNft = [results];  
+          } else {
+            this.searchNft = [];
+          }
+          console.log('searchNft after assignment:', this.searchNft);
+        });
+      }
+
+    
+}
+
+searchNFTsByCollections(): void {
+      const term = this.searchTermCollections.trim();
+      if (term.length === 0) {
+        this.searchNft = [];
+        return;
+      } else {
+        this.nftByCollections = this.NFTService.getNftByCollesction(term).subscribe({
+  next: (results) => {
+    console.log('Raw results from API:', results);
+    if (Array.isArray(results)) {
+      this.searchNftCollections = results;
+    } else if (results && typeof results === 'object') {
+      this.searchNftCollections = [results];  
+    } else {
+      this.searchNftCollections = [];
+    }
+    console.log('searchNftCollections after assignment:', this.searchNftCollections);
+  },
+  error: (err) => {
+    console.error('Error fetching NFTs by collection:', err);
+  }
+});
+
+      }
+
+    
+}
+
+
      loadUserIdFromToken(): void {
     const token = this.cookieService.get('jwt_token');
     if (token) {
@@ -72,7 +135,7 @@ export class MarketplaceComponent implements OnDestroy {
       return;
     }
     console.log("Id Nft:", nft_id);
-    this.usersService.addNftToUser(this.user_id, nft_id).subscribe({
+    this.nftToUser = this.usersService.addNftToUser(this.user_id, nft_id).subscribe({
       next: (res) => {
         console.log('NFT успішно додано:', res);
       },
@@ -81,6 +144,8 @@ export class MarketplaceComponent implements OnDestroy {
       }
     });
   }
+
+  
 
      getNFts(): void {
       this.marketSub = this.NFTService.fetchNFts().subscribe(data => {
@@ -95,10 +160,14 @@ export class MarketplaceComponent implements OnDestroy {
 
     toogleActive(index: number): void {
       this.variableService.currentSlideIndex = index;
+      console.log(this.variableService.currentSlideIndex)
     }
 
     ngOnDestroy(): void {
       this.marketSub?.unsubscribe();
+      this.nftByName?.unsubscribe();
+      this.nftByCollections?.unsubscribe();
+      this.nftToUser?.unsubscribe();
     }
 
 }
