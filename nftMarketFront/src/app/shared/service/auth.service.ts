@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../interface/user.ineterface';
-import { RegisterResponse } from '../interface/registerresponse.interface';
+import { RegisterResponse } from '../interface/registerResponse.interface';
 
 @Injectable({
   providedIn: 'root'

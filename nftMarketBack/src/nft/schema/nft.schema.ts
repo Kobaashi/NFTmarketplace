@@ -22,7 +22,7 @@ export class NFT extends Document {
   colections: string;
 
   @Prop({ required: true })
-  categories: number;
+  categories: string;
 
   @Prop({ required: true })
   price: number;
