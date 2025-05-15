@@ -67,25 +67,40 @@ export class LogInComponent {
   }
 
   async loginFn() {
-    const email = this.loginForm.get('email')?.value;
-    const password = this.loginForm.get('password')?.value;
-  
-    try {
-      const response = await this.authService.login({ email, password }).toPromise();
-      console.log('Login response:', response);
-  
-      if (response?.message === 'Login successful') {
-        console.log('Login successful!');
-      } else {
-        console.warn('Unexpected response:', response);
-      }
-    } catch (error: any) {
-      console.error('Login failed:', error?.error?.message || error);
+  const email = this.loginForm.get('email')?.value;
+  const password = this.loginForm.get('password')?.value;
+
+  try {
+    // робимо запит до сервера
+    const response: any = await this.authService.login({ email, password }).toPromise();
+    console.log('Login response:', response);
+
+    if (response?.message === 'Login successful' && response?.token) {
+      // Записуємо JWT у cookie
+      this.setJwtCookie(response.token);
+
+      console.log('Login successful! JWT saved in cookies.');
+    } else {
+      console.warn('Unexpected response:', response);
     }
+  } catch (error: any) {
+    console.error('Login failed:', error?.error?.message || error);
   }
-  
-  
-  
+}
+
+// Функція для запису cookie (з простими налаштуваннями, можна допрацювати)
+private setJwtCookie(token: string): void {
+  const expiresDays = 7;
+  const d = new Date();
+  d.setTime(d.getTime() + (expiresDays * 24 * 60 * 60 * 1000));
+  const expires = "expires=" + d.toUTCString();
+
+  document.cookie = `jwt=${token};${expires};path=/;SameSite=Lax`;
+
+  window.location.reload();
+}
+
+
   ngOnInit(): void {
   }
 }

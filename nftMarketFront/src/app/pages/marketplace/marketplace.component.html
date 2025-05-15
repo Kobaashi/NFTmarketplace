@@ -16,7 +16,7 @@
       type="text" 
       placeholder="Search your favourite NFTs" 
       [(ngModel)]="searchTerm"
-      class="w-[1050px] h-[60px] border-[1px] border-darkGray bg-transparent rounded-[20px] pl-5 placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-lightGray placeholder:leading-[160%]">
+      class="focus:outline-none focus:ring focus:ring-purple w-[1050px] h-[60px] border-[1px] border-darkGray bg-transparent rounded-[20px] pl-5 placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-lightGray placeholder:leading-[160%]">
       <img [src]="variableService.search" alt="" (click)="searchNFTsByName()" class="cursor-pointer relative w-[24px] h-[24px] desk:mt-[15px] -left-10
         mob:mt-5">
       } @else if(this.variableService.currentSlideIndex === 1) {
@@ -24,7 +24,7 @@
       type="text" 
       placeholder="Search your favourite NFTs" 
       [(ngModel)]="searchTermCollections"
-      class="w-[1050px] h-[60px] border-[1px] border-darkGray bg-transparent rounded-[20px] pl-5 placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-lightGray placeholder:leading-[160%]">
+      class="focus:outline-none focus:ring focus:ring-purple w-[1050px] h-[60px] border-[1px] border-darkGray bg-transparent rounded-[20px] pl-5 placeholder:font-work placeholder:font-regular placeholder:text-base placeholder:text-lightGray placeholder:leading-[160%]">
       <img [src]="variableService.search" alt="" (click)="searchNFTsByCollections()" class="cursor-pointer relative w-[24px] h-[24px] desk:mt-[15px] -left-10
         mob:mt-5">
       }

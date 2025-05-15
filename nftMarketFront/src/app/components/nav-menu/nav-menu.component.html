@@ -26,85 +26,84 @@
   <div class="pc:mt-[30px] pc:ml-[523px] pc:w-[607px]
                desk:mt-[30px] desk:ml-[250px] desk:w-[607px]">
     @if(variableService.isActive !== true) {
-      <div class="pc:bg-lightBlack pc:bg-opacity-1 pc:ml-[200px] pc:block desk:block mob:hidden">
-        <ul class="pc:flex pc:mt-[5px] pc:mb-[20px] pc:font-work pc:font-semibold pc:text-white pc:text-base
-                    desk:flex desk:mt-[5px] desk:mb-[20px] desk:font-work desk:font-semibold desk:text-white desk:text-base
-                     mob:block mob:mt-[50px] mob:mb-[20px] mob:font-work mob:font-semibold mob:text-white mob:text-caption">
+  <div class="pc:bg-lightBlack pc:bg-opacity-1 pc:ml-[200px] pc:block desk:block mob:hidden">
+    <ul class="pc:flex pc:mt-[5px] pc:mb-[20px] pc:font-work pc:font-semibold pc:text-white pc:text-base
+                desk:flex desk:mt-[5px] desk:mb-[20px] desk:font-work desk:font-semibold desk:text-white desk:text-base
+                mob:block mob:mt-[50px] mob:mb-[20px] mob:font-work mob:font-semibold mob:text-white mob:text-caption">
 
-          <ul class="pc:flex
-                      desk:flex">
-            <li class="pc:px-10 pc:py-3 pc:cursor-pointer pc:transition-transform pc:duration-500 pc:hover:scale-90 pc:mr-[30px]
-                        desk:px-10 desk:py-3 desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90 desk:mr-[30px]
-        mob:px-10 mob:py-3 mob:cursor-pointer mob:z-10 mob:mb-[30px]">
-              <a routerLink="/marketplace" routerLinkActive="active">Marketplace</a>
-            </li>
+      <ul class="pc:flex desk:flex">
+        <a routerLink="/marketplace" routerLinkActive="active"><li class="pc:px-10 pc:py-3 pc:cursor-pointer pc:transition-transform pc:duration-500 pc:hover:scale-90 pc:mr-[30px]
+                    desk:px-10 desk:py-3 desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90 desk:mr-[30px]
+                    mob:px-10 mob:py-3 mob:cursor-pointer mob:z-10 mob:mb-[30px]">
+          Marketplace
+        </li></a>
 
-            <li class="pc:px-10 pc:py-3 pc:cursor-pointer pc:transition-transform pc:duration-500 pc:hover:scale-90 pc:mr-[30px]
-                        desk:px-10 desk:py-3 desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90 desk:mr-[30px]
-        mob:px-10 mob:py-3 mob:cursor-pointer mob:mb-[30px]">
-              <a routerLink="/ranking" routerLinkActive="active">Rankings</a>
-            </li>
+        <a routerLink="/ranking" routerLinkActive="active"><li class="pc:px-10 pc:py-3 pc:cursor-pointer pc:transition-transform pc:duration-500 pc:hover:scale-90 pc:mr-[30px]
+                    desk:px-10 desk:py-3 desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90 desk:mr-[30px]
+                    mob:px-10 mob:py-3 mob:cursor-pointer mob:mb-[30px]">
+          Rankings
+        </li></a>
 
-            <li class="pc:px-5 pc:py-3 pc:cursor-pointer pc:transition-transform pc:duration-500 pc:hover:scale-90 pc:mr-[30px] pc:w-[174px]
-                        desk:px-10 desk:py-3 desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90 desk:mr-[30px] desk:w-[215px]
-        mob:px-10 mob:py-3 mob:cursor-pointer mob:mb-[30px]">
-              <a routerLink="/connect-a-wallet" routerLinkActive="active">Connect a wallet</a>
-            </li>
+        <a routerLink="/connect-a-wallet" routerLinkActive="active"><li class="pc:px-5 pc:py-3 pc:cursor-pointer pc:transition-transform pc:duration-500 pc:hover:scale-90 pc:mr-[30px] pc:w-[174px]
+                    desk:px-10 desk:py-3 desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90 desk:mr-[30px] desk:w-[215px]
+                    mob:px-10 mob:py-3 mob:cursor-pointer mob:mb-[30px]">
+          Connect a wallet
+        </li></a>
 
-            <li class="pc:px-5 pc:py-3 pc:cursor-pointer pc:transition-transform pc:duration-500 pc:hover:scale-90 pc:mr-[30px] pc:w-[174px]
-                        desk:px-10 desk:py-3 desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90 desk:-mr-[30px] desk:w-[215px]
-              mob:px-10 mob:py-3 mob:cursor-pointer mob:mb-[30px]">
-              <a routerLink="/jwtuser/:nameuser/:user_id" routerLinkActive="active">Profile</a>
-            </li>
-          </ul>
+        <a routerLink="/jwtuser/:nameuser/:user_id" routerLinkActive="active"><li class="pc:px-5 pc:py-3 pc:cursor-pointer pc:transition-transform pc:duration-500 pc:hover:scale-90 pc:mr-[30px] pc:w-[174px]
+                    desk:px-10 desk:py-3 desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90 desk:-mr-[30px] desk:w-[215px]
+                    mob:px-10 mob:py-3 mob:cursor-pointer mob:mb-[30px]">
+          Profile
+        </li></a>
+      </ul>
 
-          <div class="inline-flex pc:cursor-pointer pc:transition-transform pc:duration-500 pc:hover:scale-90 pc:mr-[30px] pc:-mt-[5px]
-                       desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90 desk:ml-[30px] desk:-mt-[5px]
-                        mob:cursor-pointer mob:mt-[30px]">
-            <button class="mob:hidden desk:flex pc:flex pc:font-mono pc:font-semibold pc:text-base pc:leading-[140%] pc:items-center pc:justify-center pc:bg-purple pc:px-[20px] pc:w-[152px] pc:h-[60px] pc:rounded-[20px]
-                            desk:work desk:font-semibold desk:text-base desk:leading-[140%] desk:items-center desk:justify-center desk:bg-purple desk:px-[20px] desk:py-[19px] desk:w-[152px] desk:h-[60px] desk:rounded-[20px]">
-              <img [src]="variableService.userm" alt="" class="pc:w-[24px] pc:h-[24px] pc:mr-[12px] mob:w-[12px] mob:h-[12px] mob:mr-[12px]">
-              <a routerLink="/log-in" routerLinkActive="active">Log In</a>
-            </button>
-          </div>
-
-        </ul>
+      <div class="inline-flex pc:cursor-pointer pc:transition-transform pc:duration-500 pc:hover:scale-90 pc:mr-[30px] pc:-mt-[5px]
+                  desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90 desk:ml-[30px] desk:-mt-[5px]
+                  mob:cursor-pointer mob:mt-[30px]">
+        <a routerLink="/log-in" routerLinkActive="active"><button (click)="onAuthButtonClick()" class="mob:hidden desk:flex pc:flex pc:font-mono pc:font-semibold pc:text-base pc:leading-[140%] pc:items-center pc:justify-center pc:bg-purple pc:px-[20px] pc:w-[152px] pc:h-[60px] pc:rounded-[20px]
+                        desk:work desk:font-semibold desk:text-base desk:leading-[140%] desk:items-center desk:justify-center desk:bg-purple desk:px-[20px] desk:py-[19px] desk:w-[152px] desk:h-[60px] desk:rounded-[20px]">
+          <img [src]="variableService.userm" alt="" class="pc:w-[24px] pc:h-[24px] pc:mr-[12px] mob:w-[12px] mob:h-[12px] mob:mr-[12px]">
+          {{ buttonText }}
+        </button></a>
       </div>
-    } @else {
-      <div class="mob:flex mob:bg-lightGray mob:bg-opacity-[0.1] pc:bg-lightBlack pc:bg-opacity-1 mob:-ml-[200px] mob:rounded-[20px] mob:mb-[10px]">
-        <ul class="pc:flex pc:mt-[60px] pc:mb-[20px] pc:ml-[800px] pc:font-work pc:font-semibold pc:text-white pc:text-base
-                    desk:flex desk:mt-[60px] desk:mb-[20px] desk:ml-[800px] desk:font-work desk:font-semibold desk:text-white desk:text-base
-            mob:block mob:mt-[50px] mob:mb-[20px] mob:-ml-[200px] mob:font-work mob:font-semibold mob:text-white mob:text-caption">
-          <li class="pc:px-10 pc:py-3 pc:ml-[10px] pc:cursor-pointer pc:transition-transform pc:duration-500 pc:hover:scale-90
-            mob:px-10 mob:py-3 mob:ml-[190px] mob:cursor-pointer mob:relative mob:z-10"><a routerLink="/marketplace" routerLinkActive="active">Marketplace</a></li>
-          <li class="pc:px-10 pc:py-3 pc:ml-[10px] pc:cursor-pointer pc:transition-transform pc:duration-500 pc:hover:scale-90
-            mob:px-10 mob:py-3 mob:ml-[190px] mob:cursor-pointer mob:relative mob:z-10"><a routerLink="/ranking" routerLinkActive="active">Rankings</a></li>
-          <li class="pc:px-10 pc:py-3 pc:ml-[10px] pc:cursor-pointer pc:transition-transform pc:duration-500 hover:scale-90 pc:w-[215px]
-            mob:px-10 mob:py-3 mob:ml-[190px] mob:cursor-pointer mob:relative mob:z-10"><a routerLink="/connect-a-wallet" routerLinkActive="active">Connect a wallet</a></li>
-          <li class="pc:px-10 pc:py-3 pc:ml-[10px] pc:cursor-pointer pc:transition-transform pc:duration-500 hover:scale-90 pc:w-[215px]
-            mob:px-10 mob:py-3 mob:ml-[190px] mob:cursor-pointer mob:relative mob:z-10"><a routerLink="jwtuser/:nameuser/:user_id" routerLinkActive="active">Profile</a></li>
 
-          <div class="flex pc:-mt-[25px] cursor-pointer transition-transform duration-500 hover:scale-90
-              mob:-mt-[7px]">
-            <button class="mob:hidden pc:flex pc:font-mono pc:font-semibold pc:text-base pc:leading-[140%] pc:items-center pc:justify-center pc:bg-purple pc:px-[20px] pc:w-[170px] pc:h-[60px] pc:rounded-[20px] pc:ml-[50px]
-                    mob:font-mono mob:font-semibold mob:caption mob:leading-[140%] mob:items-center mob:justify-center mob:bg-purple mob:w-[90px] mob:h-[30px] mob:rounded-[20px] mob:mt-[20px] mob:ml-[220px]">
-              <img [src]="variableService.userm" alt="" class="pc:w-[24px] pc:h-[24px] pc:mr-[12px]
-                                               mob:w-[12px] mob:h-[12px] mob:mr-[12px]">
-              <a routerLink="/log-in" routerLinkActive="active">Log In</a>
-            </button>
-          </div>
-          <div>
-            <button class="flex pc:hidden pc:font-mono pc:font-semibold pc:text-base pc:leading-[140%] pc:items-center pc:justify-center pc:bg-purple pc:px-[20px] pc:w-[170px] pc:h-[60px] pc:rounded-[20px]
-                    desk:w-[152px] desk:h-[60px]
-                    mob:font-mono mob:font-semibold mob:caption mob:leading-[140%] mob:items-center mob:justify-center mob:bg-purple mob:w-[90px] mob:h-[30px] mob:rounded-[20px] mob:mt-[20px] mob:ml-[220px] mob:relative mob:z-10">
-              <img [src]="variableService.userm" alt="" class="pc:w-[24px] pc:h-[24px] pc:mr-[12px]
-                                               desk:w-[20px] pc:h-[20px] pc:mr-[12px]
-                                               mob:w-[12px] mob:h-[12px] mob:mr-[12px]">
-              <a routerLink="/log-in" routerLinkActive="active">Log In</a>
-            </button>
-          </div>
-        </ul>
+    </ul>
+  </div>
+} @else {
+  <div class="mob:flex mob:bg-lightGray mob:bg-opacity-[0.1] pc:bg-lightBlack pc:bg-opacity-1 mob:-ml-[200px] mob:rounded-[20px] mob:mb-[10px]">
+    <ul class="pc:flex pc:mt-[60px] pc:mb-[20px] pc:ml-[800px] pc:font-work pc:font-semibold pc:text-white pc:text-base
+                desk:flex desk:mt-[60px] desk:mb-[20px] desk:ml-[800px] desk:font-work desk:font-semibold desk:text-white desk:text-base
+                mob:block mob:mt-[50px] mob:mb-[20px] mob:-ml-[200px] mob:font-work mob:font-semibold mob:text-white mob:text-caption">
+      <li class="pc:px-10 pc:py-3 pc:ml-[10px] pc:cursor-pointer pc:transition-transform pc:duration-500 pc:hover:scale-90
+        mob:px-10 mob:py-3 mob:ml-[190px] mob:cursor-pointer mob:relative mob:z-10"><a routerLink="/marketplace" routerLinkActive="active">Marketplace</a></li>
+      <li class="pc:px-10 pc:py-3 pc:ml-[10px] pc:cursor-pointer pc:transition-transform pc:duration-500 pc:hover:scale-90
+        mob:px-10 mob:py-3 mob:ml-[190px] mob:cursor-pointer mob:relative mob:z-10"><a routerLink="/ranking" routerLinkActive="active">Rankings</a></li>
+      <li class="pc:px-10 pc:py-3 pc:ml-[10px] pc:cursor-pointer pc:transition-transform pc:duration-500 hover:scale-90 pc:w-[215px]
+        mob:px-10 mob:py-3 mob:ml-[190px] mob:cursor-pointer mob:relative mob:z-10"><a routerLink="/connect-a-wallet" routerLinkActive="active">Connect a wallet</a></li>
+      <li class="pc:px-10 pc:py-3 pc:ml-[10px] pc:cursor-pointer pc:transition-transform pc:duration-500 hover:scale-90 pc:w-[215px]
+        mob:px-10 mob:py-3 mob:ml-[190px] mob:cursor-pointer mob:relative mob:z-10"><a routerLink="jwtuser/:nameuser/:user_id" routerLinkActive="active">Profile</a></li>
+
+      <div class="flex pc:-mt-[25px] cursor-pointer transition-transform duration-500 hover:scale-90
+          mob:-mt-[7px]">
+        <button class="mob:hidden pc:flex pc:font-mono pc:font-semibold pc:text-base pc:leading-[140%] pc:items-center pc:justify-center pc:bg-purple pc:px-[20px] pc:w-[170px] pc:h-[60px] pc:rounded-[20px] pc:ml-[50px]
+                mob:font-mono mob:font-semibold mob:caption mob:leading-[140%] mob:items-center mob:justify-center mob:bg-purple mob:w-[90px] mob:h-[30px] mob:rounded-[20px] mob:mt-[20px] mob:ml-[220px]">
+          <img [src]="variableService.userm" alt="" class="pc:w-[24px] pc:h-[24px] pc:mr-[12px]
+                                           mob:w-[12px] mob:h-[12px] mob:mr-[12px]">
+          <a routerLink="/log-in" routerLinkActive="active">{{ buttonText }}</a>
+        </button>
       </div>
-    }
+      <div>
+        <button (click)="onAuthButtonClick()" class="flex pc:hidden pc:font-mono pc:font-semibold pc:text-base pc:leading-[140%] pc:items-center pc:justify-center pc:bg-purple pc:px-[20px] pc:w-[170px] pc:h-[60px] pc:rounded-[20px]
+                desk:w-[152px] desk:h-[60px]
+                mob:font-mono mob:font-semibold mob:caption mob:leading-[140%] mob:items-center mob:justify-center mob:bg-purple mob:w-[90px] mob:h-[30px] mob:rounded-[20px] mob:mt-[20px] mob:ml-[220px] mob:relative mob:z-10">
+          <img [src]="variableService.userm" alt="" class="pc:w-[24px] pc:h-[24px] pc:mr-[12px]
+                                           desk:w-[20px] pc:h-[20px] pc:mr-[12px]
+                                           mob:w-[12px] mob:h-[12px] mob:mr-[12px]">
+          <a routerLink="/log-in" routerLinkActive="active">{{ buttonText }}</a>
+        </button>
+      </div>
+    </ul>
+  </div>
+}
   </div>
 </nav>

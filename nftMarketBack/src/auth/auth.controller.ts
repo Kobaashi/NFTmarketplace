@@ -21,23 +21,29 @@ export class AuthController {
     }
   }
 
-     @Post('login')
+    @Post('login')
    async login(
      @Body() body: { email: string; password: string },
      @Res({ passthrough: true }) response: Response
    ) {
      const token = await this.authService.login(body.email, body.password);
      response.cookie('jwt', token, {
-       httpOnly: true,
+       httpOnly: false,
        sameSite: 'strict',
        maxAge: 7 * 24 * 60 * 60 * 1000,
+       path: '/'
      });
      return { message: 'Login successful', token }; 
    }
 
   @Post('logout')
   logout(@Res({ passthrough: true }) response: Response) {
-    response.clearCookie('jwt');
+    response.clearCookie('jwt', {
+      httpOnly: false,
+      sameSite: 'strict',
+      secure: false,  
+      path: '/'
+    });
     return { message: 'Вихід виконано успішно' };
   }
 
