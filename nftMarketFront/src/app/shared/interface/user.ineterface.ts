@@ -13,5 +13,6 @@ export interface User {
   followers: number,
   bio: string,
   change: string,
-  created:[{nft_id: string}]
+  created:[{nft_id: string}],
+  owned:[{nft_id: string}],
 }

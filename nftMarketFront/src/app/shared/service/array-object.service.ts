@@ -17,9 +17,6 @@ export class ArrayObjectService {
     {
       name: 'Owned',
     },
-    {
-      name: 'Collection',
-    },
   ]
 
   NFTS = [

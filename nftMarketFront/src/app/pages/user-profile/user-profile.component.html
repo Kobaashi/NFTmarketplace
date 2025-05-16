@@ -66,7 +66,7 @@
       <div class="desk:w-full desk:h-[70px] desk:border-t-[1px] desk:border-lightGray desk:mt-10
                    mob:w-full mob:h-[70px] mob:border-t-[1px] mob:border-lightGray mob:mt-10">
         <div class="flex pc:ml-[430px]
-              desk:ml-[210px] mt-[10px]
+              desk:ml-[410px] mt-[10px]
                      mob:ml-[30px]">
           @for(tab of Tabs; track tab; let i = $index) {
             <div
@@ -88,10 +88,10 @@
       </div>
     </div>
     <div class="bg-darkGray border-b-[2px] border-lightBlack pb-20">
-      <div class="desk:block desk:flex desk:flex-wrap desk:pt-[50px] pc:w-[60%] desk:w-[80%] pc:ml-[400px]
+      @if(this.variableService.currentSlideIndex === 0) {
+        <div class="desk:block desk:flex desk:flex-wrap desk:pt-[50px] pc:w-[60%] desk:w-[80%] pc:ml-[400px]
       desk:ml-[190px]
                    mob:hidden"> 
-        @if(createdNfts.length > 0) {
           @for(nfts of createdNfts; track nfts) {
             <div class="desk:ml-[30px] desk:mt-[30px] desk:transition-transform desk:duration-500 desk:hover:scale-90">
               <a routerLink="/marketplace" routerLinkActive="active">
@@ -117,10 +117,7 @@
                 </div>
               </a>
             </div>
-          }}
-        <!-- } @else if(createdNfts.length == 0) {
-          <div>{noNFt}</div>
-        } -->
+          }
       </div>
 
         <div class="desk:hidden desk:flex desk:flex-wrap desk:pt-[50px] desk:w-[60%] desk:ml-[360px]
@@ -152,6 +149,9 @@
             </div>
           }
         </div>
+      } @else if (this.variableService.currentSlideIndex === 0 && this.createdNfts.length === 0) {
+        <h1>Fuck you</h1>
+      }
     </div>
   </div>
 </div>

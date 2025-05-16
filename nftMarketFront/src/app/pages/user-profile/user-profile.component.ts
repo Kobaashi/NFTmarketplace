@@ -97,6 +97,7 @@ export class UserProfileComponent implements OnInit, OnDestroy {
 
   toogleActive(index: number): void {
     this.variableService.currentSlideIndex = index;
+    console.log(this.variableService.currentSlideIndex)
   }
 
   ngOnDestroy(): void {

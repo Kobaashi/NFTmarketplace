@@ -32,6 +32,7 @@ export class ArtistComponent implements OnDestroy {
   private nftSub?: Subscription;
   user: User | null = null;
   createdNfts: any[] = [];
+  ownedNfts: any[] = [];  
   NFTS: any[] = [];
   Tabs: any[] = [];
 
@@ -52,6 +53,7 @@ export class ArtistComponent implements OnDestroy {
     const userId = this.route.snapshot.paramMap.get('id');
     if (userId) {
       this.getUserById(userId);
+      this.getOwnedNft(userId);
     }
   }
 
@@ -88,9 +90,38 @@ export class ArtistComponent implements OnDestroy {
     });
   }
 
+  getOwnedNft(userId: string): void {
+    this.userSub = this.usersService.getUserById(userId).subscribe({
+      next: (data) => {
+        this.user = data;
+        console.log('User data:', this.user);
+
+        if (this.user?.owned?.length) {
+          for (const item of this.user.owned) {
+            this.nftSub = this.nftService.getNftById(item.nft_id).subscribe({
+              next: (nftData) => {
+                this.ownedNfts.push(nftData); 
+                console.log('NFT data:', this.ownedNfts);
+              },
+              error: (err) => {
+                console.error(`Error fetching NFT ${item.nft_id}:`, err);
+              }
+            });
+          } 
+        } else {
+          console.log('No NFTs created by this user.');
+        }
+      },
+      error: (err) => {
+        console.error('Error fetching user:', err);
+      }
+    });
+  }
+
 
   toogleActive(index: number): void {
     this.variableService.currentSlideIndex = index;
+    console.log(this.variableService.currentSlideIndex)
   }
 
   ngOnDestroy(): void {
