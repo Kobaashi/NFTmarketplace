@@ -36,6 +36,7 @@ export class UserProfileComponent implements OnInit, OnDestroy {
   Tabs: any[] = [];
   user: User | null = null;
   createdNfts: any[] = [];
+  ownedNfts: any[] = [];
 
   constructor(
     private readonly authService: AuthService,
@@ -72,7 +73,24 @@ export class UserProfileComponent implements OnInit, OnDestroy {
             this.nftSub = this.nftService.getNftById(item.nft_id).subscribe({
               next: (nftData) => {
                 this.createdNfts.push(nftData);
-                console.log('NFT data:', this.createdNfts);
+                console.log('NFT data by created:', this.createdNfts);
+              },
+              error: (err) => {
+                console.error(`Error fetching NFT ${item.nft_id}:`, err);
+              }
+            });
+          }
+        } else {
+          this.noNFt = 'not a single nft was created'
+        }
+
+
+        if (this.user?.owned?.length) {
+          for (const item of this.user.owned) {
+            this.nftSub = this.nftService.getNftById(item.nft_id).subscribe({
+              next: (nftData) => {
+                this.ownedNfts.push(nftData);
+                console.log('NFT data by owned:', this.ownedNfts);
               },
               error: (err) => {
                 console.error(`Error fetching NFT ${item.nft_id}:`, err);
