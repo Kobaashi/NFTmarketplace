@@ -14,7 +14,7 @@ export const routes: Routes = [
   { path: 'marketplace', component: MarketplaceComponent },
   { path: 'ranking', component: RankingComponent },
   { path: 'connect-a-wallet', component: ConnectComponent },
-  { path: 'sign-up-or-log-in', component: AuthComponent },
+  // { path: 'sign-up-or-log-in', component: AuthComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'log-in', component: LogInComponent },
   { path: 'artist', component: ArtistComponent },

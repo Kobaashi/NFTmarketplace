@@ -25,9 +25,12 @@ export class NavMenuComponent {
   }
 
   checkJwtCookie() {
+  if (typeof document !== 'undefined') {
     const hasJwt = document.cookie.includes('jwt');
     this.buttonText = hasJwt ? 'Log Out' : 'Log In';
   }
+}
+
 
   onAuthButtonClick() {
   if (this.buttonText === 'Log Out') {
