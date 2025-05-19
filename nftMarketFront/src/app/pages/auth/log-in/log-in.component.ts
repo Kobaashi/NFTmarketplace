@@ -15,6 +15,7 @@ import { VariableService } from '../../../shared/service/variable.service';
 import { AuthService } from '../../../shared/service/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BadRequestException } from "@nestjs/common";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-log-in',
@@ -39,6 +40,7 @@ export class LogInComponent {
   emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   constructor(
+    private router: Router,
     private authService: AuthService,
     private fb: FormBuilder,
     protected variableService: VariableService
@@ -76,8 +78,8 @@ export class LogInComponent {
     console.log('Login response:', response);
 
     if (response?.message === 'Login successful' && response?.token) {
-      // Записуємо JWT у cookie
       this.setJwtCookie(response.token);
+      this.router.navigate(['/']);
 
       console.log('Login successful! JWT saved in cookies.');
     } else {
