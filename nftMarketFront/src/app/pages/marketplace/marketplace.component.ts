@@ -137,6 +137,7 @@ searchNFTsByCollections(): void {
     console.log("Id Nft:", nft_id);
     this.nftToUser = this.usersService.addNftToUser(this.user_id, nft_id).subscribe({
       next: (res) => {
+        alert('Ви успішно купили NFT');
         console.log('NFT успішно додано:', res);
       },
       error: (err) => {
