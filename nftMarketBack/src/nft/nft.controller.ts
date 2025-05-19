@@ -30,9 +30,9 @@ export class NftController {
   }
 
   @Get('categories/:categories')
-  async findNFTByCategories(@Param('categories') categories: string) {
-    console.log(`Searching NFT with categories: "${categories}"`);
-    return this.nftService.findNFTByCategories(categories);
-  }
+    async findNFTByCategories(@Param('categories') categories: string) {
+      console.log(`Searching NFT with categories: "${categories}"`);
+      return this.nftService.findNFTByCategories(categories);
+    }
 
 }

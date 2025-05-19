@@ -19,7 +19,7 @@ desk:pl-[180px]
                mob:mt-5 mob:w-[100%] mob:flex mob:flex-wrap mob:-ml-[25px]">
     @if(!variableService.isMobile) {
       @for(creator of creators; track creator; let i = $index) {
-        <a routerLink="/artist" routerLinkActive="active">
+        <a [routerLink]="['/user', creator.name, creator.user_id]" routerLinkActive="active">
           <div class="desk:block desk:w-[240px] desk:h-[238px] bg-darkGray desk:rounded-[20px] desk:ml-[30px] desk:mt-[30px] desk:transition-transform desk:duration-500 desk:hover:scale-90
                      mob:flex mob:w-[315px] mob:h-[100px] mob:rounded-[20px] mob:ml-[30px] mob:mt-5 mob:transition-transform mob:duration-500 mob:hover:scale-90" id="creator-cards">
             <div class="desk:pt-[18px] desk:ml-5
@@ -40,14 +40,14 @@ desk:pl-[180px]
         </a>
       }
     } @else if(variableService.isMobile) {
-      @for(creator of creators; track creator) {
-        <a routerLink="/artist" routerLinkActive="active">
+      @for(creator of creators; track creator; let i = $index) {
+        <a [routerLink]="['/user', creator.name, creator.user_id]" routerLinkActive="active">
           <div class="desk:hidden desk:block desk:w-[240px] desk:h-[238px] bg-darkGray desk:rounded-[20px] desk:ml-[30px] desk:mt-[30px] desk:transition-transform desk:duration-500 desk:hover:scale-90
                       mob:flex mob:w-[315px] mob:h-[100px] mob:rounded-[20px] mob:ml-[30px] mob:mt-5 mob:transition-transform mob:duration-500 mob:hover:scale-90" id="creator-card ">
             <div class="desk:pt-[18px] desk:ml-5
                        mob:pt-[13px] mob:ml-3">
               <h1 class="bg-lightBlack desk:w-[30px] desk:h-[30px] desk:rounded-full desk:text-center desk:py-1 desk:text-lightGray
-                       mob:w-[30px] mob:h-[30px] mob:rounded-full mob:text-center mob:py-1 mob:text-lightGray mob:relative mob:z-10">{{ creator.id }}</h1>
+                       mob:w-[30px] mob:h-[30px] mob:rounded-full mob:text-center mob:py-1 mob:text-lightGray mob:relative mob:z-10">{{ i + 1 }}</h1>
             </div>
             <div class="block">
               <img [src]="creator.ava" alt="" class="desk:w-[120px] desk:h-[120px] desk:rounded-full desk:-mt-5 desk:mx-auto

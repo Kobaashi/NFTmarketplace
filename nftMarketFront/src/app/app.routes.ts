@@ -5,7 +5,6 @@ import {ConnectComponent} from './pages/connect/connect.component';
 import {RankingComponent} from './pages/ranking/ranking.component';
 import {ArtistComponent} from './pages/artist/artist.component';
 import {MarketplaceComponent} from './pages/marketplace/marketplace.component';
-import {NftComponent} from './pages/nft/nft.component';
 import {LogInComponent} from './pages/auth/log-in/log-in.component';
 import {SignUpComponent} from './pages/auth/sign-up/sign-up.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';

@@ -73,13 +73,14 @@
           </p>
         </div>
         <div class="desk:block desk:w-[160px] desk:h-[22px] desk:-ml-1 desk:-mt-[5px]
-                     mob:hidden">
-          <p class="desk:font-mono desk:font-regular desk:text-base desk:text-lightGray desk:text-left desk:leading-[140%]">
+                     mob:w-[100px] mob:h-[22px] mob:-ml-1 mob:mt-[3px]">
+          <p class="desk:font-mono desk:font-regular desk:text-base desk:text-lightGray desk:text-left desk:leading-[140%]
+          mob:font-mono mob:font-regular mob:text-caption mob:text-lightGray mob:text-left mob:leading-[140%]">
             NFts Sold
           </p>
         </div>
         <div class="desk:block desk:w-[160px] desk:h-[22px] desk:ml-8 desk:-mt-[5px]
-                     mob:w-[70px] mob:h-[13px] mob:mt-1">
+                     mob:hidden mob:w-[70px] mob:h-[13px] mob:mt-1">
           <p class="desk:font-mono desk:font-regular desk:text-base desk:text-lightGray desk:text-left desk:leading-[140%]
                      mob:font-mono mob:font-regular mob:text-caption mob:text-lightGray mob:text-left mob:leading-[110%]">
             Volume
@@ -93,27 +94,41 @@
                  mob:pt-5 mob:pb-5">
                  @for(artist of filteredArtists$ | async; track artist; let i = $index) {
                  <a [routerLink]="['/user', artist.name, artist.user_id]" routerLinkActive="active">
-                  <div class="desk:mb-[20px] cursor-pointer">
-                    <div class="bg-[#3B3B3B] desk:w-[1050px] desk:h-[84px] flex rounded-[20px]">
-                      <div class="bg-[#2B2B2B] desk:w-[30px] desk:h-[30px] desk:rounded-full desk:mt-[27px] desk:ml-[20px] flex items-center justify-center">
-                        <span class="desk:mx-[8px] desk:my-[4px] text-[#858584]">{{i + 1}}</span>
+                  <div class="desk:mb-[20px] cursor-pointer
+                  mob:mb-[20px]">
+                    <div class="bg-[#3B3B3B] desk:w-[1050px] desk:h-[84px] flex rounded-[20px]
+                    mob:bg-[#3B3B3B] mob:w-[315px] mob:h-[50] flex mob:rounded-[20px]">
+                      <div class="desk:bg-[#2B2B2B] desk:w-[30px] desk:h-[30px] desk:rounded-full desk:mt-[27px] desk:ml-[20px] flex items-center justify-center
+                      mob:w-[24px] mob:h-[24px] mob:rounded-full mob:mt-[13px] mob:ml-[10px]">
+                        <span class="desk:mx-[8px] desk:my-[4px] text-[#858584]
+                        mob:mx-[10px] mob:mb-[13px] ">{{i + 1}}</span>
                       </div>
-                      <div class="flex desk:w-[360px] desk:h-[60px]">
-                        <img src="{{artist.ava}}"  class="desk:w-[60px] desk:h-[60px] rounded-full desk:ml-[20px] desk:mt-[12px]"/>
-                        <h1 class="font-work font-semibold text-h5 text-white desk:ml-[20px] desk:mt-[25px]">{{artist.name | firstUppercase}}</h1>
+                      <div class="flex desk:w-[360px] desk:h-[60px]
+                      mob:w-[167px] mob:h-[24px]">
+                        <img src="{{artist.ava}}"  class="desk:w-[60px] desk:h-[60px] rounded-full desk:ml-[20px] desk:mt-[12px]
+                        mob:w-[24px] mob:h-[24px] mob:ml-[10px] mob:mt-[7px]"/>
+                        <h1 class="font-work font-semibold desk:text-h5 text-white desk:ml-[20px] desk:mt-[25px]
+                        mob:text-caption mob:ml-[12px] mob:mt-[9px]">{{artist.name | firstUppercase}}</h1>
                       </div>
-                      <div class="flex desk:ml-[115px]">
-                        <h2 class="font-mono font-regular text-base  text-[#00AC4F] desk:mt-[31px] desk:-ml-[15px] desk:w-[160px]">{{artist.change}}</h2>
+                      <div class="flex desk:ml-[115px]
+                      mob:ml-[45px]">
+                        <h2 class="desk:block font-mono font-regular text-base  text-[#00AC4F] desk:mt-[31px] desk:-ml-[15px] desk:w-[160px]
+                        mob:hidden">{{artist.change}}</h2>
                         @if(variableService.currentSlideIndex === 0) {
-                          <h2 class="font-mono font-regular text-base  text-white desk:mt-[31px] desk:ml-[30px] desk:w-[160px]">{{artist.sold_today}}</h2>
+                          <h2 class="font-mono font-regular text-base  text-white desk:mt-[31px] desk:ml-[30px] desk:w-[160px]
+                          mob:mt-[7px] ">{{artist.sold_today}}</h2>
                         } @else if(variableService.currentSlideIndex === 1) {
-                          <h2 class="font-mono font-regular text-base  text-white desk:mt-[31px] desk:ml-[30px] desk:w-[160px]">{{artist.sold_week}}</h2>
+                          <h2 class="font-mono font-regular text-base  text-white desk:mt-[31px] desk:ml-[30px] desk:w-[160px]
+                          mob:mt-[7px] ">{{artist.sold_week}}</h2>
                         } @else if(variableService.currentSlideIndex === 2) {
-                          <h2 class="font-mono font-regular text-base  text-white desk:mt-[31px] desk:ml-[30px] desk:w-[160px]">{{artist.sold_month}}</h2>
+                          <h2 class="font-mono font-regular text-base  text-white desk:mt-[31px] desk:ml-[30px] desk:w-[160px]
+                          mob:mt-[7px] ">{{artist.sold_month}}</h2>
                         } @else if(variableService.currentSlideIndex === 3) {
-                          <h2 class="font-mono font-regular text-base  text-white desk:mt-[31px] desk:ml-[30px] desk:w-[160px]">{{artist.sold_allTime}}</h2>
+                          <h2 class="font-mono font-regular text-base  text-white desk:mt-[31px] desk:ml-[30px] desk:w-[160px]
+                          mob:mt-[7px] ">{{artist.sold_allTime}}</h2>
                         }
-                        <h2 class="font-mono font-regular text-base  text-white desk:mt-[31px] desk:-ml-[20px] desk:w-[160px]">{{artist.volume}} ETH</h2>
+                        <h2 class="desk:block font-mono font-regular text-base  text-white desk:mt-[31px] desk:-ml-[20px] desk:w-[160px]
+                        mob:hidden">{{artist.volume}} ETH</h2>
                       </div>
                     </div>
                   </div>

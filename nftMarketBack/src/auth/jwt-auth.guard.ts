@@ -7,7 +7,7 @@
 
      canActivate(context: ExecutionContext): boolean {
        const request = context.switchToHttp().getRequest();
-       const token = request.cookies.token; // Assuming token is stored in cookies
+       const token = request.cookies.token; 
 
        if (!token || !this.authService.validateToken(token)) {
          throw new UnauthorizedException('Invalid or missing token');
