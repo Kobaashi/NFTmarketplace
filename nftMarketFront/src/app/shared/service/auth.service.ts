@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../interface/user.ineterface';
 import { RegisterResponse } from '../interface/registerResponse.interface';
+import { environment } from '../../../environment/environmet';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000';
-  private jwtUserUrl = 'http://localhost:3000/auth/user-token';
+  private apiUrl = `${environment.apiUrl}`;
+  private jwtUserUrl = `${environment.apiUrl}/auth/user-token`;
 
   constructor(private http: HttpClient) { }
 

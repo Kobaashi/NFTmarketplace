@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { User } from '../interface/user.ineterface';
 import { map } from 'rxjs/operators';
 import { NftResponse } from '../interface/nftResponse.interface';
+import { environment } from '../../../environment/environmet';
 
 @Injectable({
   providedIn: 'root',
@@ -11,8 +12,8 @@ import { NftResponse } from '../interface/nftResponse.interface';
 })
 export class UsersService {
   public userId: string = '';
-  private nftURL: string = "http://localhost:3000/users";
-  private userIdUrl = 'http://localhost:3000/users/id';
+  private nftURL: string = `${environment.apiUrl}/users`;
+  private userIdUrl = `${environment.apiUrl}/users/id`;
 
   constructor(private http: HttpClient) { }
     getUsers():  Observable<any[]> {

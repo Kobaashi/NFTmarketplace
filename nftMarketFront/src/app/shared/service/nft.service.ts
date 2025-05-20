@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Nft } from '../interface/nft.interface';
+import { environment } from '../../../environment/environmet';
 
 @Injectable({
   providedIn: 'root',
 
 })
 export class NFTService {
-  private nftURL: string = "http://localhost:3000/nft"
+  private nftURL: string = `${environment.apiUrl}/nft`
 
 
   constructor(private http: HttpClient) { }
