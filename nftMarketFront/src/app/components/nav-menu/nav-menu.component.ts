@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { VariableService } from '../../shared/service/variable.service';
+import { environment } from '../../../environment/environmet';
 
 @Component({
   selector: 'app-nav-menu',
@@ -34,10 +35,10 @@ export class NavMenuComponent {
 
   onAuthButtonClick() {
   if (this.buttonText === 'Log Out') {
-    this.http.post('http://localhost:3000/auth/logout', {}, { withCredentials: true }).subscribe({
+    this.http.post(`${environment.apiUrl}/auth/logout`, {}, { withCredentials: true }).subscribe({
       next: () => {
         this.buttonText = 'Log In';
-        window.location.reload(); // оновлюємо сторінку одразу
+        window.location.reload(); 
       },
       error: (err) => {
         console.error('Logout failed:', err);
