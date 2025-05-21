@@ -26,7 +26,7 @@ import { CookieService } from 'ngx-cookie-service';
     NgClass
   ],
   providers: [CookieService],
-  styleUrls: ['./user-profile.component.scss']
+  styleUrls: ['./user-profile.component.scss'],
 })
 export class UserProfileComponent implements OnInit, OnDestroy {
 

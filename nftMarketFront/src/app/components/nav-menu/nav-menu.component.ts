@@ -3,6 +3,8 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { VariableService } from '../../shared/service/variable.service';
 import { environment } from '../../../environment/environmet';
+import { AuthGuard } from '../../auth.guard';
+import { AuthService } from '../../shared/service/auth.service';
 
 @Component({
   selector: 'app-nav-menu',
@@ -18,6 +20,8 @@ export class NavMenuComponent {
   buttonText: string = 'Log In';
 
   constructor(
+    private authGuard: AuthGuard,
+    private authService: AuthService,
     protected variableService: VariableService,
     private http: HttpClient,
     private router: Router
@@ -25,12 +29,20 @@ export class NavMenuComponent {
     this.checkJwtCookie();
   }
 
-  checkJwtCookie() {
-  if (typeof document !== 'undefined') {
-    const hasJwt = document.cookie.includes('jwt');
-    this.buttonText = hasJwt ? 'Log Out' : 'Log In';
+  goToProfile() {
+    if(this.authService.isLoggedIn()) {
+      this.router.navigate(['/jwtuser/:nameuser/:user_id']);
+    } else {  
+      this.router.navigate(['/log-in']);
+    }
   }
-}
+
+  checkJwtCookie() {
+    if (typeof document !== 'undefined') {
+      const hasJwt = document.cookie.includes('jwt');
+      this.buttonText = hasJwt ? 'Log Out' : 'Log In';
+    }
+  }
 
 
   onAuthButtonClick() {

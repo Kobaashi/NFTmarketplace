@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { User } from '../interface/user.ineterface';
 import { RegisterResponse } from '../interface/registerResponse.interface';
 import { environment } from '../../../environment/environmet';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,9 @@ export class AuthService {
   private apiUrl = `${environment.apiUrl}`;
   private jwtUserUrl = `${environment.apiUrl}/auth/user-token`;
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private cookieService: CookieService,
+    private http: HttpClient) { }
 
   register(userData: {
     name: string;
@@ -36,7 +39,12 @@ export class AuthService {
     return this.http.get<User>(this.jwtUserUrl, { withCredentials: true });
   }
 
-  setUser(user: User) {
+  isLoggedIn(): boolean {
+    return this.cookieService.check('jwt');
+  }
+
+  getUserToken(): string | null {
+    return this.cookieService.get('jwt') || null;
   }
 
 
