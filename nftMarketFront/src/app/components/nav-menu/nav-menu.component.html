@@ -60,11 +60,12 @@
       <div class="inline-flex pc:cursor-pointer pc:transition-transform pc:duration-500 pc:hover:scale-90 pc:mr-[30px] pc:-mt-[5px]
                   desk:cursor-pointer desk:transition-transform desk:duration-500 desk:hover:scale-90 desk:ml-[30px] desk:-mt-[5px]
                   mob:cursor-pointer mob:mt-[30px]">
-       <button (click)="onAuthButtonClick()" class="mob:hidden desk:flex pc:flex pc:font-mono pc:font-semibold pc:text-base pc:leading-[140%] pc:items-center pc:justify-center pc:bg-purple pc:px-[20px] pc:w-[152px] pc:h-[60px] pc:rounded-[20px]
+       <a routerLink="/log-in" routerLinkActive="active"><button (click)="onAuthButtonClick()" class="mob:hidden desk:flex pc:flex pc:font-mono pc:font-semibold pc:text-base pc:leading-[140%] pc:items-center pc:justify-center pc:bg-purple pc:px-[20px] pc:w-[152px] pc:h-[60px] pc:rounded-[20px]
                         desk:work desk:font-semibold desk:text-base desk:leading-[140%] desk:items-center desk:justify-center desk:bg-purple desk:px-[20px] desk:py-[19px] desk:w-[152px] desk:h-[60px] desk:rounded-[20px]">
           <img [src]="variableService.userm" alt="" class="pc:w-[24px] pc:h-[24px] pc:mr-[12px] mob:w-[12px] mob:h-[12px] mob:mr-[12px]">
           {{ buttonText }}
         </button>
+        </a>
       </div>
 
     </ul>
