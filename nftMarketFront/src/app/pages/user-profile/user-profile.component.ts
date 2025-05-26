@@ -50,8 +50,6 @@ export class UserProfileComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    const nameuser = this.route.snapshot.paramMap.get('nameuser');
-    const user_id = this.route.snapshot.paramMap.get('user_id');
     this.getUserByJwt();
     this.getArray();
   }
@@ -69,17 +67,14 @@ export class UserProfileComponent implements OnInit, OnDestroy {
       if (this.user?.user_id && this.user?.name) {
         this.setUserId(this.user.user_id);
 
-        // Очікуваний URL
         const expectedUrl = `/jwtuser/${this.user.name}/${this.user.user_id}`;
 
-        // Якщо URL не відповідає — редірект
         if (this.router.url !== expectedUrl) {
           this.router.navigate(['/jwtuser', this.user.name, this.user.user_id]);
           return;
         }
       }
 
-      // Created NFTs
       if (this.user?.created?.length) {
         for (const item of this.user.created) {
           this.nftService.getNftById(item.nft_id).subscribe({
@@ -96,7 +91,6 @@ export class UserProfileComponent implements OnInit, OnDestroy {
         this.noNFt = 'not a single nft was created';
       }
 
-      // Owned NFTs
       if (this.user?.owned?.length) {
         for (const item of this.user.owned) {
           this.nftService.getNftById(item.nft_id).subscribe({

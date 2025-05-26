@@ -48,8 +48,6 @@ export class ArtistComponent implements OnDestroy {
 
   ngOnInit(): void {
     this.getArray();
-    const name = this.route.snapshot.paramMap.get('name');
-    const id = this.route.snapshot.paramMap.get('id');
     const userId = this.route.snapshot.paramMap.get('id');
     if (userId) {
       this.getUserById(userId);
