@@ -2,7 +2,6 @@ import { Controller, Headers, Post, Body, BadRequestException, Res, Query, Get, 
 import { RegisterDto } from './dto/register.dto';
 import { Response } from 'express';
 import { AuthService } from './auth.service';
-import { JwtAuthGuard } from './jwt-auth.guard';
 
 @Controller('auth')
 export class AuthController {

@@ -44,6 +44,7 @@ export class AuthService {
       followers: 0,
       change: "+0.0%",             
       created: registerDto.created || [],          
+      owned: registerDto.owned || [],          
     });
 
     try {

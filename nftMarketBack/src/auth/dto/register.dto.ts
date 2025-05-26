@@ -32,4 +32,9 @@ export class RegisterDto {
   @ValidateNested({ each: true })
   @Type(() => ChangeItem)
   created?: ChangeItem[];
+
+  @IsOptional()
+  @ValidateNested({ each: true })
+  @Type(() => ChangeItem)
+  owned?: ChangeItem[];
 }

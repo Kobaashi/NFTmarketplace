@@ -50,7 +50,7 @@ export class NavMenuComponent {
     this.http.post(`${environment.apiUrl}/auth/logout`, {}, { withCredentials: true }).subscribe({
       next: () => {
         this.buttonText = 'Log In';
-        window.location.reload(); 
+        this.router.navigate(['/log-in']);
       },
       error: (err) => {
         console.error('Logout failed:', err);

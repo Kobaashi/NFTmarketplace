@@ -73,7 +73,6 @@ export class LogInComponent {
   const password = this.loginForm.get('password')?.value;
 
   try {
-    // робимо запит до сервера
     const response: any = await this.authService.login({ email, password }).toPromise();
     console.log('Login response:', response);
 
@@ -90,7 +89,6 @@ export class LogInComponent {
   }
 }
 
-// Функція для запису cookie (з простими налаштуваннями, можна допрацювати)
 private setJwtCookie(token: string): void {
   const expiresDays = 7;
   const d = new Date();

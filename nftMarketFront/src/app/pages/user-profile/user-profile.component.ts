@@ -50,6 +50,8 @@ export class UserProfileComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    const nameuser = this.route.snapshot.paramMap.get('nameuser');
+    const user_id = this.route.snapshot.paramMap.get('user_id');
     this.getUserByJwt();
     this.getArray();
   }
@@ -59,53 +61,64 @@ export class UserProfileComponent implements OnInit, OnDestroy {
   }
 
   getUserByJwt(): void {
-    this.userSub = this.authService.getUserByJwt().subscribe({
-      next: (user) => {
-        this.user = user;
-        console.log('Authenticated User:', this.user);
+  this.userSub = this.authService.getUserByJwt().subscribe({
+    next: (user) => {
+      this.user = user;
+      console.log('Authenticated User:', this.user);
 
-        if (this.user?.user_id) {
-          this.setUserId(this.user.user_id);
+      if (this.user?.user_id && this.user?.name) {
+        this.setUserId(this.user.user_id);
+
+        // Очікуваний URL
+        const expectedUrl = `/jwtuser/${this.user.name}/${this.user.user_id}`;
+
+        // Якщо URL не відповідає — редірект
+        if (this.router.url !== expectedUrl) {
+          this.router.navigate(['/jwtuser', this.user.name, this.user.user_id]);
+          return;
         }
-
-        if (this.user?.created?.length) {
-          for (const item of this.user.created) {
-            this.nftSub = this.nftService.getNftById(item.nft_id).subscribe({
-              next: (nftData) => {
-                this.createdNfts.push(nftData);
-                console.log('NFT data by created:', this.createdNfts);
-              },
-              error: (err) => {
-                console.error(`Error fetching NFT ${item.nft_id}:`, err);
-              }
-            });
-          }
-        } else {
-          this.noNFt = 'not a single nft was created'
-        }
-
-
-        if (this.user?.owned?.length) {
-          for (const item of this.user.owned) {
-            this.nftSub = this.nftService.getNftById(item.nft_id).subscribe({
-              next: (nftData) => {
-                this.ownedNfts.push(nftData);
-                console.log('NFT data by owned:', this.ownedNfts);
-              },
-              error: (err) => {
-                console.error(`Error fetching NFT ${item.nft_id}:`, err);
-              }
-            });
-          }
-        } else {
-          this.noNFt = 'not a single nft was created'
-        }
-      },
-      error: (err) => {
-        console.error('Error fetching authenticated user:', err);
       }
-    });
-  }
+
+      // Created NFTs
+      if (this.user?.created?.length) {
+        for (const item of this.user.created) {
+          this.nftService.getNftById(item.nft_id).subscribe({
+            next: (nftData) => {
+              this.createdNfts.push(nftData);
+              console.log('NFT data by created:', this.createdNfts);
+            },
+            error: (err) => {
+              console.error(`Error fetching NFT ${item.nft_id}:`, err);
+            }
+          });
+        }
+      } else {
+        this.noNFt = 'not a single nft was created';
+      }
+
+      // Owned NFTs
+      if (this.user?.owned?.length) {
+        for (const item of this.user.owned) {
+          this.nftService.getNftById(item.nft_id).subscribe({
+            next: (nftData) => {
+              this.ownedNfts.push(nftData);
+              console.log('NFT data by owned:', this.ownedNfts);
+            },
+            error: (err) => {
+              console.error(`Error fetching NFT ${item.nft_id}:`, err);
+            }
+          });
+        }
+      } else {
+        this.noNFt = 'not a single nft was created';
+      }
+    },
+    error: (err) => {
+      console.error('Error fetching authenticated user:', err);
+    }
+  });
+}
+
 
   setUserId(id: string): void {
     this.usersService.userId = id;

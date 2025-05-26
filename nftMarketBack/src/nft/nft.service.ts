@@ -33,11 +33,4 @@ export class NftService {
     return result;
   }
 
-  async findNFTByCategories(categories: string): Promise<NFT[] | null> {
-    console.log('Looking for NFT with categories:', categories);
-    const result = await this.nftModel.find({ categories });
-    console.log('Result:', result);
-    return result;
-  }
-
 }
