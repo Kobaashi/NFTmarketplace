@@ -39,4 +39,8 @@ export class DiscoverMoreComponent {
     });
   }
 
+  ngOnDestroy(): void {
+    this.discoverSub?.unsubscribe();
+  }
+
 }
