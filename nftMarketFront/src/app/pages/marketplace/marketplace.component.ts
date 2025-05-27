@@ -15,6 +15,8 @@ import { FormsModule } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 import { Nft } from '../../shared/interface/nft.interface';
+import { Router } from '@angular/router';
+import { AuthService } from '../../shared/service/auth.service';
 
 @Component({
   selector: 'app-marketplace',
@@ -46,6 +48,8 @@ export class MarketplaceComponent implements OnDestroy {
       user_id: string = '';
 
      constructor(
+      private router: Router,
+      private authService: AuthService,
       private arrayObjectService: ArrayObjectService,
       private NFTService: NFTService ,
       protected variableService: VariableService,
@@ -61,6 +65,10 @@ export class MarketplaceComponent implements OnDestroy {
         const userIdFromCookie = this.cookieService.get('user_id');
         console.log('User ID from cookies:', userIdFromCookie);
         this.user_id = userIdFromCookie;
+     }
+
+     checkBuy() {
+        
      }
 
      searchNFTsByName(): void {
@@ -129,7 +137,8 @@ searchNFTsByCollections(): void {
   }
 
   addNftToUser(nft_id: string): void {
-    if (!this.user_id) {
+    if(this.authService.isLoggedIn()) {
+      if (!this.user_id) {
       console.error('User ID відсутній');
       return;
     }
@@ -143,6 +152,10 @@ searchNFTsByCollections(): void {
         console.error('Помилка додавання NFT:', err);
       }
     });
+    } else {  
+      alert('Будь ласка, увійдіть до системи, щоб купити NFT');
+      this.router.navigate(['/log-in']);
+    }
   }
 
   

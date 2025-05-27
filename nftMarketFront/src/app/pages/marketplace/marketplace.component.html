@@ -60,7 +60,6 @@
       @if(searchTerm === '') {
         @for(nfts of NFTs; track nfts) {
         <div class="desk:ml-[30px] desk:mt-[30px] transition-transform duration-500 hover:scale-90">
-          <a routerLink="/nft-page" routerLinkActive="active">
             <div >
               <img [src]="nfts.picture" alt="" class="desk:w-[330px] desk:h-[295px] rounded-t-[20px]
                                                   mob:w-[315px] mob:h-[238px] mob:object-cover">
@@ -96,13 +95,11 @@
                 <button (click)="addNftToUser(nfts.nft_id)">Buy</button>
               </div>
             </div>
-          </a>
         </div>
       }
     } @else if(searchTerm !== ''){
         @for(nfts of searchNft; track nfts) {
         <div class="desk:ml-[30px] desk:mt-[30px] transition-transform duration-500 hover:scale-90">
-          <a routerLink="/nft-page" routerLinkActive="active">
             <div >
               <img [src]="nfts.picture" alt="" class="desk:w-[330px] desk:h-[295px] rounded-t-[20px]
                                                   mob:w-[315px] mob:h-[238px] mob:object-cover">
@@ -138,14 +135,12 @@
                 <button (click)="addNftToUser(nfts.nft_id)">Buy</button>
               </div>
             </div>
-          </a>
         </div>
       }
     }
     } @else if(this.variableService.currentSlideIndex === 1) {
       @for(nfts of searchNftCollections; track nfts) {
         <div class="desk:ml-[30px] desk:mt-[30px] transition-transform duration-500 hover:scale-90">
-          <a routerLink="/nft-page" routerLinkActive="active">
             <div >
               <img [src]="nfts.picture" alt="" class="desk:w-[330px] desk:h-[295px] rounded-t-[20px]
                                                   mob:w-[315px] mob:h-[238px] mob:object-cover">
@@ -181,7 +176,6 @@
                 <button (click)="addNftToUser(nfts.nft_id)">Buy</button>
               </div>
             </div>
-          </a>
         </div>
       }
     }
