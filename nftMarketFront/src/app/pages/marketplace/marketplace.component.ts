@@ -67,10 +67,6 @@ export class MarketplaceComponent implements OnDestroy {
         this.user_id = userIdFromCookie;
      }
 
-     checkBuy() {
-        
-     }
-
      searchNFTsByName(): void {
       const term = this.searchTerm.trim();
       if (term.length === 0) {
