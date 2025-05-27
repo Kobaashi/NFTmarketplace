@@ -52,8 +52,7 @@ export class MarketplaceComponent implements OnDestroy {
       private http: HttpClient,
       private cookieService: CookieService,
       private readonly usersService: UsersService
-    ) {
-     }
+    ) {}
 
      ngOnInit():void {
         this.getArray();

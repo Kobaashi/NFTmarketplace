@@ -26,18 +26,18 @@
         <a routerLink="/marketplace" routerLinkActive="active">
           <div class="desk:w-[330px]
                        mob:w-[315px]">
-            <img [src]="nft.image" alt="" class="desk:w-full desk:h-[296px] desk:rounded-t-[20px]
+            <img [src]="nft.picture" alt="" class="desk:w-full desk:h-[296px] desk:rounded-t-[20px]
                                                   mob:w-[315px] mob:h-[238px] mob:rounded-t-[20px]">
             <div class="desk:h-[173px] bg-darkGray desk:rounded-b-[20px]
                          mob:h-[164px] mob:rounded-b-[20px]">
               <h5 class="desk:font-work desk:font-semibold desk:text-h5 desk:text-white desk:leading-[140%] desk:pt-5 desk:ml-[30px]
-                          mob:font-work mob:font-semibold mob:text-h5 mob:text-white mob:leading-[140%] mob:pt-5 mob:ml-5">{{ nft.name | firstUppercase }}</h5>
+                          mob:font-work mob:font-semibold mob:text-h5 mob:text-white mob:leading-[140%] mob:pt-5 mob:ml-5">{{ nft.nft_name | firstUppercase }}</h5>
               <div class="flex desk:mt-[5px] desk:ml-[30px]
                            mob:mt-[5px] mob:ml-[20px]">
-                <img [src]="nft.authorAva" alt="" class="desk:w-[24px] desk:h-[24px]
+                <img [src]="nft.artist_ava" alt="" class="desk:w-[24px] desk:h-[24px]
                                                           mob:w-[24px] mob:h-[24px]">
                 <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%] desk:ml-3
-                           mob:font-mono mob:font-regular mob:text-base mob:text-white mob:leading-[140%] mob:ml-3">{{ nft.authorName }}</p>
+                           mob:font-mono mob:font-regular mob:text-base mob:text-white mob:leading-[140%] mob:ml-3">{{ nft.artist }}</p>
               </div>
               <div class="flex desk:pt-[25px] desk:ml-[30px]
                            mob:pt-[25px] mob:ml-5">
@@ -53,7 +53,7 @@
                   <p class="desk:font-mono desk:font-regular desk:text-caption desk:text-lightGray desk:leading-[110%]
                              mob:font-mono mob:font-regular mob:text-caption mob:text-lightGray mob:leading-[110%]">{{ 'highest bid' | firstUppercase }}</p>
                   <p class="desk:font-mono desk:font-regular desk:text-base desk:text-white desk:leading-[140%]
-                             mob:font-mono mob:font-regular mob:text-caption mob:text-white mob:leading-[110%] mob:mt-2">{{ nft.highestBid }} wETH</p>
+                             mob:font-mono mob:font-regular mob:text-caption mob:text-white mob:leading-[110%] mob:mt-2">{{ nft.highest_bid }} wETH</p>
                 </div>
               </div>
             </div>
