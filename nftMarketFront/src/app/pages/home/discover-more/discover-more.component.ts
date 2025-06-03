@@ -25,8 +25,7 @@ export class DiscoverMoreComponent {
   constructor( 
     private NFTService: NFTService,
     private arrayObjectService: ArrayObjectService, 
-    protected variableService: VariableService ) {
-  }
+    protected variableService: VariableService ) {}
 
   ngOnInit(): void {
     this.getNFts();
