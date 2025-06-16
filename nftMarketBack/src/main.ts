@@ -8,7 +8,8 @@ async function bootstrap() {
   const configService = app.get(ConfigService);
 
   app.enableCors({
-    origin: configService.get<string>('FRONTEND_URI') || 'http://localhost:4200',
+    origin: configService.get<string>('FRONTEND_URI') || '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });
   
