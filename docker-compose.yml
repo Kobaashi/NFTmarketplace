@@ -8,7 +8,7 @@ services:
     networks: 
       - nftMarketPlace
     environment:
-      - ANGULAR_APP_API_URL=http://backend:5001
+      - ANGULAR_APP_API_URL=http://backend:5000
 
   backend:
     build:
